@@ -44,7 +44,9 @@ const GAMES = [
     desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。「爽快感×スリル」スキマ争奪カードゲーム",
     image: "assets/outbaaaan.jpg",
     isNew: false,
-    links: [],
+    links: [ 
+      { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
+    ],
   },
 ];
 

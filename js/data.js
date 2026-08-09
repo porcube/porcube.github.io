@@ -29,8 +29,8 @@ const GAMES = [
   {
     title: "メェメェメェデェ",
     players: "3〜5人",
-    time: "約45分",
-    age: "10歳以上",
+    time: "15分",
+    age: "8歳～",
     desc: "ここにゲームの紹介文が入ります。",
     image: null,
     isNew: false,

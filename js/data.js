@@ -42,7 +42,7 @@ const GAMES = [
     time: "15～30分",
     age: "8歳～",
     desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。「爽快感×スリル」スキマ争奪カードゲーム",
-    image: "assets/OUTBAAAAN.jpg",
+    image: "assets/outbaaaan.jpg",
     isNew: false,
     links: [],
   },

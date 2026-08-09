@@ -200,8 +200,8 @@ a { color: inherit; }
 .section-die[data-face="1"]::after  { display: none; }
 .section-die[data-face="2"]::before { top: 9px; left: 9px; }
 .section-die[data-face="2"]::after  { bottom: 9px; right: 9px; }
-.section-die[data-face="3"]::before { top: 7px; left: 7px; box-shadow: 12px 12px 0 var(--ink); }
-.section-die[data-face="3"]::after  { bottom: 7px; right: 7px; }
+.section-die[data-face="3"]::before { top: 5px; left: 5px; width: 7px; height: 7px; box-shadow: 10.5px 10.5px 0 var(--ink); }
+.section-die[data-face="3"]::after  { bottom: 5px; right: 5px; width: 7px; height: 7px; }
 
 /* ---------- games ---------- */
 .games-grid {

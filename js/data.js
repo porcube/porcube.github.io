@@ -23,7 +23,7 @@ const GAMES = [
     image: "assets/sclamble.jpg",
     isNew: true,
     links: [
-      { label: "BOOTHで見る", url: "#" },
+      { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
     ],
   },
   {

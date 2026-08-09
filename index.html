@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PORCUBE｜ボードゲーム制作サークル ぽるきゅーぶ</title>
+<meta name="description" content="ボードゲーム制作サークルPORCUBE（ぽるきゅーぶ）の公式サイト。作品紹介・イベント出展情報・お問い合わせはこちらから。">
+<link rel="icon" href="assets/logo.png">
+<meta property="og:title" content="PORCUBE｜ボードゲーム制作サークル">
+<meta property="og:description" content="さいころひとつぶん、たのしい時間。ボードゲーム制作サークルPORCUBEの公式サイト。">
+<meta property="og:image" content="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="PORCUBE トップへ">
+    <span class="brand-die" aria-hidden="true">
+      <span class="pip"></span><span class="pip"></span><span class="pip"></span><span class="pip"></span>
+    </span>
+    <span class="brand-name">PORCUBE</span>
+  </a>
+  <nav class="site-nav" aria-label="メインナビゲーション">
+    <a class="nav-pill" href="#games">Games</a>
+    <a class="nav-pill" href="#events">Events</a>
+    <a class="nav-pill nav-pill--solid" href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-pips" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <img class="hero-logo reveal" src="assets/logo.png" alt="PORCUBE ロゴ：さいころの中で向かい合うふたりのキャラクター">
+    <h1 class="hero-title reveal">さいころひとつぶん、<br class="sp-only">たのしい時間。</h1>
+    <p class="hero-lead reveal">ボードゲーム制作サークル PORCUBE（ぽるきゅーぶ）です。<br>
+    テーブルを囲むみんなが笑顔になるゲームを、すこしずつ作っています。</p>
+    <a class="btn btn--solid reveal" href="#games">作品をみる →</a>
+  </section>
+
+  <section id="games" class="section">
+    <div class="section-head reveal">
+      <span class="section-die" aria-hidden="true" data-face="1"></span>
+      <h2>作品ギャラリー</h2>
+      <p class="section-sub">Games</p>
+    </div>
+    <div id="games-grid" class="games-grid"></div>
+  </section>
+
+  <section id="events" class="section">
+    <div class="section-head reveal">
+      <span class="section-die" aria-hidden="true" data-face="2"></span>
+      <h2>イベント参加予定</h2>
+      <p class="section-sub">Events</p>
+    </div>
+    <div class="events-wrap">
+      <h3 class="events-label">これからの予定</h3>
+      <ul id="events-upcoming" class="events-list"></ul>
+      <h3 class="events-label">これまでの参加</h3>
+      <ul id="events-past" class="events-list events-list--past"></ul>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="section-head reveal">
+      <span class="section-die" aria-hidden="true" data-face="3"></span>
+      <h2>お問い合わせ</h2>
+      <p class="section-sub">Contact</p>
+    </div>
+    <div class="contact-card reveal">
+      <p>作品のご感想、取材・委託のご相談、遊び方のご質問など、<br class="pc-only">お気軽にどうぞ。</p>
+      <div class="contact-actions">
+        <a id="contact-form-link" class="btn btn--solid" href="#" target="_blank" rel="noopener">お問い合わせフォーム</a>
+        <a id="contact-x-link" class="btn" href="#" target="_blank" rel="noopener">X（Twitter）</a>
+      </div>
+      <p class="contact-note">フォームの返信には数日いただくことがあります。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© <span id="year"></span> PORCUBE</span>
+  <span class="footer-pips" aria-hidden="true"><span></span><span></span><span></span></span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

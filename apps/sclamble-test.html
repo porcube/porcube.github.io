@@ -251,12 +251,12 @@
     gap:7px;
   }
   .reveal-card{
-    border-radius:14px;
-    padding:6px 5px;
+    border-radius:12px;
+    padding:5px 4px;
     text-align:center;
     border:1px solid #ead8ba;
     background:#faf7f0;
-    min-height:58px;
+    min-height:50px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -282,9 +282,7 @@
     font-weight:700;
     font-size:11px;
   }
-  @media(max-width:700px){
-    .reveal-grid{grid-template-columns:repeat(3,1fr)}
-  }
+
 
   .choice-strip{
     display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;
@@ -364,14 +362,6 @@
         <div class="legend">🐑白=1点　🐏赤=2点　🐑金=3点　🐺=0点</div>
       </div>
 
-      <div class="reveal-panel" id="revealPanel">
-        <div class="reveal-head">
-          <strong>今回のカード</strong>
-          <span id="phaseText">色カードを1枚選んでください</span>
-        </div>
-        <div class="reveal-grid" id="revealGrid"></div>
-      </div>
-
       <div class="board-wrap" id="board">
         <div class="center-card">同じ色の牧場を選ぶと<br>逃げちゃうぞ</div>
       </div>
@@ -389,9 +379,18 @@
         <div class="choice-strip" id="choiceStrip"></div>
       </div>
 
+      <div class="reveal-panel" id="revealPanel">
+        <div class="reveal-head">
+          <strong>今回のカード</strong>
+          <span id="phaseText">色カードを1枚選んでください</span>
+        </div>
+        <div class="reveal-grid" id="revealGrid"></div>
+      </div>
+
+
       <div class="actionbar">
         <button class="primary" id="nextStepBtn" style="display:none">OK</button>
-        <button class="secondary" id="resetBtn">最初から</button>
+        <button class="secondary" id="resetBtn" style="display:none">最初から</button>
       </div>
       <div class="step-help" id="stepHelp"></div>
 
@@ -459,6 +458,8 @@ function shuffle(a){
   return a;
 }
 function newGame(){
+  const resetBtn=document.getElementById('resetBtn');
+  if(resetBtn) resetBtn.style.display='none';
   game = {
     round:1,
     bag:freshBag(),
@@ -909,6 +910,8 @@ function endGame(){
     </div>`).join('');
   log('<span class="major">3ラウンド終了！</span> 得点計算へ。');
   document.getElementById('overlay').classList.add('show');
+  const resetBtn=document.getElementById('resetBtn');
+  if(resetBtn) resetBtn.style.display='inline-block';
 }
 
 document.getElementById('nextStepBtn').onclick=advanceStep;

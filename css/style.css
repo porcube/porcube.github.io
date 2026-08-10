@@ -442,3 +442,28 @@ a:focus-visible, .btn:focus-visible {
   outline-offset: 3px;
   border-radius: 999px;
 }
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-links a {
+  color: var(--paper);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: .85;
+}
+.footer-links a:hover { opacity: 1; text-decoration: underline; }
+
+@media (max-width: 620px) {
+  .site-footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+

@@ -76,7 +76,7 @@
             '<span class="event-name">' + esc(ev.name) +
               (ev.booth ? '<span class="event-booth">' + esc(ev.booth) + "</span>" : "") +
             "</span><br>" +
-            '<span class="event-meta">' + meta.join("　") + "</span>" +
+            '<span class="event-meta">' + meta.join("<br>") + "</span>" +
           "</span>" +
         "</li>"
       );

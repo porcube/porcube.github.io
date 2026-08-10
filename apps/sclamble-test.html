@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SCRAMBLE 3ラウンド体験版</title>
+<title>SCLAMBLE 3ラウンド体験版</title>
 <style>
   :root{
     --bg:#fff4df;
@@ -165,15 +165,6 @@
     display:block;
     object-fit:contain;
     border-radius:50%;
-  }
-  .chip .dir{
-    position:absolute;
-    right:-3px;bottom:-5px;
-    width:14px;height:14px;border-radius:50%;
-    background:#3e4850;color:white;
-    font-size:9px;display:flex;align-items:center;justify-content:center;
-    border:1px solid white;
-    z-index:2;
   }
   .side{padding:9px;display:flex;flex-direction:column;gap:8px}
   .section-title{font-weight:800;color:#915026;margin-bottom:4px}
@@ -347,7 +338,7 @@
 <div class="app">
   <header>
     <div class="brand">
-      <h1>SCRAMBLE</h1>
+      <h1>SCLAMBLE</h1>
       <small>6人プレイ / 3ラウンド体験版</small>
     </div>
     <div class="roundbox">
@@ -635,7 +626,7 @@ function chipHTML(ch){
   const src = ch.type==='wolf'
     ? (ch.dir<0 ? (a.imgLeft || a.img) : (a.imgRight || a.imgLeft || a.img))
     : a.img;
-  return `<div class="chip ${ch.type}" title="${a.label} ${ch.dir<0?'左向き':'右向き'}"><img src="${src}" alt="${a.label}"><span class="dir">${ch.dir<0?'←':'→'}</span></div>`;
+  return `<div class="chip ${ch.type}" title="${a.label}"><img src="${src}" alt="${a.label}"></div>`;
 }
 function renderPlayers(){
   const box=document.getElementById('players');

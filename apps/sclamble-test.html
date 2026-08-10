@@ -94,7 +94,7 @@
     position:absolute;
     width:25%;
     min-height:18%;
-    transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%) rotate(var(--rotation, 0deg));
     border-radius:15px;
     padding:8px 7px 7px;
     box-shadow:0 8px 22px rgba(0,0,0,.10);
@@ -110,7 +110,7 @@
     transition:.2s transform,.2s box-shadow;
   }
   .pasture.battled{
-    transform:translate(-50%,-50%) scale(1.05);
+    transform:translate(-50%,-50%) rotate(var(--rotation, 0deg)) scale(1.05);
     box-shadow:0 0 0 8px rgba(255,72,72,.16),0 10px 28px rgba(0,0,0,.12);
   }
   .pasture.target{
@@ -615,6 +615,15 @@ function renderBoard(){
     el.style.left=positions[i][0]+'%';
     el.style.top=positions[i][1]+'%';
     el.style.setProperty('--pasture-soft',c.soft);
+    const rotations = {
+      yellow:'180deg',
+      green:'-90deg',
+      cyan:'-90deg',
+      red:'0deg',
+      blue:'90deg',
+      pink:'90deg'
+    };
+    el.style.setProperty('--rotation', rotations[c.id] || '0deg');
     el.innerHTML=`<h3><span>${c.name}牧場</span><span class="score">${scoreChips(game.pastures[c.id])}点</span></h3>
       ${selectedIconsHTML}
       <div class="chips">${game.pastures[c.id].map(chipHTML).join('')}</div>`;

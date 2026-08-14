@@ -94,19 +94,18 @@
   .fence-card{
     position:absolute;
     width:21%;
-    aspect-ratio:1.55/1;
+    height:auto;
     transform:translate(-50%,-50%) rotate(var(--rot,0deg));
-    border-radius:10px;
-    background:#dff3ff;
+    background:transparent;
     box-shadow:0 5px 14px rgba(0,0,0,.12);
-    overflow:hidden;
+    overflow:visible;
     z-index:1;
   }
   .fence-card img{
     width:100%;
-    height:100%;
+    height:auto;
     display:block;
-    object-fit:cover;
+    object-fit:contain;
   }
   .gap-pasture{
     position:absolute;
@@ -574,12 +573,12 @@ function renderBoard(){
 
   // 実素材の柵カード。指定位置に配置。
   const fences=[
-    {x:50,y:13,rot:'0deg',img:'../asset/fence_card_front_03.jpg'},   // 上
-    {x:78,y:30,rot:'60deg',img:'../asset/fence_card_front_02.jpg'}, // 右上
-    {x:78,y:70,rot:'120deg',img:'../asset/fence_card_front_01.jpg'},// 右下
-    {x:50,y:87,rot:'180deg',img:'../asset/fence_card_front_06.jpg'},// 下
-    {x:22,y:70,rot:'240deg',img:'../asset/fence_card_front_08.jpg'},// 左下
-    {x:22,y:30,rot:'300deg',img:'../asset/fence_card_front_07.jpg'} // 左上
+    {x:50,y:13,rot:'0deg',img:'asset/fence_card_front_03.jpg'},   // 上
+    {x:78,y:30,rot:'60deg',img:'asset/fence_card_front_02.jpg'}, // 右上
+    {x:78,y:70,rot:'120deg',img:'asset/fence_card_front_01.jpg'},// 右下
+    {x:50,y:87,rot:'180deg',img:'asset/fence_card_front_06.jpg'},// 下
+    {x:22,y:70,rot:'240deg',img:'asset/fence_card_front_08.jpg'},// 左下
+    {x:22,y:30,rot:'300deg',img:'asset/fence_card_front_07.jpg'} // 左上
   ];
   fences.forEach(d=>{
     const el=document.createElement('div');
@@ -614,6 +613,8 @@ function renderBoard(){
 
     const [x,y]=gapPos[c.id];
     el.style.left=x+'%'; el.style.top=y+'%';
+    const chipRotations = {yellow:'180deg', green:'-90deg', cyan:'-90deg', red:'0deg', blue:'90deg', pink:'90deg'};
+    el.style.setProperty('--chip-rotation', chipRotations[c.id] || '0deg');
     el.innerHTML=`<div class="gap-head"><span class="gap-dot" style="background:${c.hex}"></span>${c.name}牧場 <span>${scoreChips(game.pastures[c.id])}点</span></div>${selectedIconsHTML}<div class="chips">${game.pastures[c.id].map(chipHTML).join('')}</div>`;
     board.appendChild(el);
   });

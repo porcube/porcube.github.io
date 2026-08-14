@@ -20,8 +20,13 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
+
   font-family:
     ui-rounded,
     "Hiragino Maru Gothic ProN",
@@ -46,6 +51,11 @@ body{
   min-height:100vh;
 }
 
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
 .app{
   max-width:1040px;
   margin:0 auto;
@@ -61,37 +71,57 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   gap:8px;
+
   margin-bottom:6px;
 }
 
 .brand h1{
   margin:0;
-  font-size:clamp(24px,3vw,34px);
+
+  font-size:
+    clamp(24px,3vw,34px);
+
   letter-spacing:.04em;
+
   color:#0d7199;
-  text-shadow:0 2px 0 white;
+
+  text-shadow:
+    0 2px 0 white;
 }
 
 .brand small{
   display:block;
+
   color:#7e6a55;
+
   margin-top:3px;
 }
 
 .roundbox{
   background:#fff;
-  border:2px solid #f0c77e;
+
+  border:
+    2px solid #f0c77e;
+
   border-radius:18px;
+
   padding:7px 10px;
+
   min-width:130px;
+
   text-align:center;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
 }
 
 .roundbox strong{
   font-size:17px;
-  color:var(--accent);
+
+  color:
+    var(--accent);
 }
 
 
@@ -101,6 +131,7 @@ header{
 
 .layout{
   display:grid;
+
   grid-template-columns:
     minmax(0,1.75fr)
     minmax(250px,.72fr);
@@ -109,10 +140,16 @@ header{
 }
 
 .panel{
-  background:rgba(255,250,240,.95);
-  border:2px solid #efd2a2;
+  background:
+    rgba(255,250,240,.95);
+
+  border:
+    2px solid #efd2a2;
+
   border-radius:18px;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
 }
 
 
@@ -138,15 +175,22 @@ header{
 
 .board-title{
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
   gap:12px;
+
   margin-bottom:7px;
 }
 
 .board-title h2{
   margin:0;
+
   font-size:17px;
+
   color:#244b20;
 }
 
@@ -157,15 +201,20 @@ header{
 
 .legend{
   font-size:12px;
+
   color:#294d26;
 
-  background:rgba(255,255,255,.74);
+  background:
+    rgba(255,255,255,.74);
 
   padding:5px 9px;
+
   border-radius:16px;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
 
   gap:3px;
@@ -173,8 +222,11 @@ header{
 
 .legend-row{
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
   flex-wrap:wrap;
 }
 
@@ -184,14 +236,19 @@ header{
 
 .legend-item{
   display:inline-flex;
+
   align-items:center;
+
   gap:4px;
+
   white-space:nowrap;
 }
 
 .legend-chip{
   width:20px;
+
   height:20px;
+
   object-fit:contain;
 }
 
@@ -206,33 +263,41 @@ header{
 
 .board-wrap{
   position:relative;
+
   aspect-ratio:1/1;
+
   max-width:600px;
+
   margin:0 auto;
 }
 
 
 /* =========================
-   中央進行ナビ
+   CENTER GUIDE
 ========================= */
 
 .center-card{
   position:absolute;
 
-  inset:35.5% 35.5%;
+  inset:33% 33%;
 
-  border-radius:18px;
+  border-radius:20px;
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
 
   gap:8px;
 
-  background:rgba(255,247,231,.97);
+  background:
+    rgba(255,247,231,.97);
 
-  border:3px dashed #d7a765;
+  border:
+    3px dashed #d7a765;
 
   text-align:center;
 
@@ -243,19 +308,25 @@ header{
   z-index:5;
 
   box-shadow:
-    0 8px 20px rgba(91,67,36,.12);
+    0 8px 20px
+    rgba(91,67,36,.12);
 }
 
 .center-guide{
   font-weight:900;
+
   font-size:14px;
+
   line-height:1.35;
 }
 
 .center-sub{
   font-size:10px;
+
   color:#7f6a52;
+
   line-height:1.35;
+
   min-height:14px;
 }
 
@@ -266,7 +337,9 @@ header{
 
   border-radius:13px;
 
-  padding:9px 7px;
+  padding:8px 7px;
+
+  font-size:12px;
 
   font-weight:900;
 
@@ -277,11 +350,23 @@ header{
   color:white;
 
   box-shadow:
-    0 4px 10px rgba(0,0,0,.14);
+    0 4px 10px
+    rgba(0,0,0,.14);
+
+  transition:
+    .15s transform,
+    .15s opacity,
+    .15s background;
+}
+
+.center-action:hover:not(:disabled){
+  transform:
+    translateY(-1px);
 }
 
 .center-action:disabled{
   opacity:.38;
+
   cursor:not-allowed;
 }
 
@@ -298,6 +383,7 @@ header{
   position:absolute;
 
   width:18%;
+
   height:auto;
 
   transform:
@@ -307,7 +393,8 @@ header{
   background:transparent;
 
   box-shadow:
-    0 5px 14px rgba(0,0,0,.12);
+    0 5px 14px
+    rgba(0,0,0,.12);
 
   overflow:visible;
 
@@ -316,6 +403,7 @@ header{
 
 .fence-card img{
   width:100%;
+
   height:auto;
 
   display:block;
@@ -332,16 +420,20 @@ header{
   position:absolute;
 
   width:19%;
+
   min-height:13%;
 
   transform:
     translate(-50%,-50%);
 
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
 
   gap:3px;
+
   padding:2px;
 
   z-index:3;
@@ -355,7 +447,8 @@ header{
 
 .gap-pasture.battled{
   box-shadow:
-    0 0 0 7px rgba(255,72,72,.16);
+    0 0 0 7px
+    rgba(255,72,72,.16);
 
   transform:
     translate(-50%,-50%)
@@ -364,12 +457,15 @@ header{
 
 .gap-pasture.target{
   box-shadow:
-    0 0 0 5px rgba(255,179,0,.20);
+    0 0 0 5px
+    rgba(255,179,0,.20);
 }
 
 .gap-head{
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   gap:4px;
@@ -377,6 +473,7 @@ header{
   white-space:nowrap;
 
   font-size:11px;
+
   font-weight:800;
 
   color:#5f4b37;
@@ -391,6 +488,7 @@ header{
 
 .gap-dot{
   width:9px;
+
   height:9px;
 
   border-radius:50%;
@@ -400,12 +498,14 @@ header{
 
 
 /* =========================
-   SELECT ICON
+   SELECTED PLAYERS
 ========================= */
 
 .choice-icons{
   display:flex;
+
   flex-wrap:wrap;
+
   justify-content:center;
 
   gap:3px;
@@ -415,12 +515,15 @@ header{
 
 .choice-icon{
   width:21px;
+
   height:21px;
 
   border-radius:50%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-size:12px;
@@ -429,19 +532,22 @@ header{
     rgba(255,255,255,.92);
 
   border:
-    1px solid rgba(87,63,37,.18);
+    1px solid
+    rgba(87,63,37,.18);
 }
 
 
 /* =========================
-   CHIP
+   ANIMAL CHIPS
 ========================= */
 
 .chips{
   display:flex;
+
   flex-wrap:wrap;
 
   justify-content:center;
+
   align-content:flex-start;
 
   gap:4px;
@@ -451,22 +557,27 @@ header{
 
 .chip{
   width:34px;
+
   height:34px;
 
   border-radius:50%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   background:transparent;
 
   box-shadow:
-    0 2px 5px rgba(0,0,0,.10);
+    0 2px 5px
+    rgba(0,0,0,.10);
 }
 
 .chip img{
   width:100%;
+
   height:100%;
 
   display:block;
@@ -476,9 +587,15 @@ header{
   border-radius:50%;
 
   transform:
-    rotate(var(--chip-rotation,0deg));
+    rotate(
+      var(
+        --chip-rotation,
+        0deg
+      )
+    );
 
-  transform-origin:center center;
+  transform-origin:
+    center center;
 }
 
 
@@ -490,6 +607,7 @@ header{
   padding:9px;
 
   display:flex;
+
   flex-direction:column;
 
   gap:8px;
@@ -497,6 +615,7 @@ header{
 
 .section-title{
   font-weight:800;
+
   color:#915026;
 
   margin-bottom:4px;
@@ -511,7 +630,10 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(2,minmax(0,1fr));
+    repeat(
+      2,
+      minmax(0,1fr)
+    );
 
   gap:5px;
 }
@@ -540,12 +662,15 @@ header{
 
 .avatar{
   width:28px;
+
   height:28px;
 
   border-radius:50%;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   background:#f4e0bd;
@@ -553,7 +678,8 @@ header{
   font-size:15px;
 
   border:
-    1px solid rgba(95,70,38,.18);
+    1px solid
+    rgba(95,70,38,.18);
 }
 
 .player.you{
@@ -565,11 +691,13 @@ header{
 
 .hut{
   font-size:10px;
+
   color:#71624f;
 }
 
 .pts{
   font-weight:900;
+
   font-size:12px;
 }
 
@@ -582,7 +710,10 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(6,minmax(0,1fr));
+    repeat(
+      6,
+      minmax(0,1fr)
+    );
 
   gap:6px;
 }
@@ -602,13 +733,17 @@ header{
 
   min-height:86px;
 
-  writing-mode:vertical-rl;
-  text-orientation:upright;
+  writing-mode:
+    vertical-rl;
+
+  text-orientation:
+    upright;
 
   letter-spacing:.06em;
 
   box-shadow:
-    0 4px 10px rgba(0,0,0,.11);
+    0 4px 10px
+    rgba(0,0,0,.11);
 
   transition:
     .15s transform,
@@ -622,7 +757,8 @@ header{
 
   box-shadow:
     0 0 0 3px #3f3024,
-    0 6px 14px rgba(0,0,0,.18);
+    0 6px 14px
+    rgba(0,0,0,.18);
 
   transform:
     translateY(-2px);
@@ -664,39 +800,6 @@ header{
 
 
 /* =========================
-   LOG
-========================= */
-
-.log{
-  height:150px;
-
-  overflow:auto;
-
-  background:#fff;
-
-  border:
-    1px solid #ead8ba;
-
-  border-radius:14px;
-
-  padding:8px;
-
-  font-size:11px;
-
-  line-height:1.55;
-}
-
-.log p{
-  margin:0 0 4px;
-}
-
-.log .major{
-  font-weight:900;
-  color:#b44819;
-}
-
-
-/* =========================
    REVEAL
 ========================= */
 
@@ -716,7 +819,9 @@ header{
 .reveal-head{
   display:flex;
 
-  justify-content:space-between;
+  justify-content:
+    space-between;
+
   align-items:center;
 
   gap:10px;
@@ -791,7 +896,8 @@ header{
   font-weight:900;
 
   box-shadow:
-    inset 0 -2px 0 rgba(0,0,0,.10);
+    inset 0 -2px 0
+    rgba(0,0,0,.10);
 }
 
 .reveal-hidden{
@@ -800,6 +906,40 @@ header{
   font-weight:700;
 
   font-size:11px;
+}
+
+
+/* =========================
+   LOG
+========================= */
+
+.log{
+  height:150px;
+
+  overflow:auto;
+
+  background:#fff;
+
+  border:
+    1px solid #ead8ba;
+
+  border-radius:14px;
+
+  padding:8px;
+
+  font-size:11px;
+
+  line-height:1.55;
+}
+
+.log p{
+  margin:0 0 4px;
+}
+
+.log .major{
+  font-weight:900;
+
+  color:#b44819;
 }
 
 
@@ -842,7 +982,101 @@ header{
 
 .reset-row{
   display:flex;
+
   justify-content:flex-end;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer{
+  margin-top:18px;
+
+  padding:
+    18px 12px 28px;
+
+  text-align:center;
+
+  color:#6e5a45;
+}
+
+.footer-inner{
+  max-width:1040px;
+
+  margin:0 auto;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:7px;
+}
+
+.footer-brand{
+  font-size:17px;
+
+  font-weight:900;
+
+  letter-spacing:.08em;
+
+  color:#0d7199;
+}
+
+.footer-text{
+  font-size:11px;
+
+  color:#8b7762;
+}
+
+.footer-home{
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  margin-top:3px;
+
+  padding:8px 16px;
+
+  border-radius:999px;
+
+  background:#fff;
+
+  border:
+    2px solid #efd2a2;
+
+  color:#915026;
+
+  font-size:12px;
+
+  font-weight:900;
+
+  text-decoration:none;
+
+  box-shadow:
+    0 4px 12px
+    rgba(93,59,27,.08);
+
+  transition:
+    .15s transform,
+    .15s background,
+    .15s box-shadow;
+}
+
+.footer-home:hover{
+  transform:
+    translateY(-2px);
+
+  background:#fff8ec;
+
+  box-shadow:
+    0 6px 16px
+    rgba(93,59,27,.12);
 }
 
 
@@ -861,6 +1095,7 @@ header{
   display:none;
 
   align-items:center;
+
   justify-content:center;
 
   padding:20px;
@@ -884,7 +1119,8 @@ header{
   width:100%;
 
   box-shadow:
-    0 24px 70px rgba(0,0,0,.30);
+    0 24px 70px
+    rgba(0,0,0,.30);
 
   border:
     3px solid #efc884;
@@ -907,7 +1143,9 @@ header{
 .result{
   display:flex;
 
-  justify-content:space-between;
+  justify-content:
+    space-between;
+
   align-items:center;
 
   padding:10px 12px;
@@ -932,7 +1170,13 @@ header{
    RESPONSIVE
 ========================= */
 
-@media(max-height:780px) and (min-width:861px){
+@media(
+  max-height:780px
+)
+and
+(
+  min-width:861px
+){
 
   .log{
     height:110px;
@@ -947,27 +1191,36 @@ header{
 
     padding:6px;
   }
+
 }
 
 
-@media(max-width:860px){
+@media(
+  max-width:860px
+){
 
   .layout{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .board-wrap{
     max-width:640px;
   }
+
 }
 
 
-@media(max-width:560px){
+@media(
+  max-width:560px
+){
 
   .side{
     display:flex;
+
     flex-direction:column;
   }
+
 
   .cards-section{
     order:1;
@@ -997,33 +1250,42 @@ header{
     order:7;
   }
 
+
   .board-wrap{
     width:100%;
 
     max-width:100%;
 
-    aspect-ratio:1/1.05;
+    aspect-ratio:
+      1/1.05;
   }
+
 
   .fence-card{
     width:21%;
   }
 
+
   .gap-pasture{
     width:21%;
   }
 
+
   .chip{
     width:27px;
+
     height:27px;
   }
 
+
   .choice-icon{
     width:17px;
+
     height:17px;
 
     font-size:9px;
   }
+
 
   .gap-head{
     font-size:9px;
@@ -1031,21 +1293,25 @@ header{
     padding:1px 4px;
   }
 
+
   .center-card{
-    inset:34.5% 34.5%;
+    inset:32% 32%;
 
     padding:8px;
 
     gap:6px;
   }
 
+
   .center-guide{
     font-size:12px;
   }
 
+
   .center-sub{
     font-size:9px;
   }
+
 
   .center-action{
     font-size:11px;
@@ -1053,9 +1319,11 @@ header{
     padding:7px 5px;
   }
 
+
   .cards{
     gap:4px;
   }
+
 
   .cardbtn{
     min-height:76px;
@@ -1065,19 +1333,31 @@ header{
     font-size:11px;
   }
 
+
   .legend{
     font-size:11px;
 
     padding:4px 6px;
   }
 
+
   .legend-row{
     gap:6px;
   }
 
+
   .legend-chip{
     width:18px;
+
     height:18px;
+  }
+
+
+  .site-footer{
+    margin-top:12px;
+
+    padding:
+      14px 10px 24px;
   }
 
 }
@@ -1099,7 +1379,8 @@ header{
     </h1>
 
     <small>
-      6人プレイ / 3ラウンド体験版
+      6人プレイ /
+      3ラウンド体験版
     </small>
 
   </div>
@@ -1111,7 +1392,9 @@ header{
 
     <br>
 
-    <strong id="roundLabel">
+    <strong
+      id="roundLabel"
+    >
       1 / 3
     </strong>
 
@@ -1124,7 +1407,12 @@ header{
 <div class="layout">
 
 
-<section class="panel board-panel">
+<section
+  class="
+    panel
+    board-panel
+  "
+>
 
 
   <div class="board-title">
@@ -1179,7 +1467,12 @@ header{
       </div>
 
 
-      <div class="legend-row legend-wolf-row">
+      <div
+        class="
+          legend-row
+          legend-wolf-row
+        "
+      >
 
         <span class="legend-item">
 
@@ -1195,7 +1488,9 @@ header{
 
 
         <span class="legend-note">
+
           (3匹集めると羊を失う)
+
         </span>
 
       </div>
@@ -1213,11 +1508,14 @@ header{
 
     <div class="center-card">
 
+
       <div
         class="center-guide"
         id="centerGuide"
       >
+
         色カードを選ぼう！
+
       </div>
 
 
@@ -1225,7 +1523,9 @@ header{
         class="center-sub"
         id="centerSub"
       >
+
         決定するまでは変更できます
+
       </div>
 
 
@@ -1234,8 +1534,11 @@ header{
         id="centerActionBtn"
         disabled
       >
+
         色を決定する
+
       </button>
+
 
     </div>
 
@@ -1245,13 +1548,20 @@ header{
 
 
 
-<aside class="panel side">
+<aside
+  class="
+    panel
+    side
+  "
+>
 
 
   <div class="players-section">
 
     <div class="section-title">
+
       プレイヤー
+
     </div>
 
 
@@ -1267,7 +1577,9 @@ header{
   <div class="cards-section">
 
     <div class="section-title">
+
       あなたの色カード
+
     </div>
 
 
@@ -1288,12 +1600,16 @@ header{
     <div class="reveal-head">
 
       <strong>
+
         今回のカード
+
       </strong>
 
 
       <span id="phaseText">
+
         色カードを1枚選んでください
+
       </span>
 
     </div>
@@ -1318,7 +1634,9 @@ header{
   <div class="log-section">
 
     <div class="section-title">
+
       ゲームログ
+
     </div>
 
 
@@ -1352,7 +1670,9 @@ header{
       id="resetBtn"
       style="display:none"
     >
+
       最初から
+
     </button>
 
   </div>
@@ -1367,6 +1687,39 @@ header{
 
 
 
+<footer class="site-footer">
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+
+      PORCUBE
+
+    </div>
+
+
+    <div class="footer-text">
+
+      SCLAMBLE 3ラウンド体験版
+
+    </div>
+
+
+    <a
+      class="footer-home"
+      href="https://porcube.github.io"
+    >
+
+      PORCUBEホームへ
+
+    </a>
+
+  </div>
+
+</footer>
+
+
+
 <div
   class="overlay"
   id="overlay"
@@ -1375,14 +1728,18 @@ header{
   <div class="modal">
 
     <h2>
+
       体験版 終了！
+
     </h2>
 
 
     <p>
+
       3ラウンド終了です。
       製品版では全6ラウンド、
-      5・6ラウンド目に各牧場へ2チップ追加されます。
+      5・6ラウンド目に各牧場へ2枚の動物チップが追加されます。
+
     </p>
 
 
@@ -1396,7 +1753,9 @@ header{
       class="center-action"
       id="replayBtn"
     >
+
       もう一度遊ぶ
+
     </button>
 
   </div>
@@ -1408,7 +1767,7 @@ header{
 <script>
 
 /* =========================
-   COLORS
+   DATA
 ========================= */
 
 const COLORS=[
@@ -1493,8 +1852,10 @@ const ANIMALS={
   wolf:{
     label:'オオカミ',
     score:0,
-    imgLeft:'../assets/wolf_left_chip.jpg',
-    imgRight:'../assets/wolf_right_chip.jpg'
+    imgLeft:
+      '../assets/wolf_left_chip.jpg',
+    imgRight:
+      '../assets/wolf_right_chip.jpg'
   }
 
 };
@@ -1525,9 +1886,19 @@ function freshBag(){
   let id=0;
 
 
-  for(const [type,count] of spec){
+  for(
+    const [
+      type,
+      count
+    ]
+    of spec
+  ){
 
-    for(let i=0;i<count;i++){
+    for(
+      let i=0;
+      i<count;
+      i++
+    ){
 
       bag.push({
 
@@ -1547,7 +1918,9 @@ function freshBag(){
   }
 
 
-  return shuffle(bag);
+  return shuffle(
+    bag
+  );
 
 }
 
@@ -1558,18 +1931,26 @@ function shuffle(a){
   a=[...a];
 
 
-  for(let i=a.length-1;i>0;i--){
+  for(
+    let i=a.length-1;
+    i>0;
+    i--
+  ){
 
     const j=
       Math.floor(
-        Math.random()*(i+1)
+        Math.random()
+        *
+        (i+1)
       );
 
 
     [
       a[i],
       a[j]
-    ]=[
+    ]
+    =
+    [
       a[j],
       a[i]
     ];
@@ -1590,9 +1971,13 @@ function shuffle(a){
 function newGame(){
 
   document
-    .getElementById('overlay')
+    .getElementById(
+      'overlay'
+    )
     .classList
-    .remove('show');
+    .remove(
+      'show'
+    );
 
 
   const resetBtn=
@@ -1601,7 +1986,9 @@ function newGame(){
     );
 
 
-  if(resetBtn){
+  if(
+    resetBtn
+  ){
 
     resetBtn.style.display=
       'none';
@@ -1609,11 +1996,13 @@ function newGame(){
   }
 
 
+
   game={
 
     round:1,
 
-    bag:freshBag(),
+    bag:
+      freshBag(),
 
     pastures:
       Object.fromEntries(
@@ -1626,6 +2015,7 @@ function newGame(){
         )
 
       ),
+
 
     players:[
 
@@ -1668,6 +2058,7 @@ function newGame(){
 
     ],
 
+
     currentChoices:null,
 
     pendingHumanColor:null,
@@ -1696,7 +2087,9 @@ function newGame(){
 
 
   log(
-    '<span class="major">ゲーム開始！</span> 各牧場に動物を1枚ずつ配置しました。'
+
+    '<span class="major">ゲーム開始！</span> 各牧場に動物チップを1枚ずつ配置しました。'
+
   );
 
 
@@ -1748,7 +2141,9 @@ function drawTo(
    SCORE
 ========================= */
 
-function scoreChips(chips){
+function scoreChips(
+  chips
+){
 
   return chips.reduce(
 
@@ -1778,7 +2173,9 @@ function countType(
 
   return chips.filter(
     chip=>
-      chip.type===type
+      chip.type
+      ===
+      type
   ).length;
 
 }
@@ -1838,8 +2235,6 @@ function renderReveal(){
 
 
 
-  /* CPUはまだ伏せる */
-
   if(
     game.step==='locked'
   ){
@@ -1854,7 +2249,10 @@ function renderReveal(){
             index
           )=>{
 
-            if(index===0){
+
+            if(
+              index===0
+            ){
 
               const color=
 
@@ -1877,10 +2275,12 @@ function renderReveal(){
 
                   </div>
 
+
                   <div
                     class="reveal-color"
                     style="
-                      background:${color.hex}
+                      background:
+                      ${color.hex}
                     "
                   >
 
@@ -1906,6 +2306,7 @@ function renderReveal(){
 
                 </div>
 
+
                 <div class="reveal-hidden">
 
                   選択済み
@@ -1924,8 +2325,6 @@ function renderReveal(){
   }
 
 
-  /* 公開済み */
-
   else if(
     game.currentChoices
   ){
@@ -1940,10 +2339,12 @@ function renderReveal(){
             index
           )=>{
 
+
             const color=
 
               COLORS.find(
-                x=>x.id===colorId
+                x=>
+                  x.id===colorId
               );
 
 
@@ -1975,10 +2376,12 @@ function renderReveal(){
 
                 </div>
 
+
                 <div
                   class="reveal-color"
                   style="
-                    background:${color.hex}
+                    background:
+                    ${color.hex}
                   "
                 >
 
@@ -1997,8 +2400,6 @@ function renderReveal(){
 
   }
 
-
-  /* 未選択 */
 
   else{
 
@@ -2030,6 +2431,7 @@ function renderReveal(){
 
             </div>
 
+
             <div class="reveal-hidden">
 
               ？？？
@@ -2059,10 +2461,10 @@ function renderReveal(){
       'カード公開中',
 
     move:
-      'チップ移動後',
+      '動物チップ移動後',
 
     acquire:
-      'チップ獲得後',
+      '動物チップ獲得後',
 
     roundEnd:
       'ラウンド終了'
@@ -2071,7 +2473,11 @@ function renderReveal(){
 
 
   phase.textContent=
-    phases[game.step]||'';
+    phases[
+      game.step
+    ]
+    ||
+    '';
 
 
 
@@ -2105,7 +2511,7 @@ function renderReveal(){
   ){
 
     help.textContent=
-      '同じ色が2人以上ならバッティングです。盤面を確認してから中央ボタンを押してください。';
+      '同じ色が2人以上ならバッティングです。牧場を確認してから中央ボタンを押してください。';
 
   }
 
@@ -2115,7 +2521,7 @@ function renderReveal(){
   ){
 
     help.textContent=
-      'バッティングした牧場のチップが移動しました。移動先を確認してください。';
+      'バッティングした牧場の動物チップが移動しました。移動先を確認してください。';
 
   }
 
@@ -2125,7 +2531,7 @@ function renderReveal(){
   ){
 
     help.textContent=
-      'バッティングしなかったプレイヤーがチップを獲得しました。小屋を確認してください。';
+      'バッティングしなかったプレイヤーが動物チップを獲得しました。小屋を確認してください。';
 
   }
 
@@ -2140,7 +2546,7 @@ function renderReveal(){
 
         ? '3ラウンド終了です。中央ボタンから最終結果を確認できます。'
 
-        : 'ラウンド終了です。中央ボタンで夜処理と補充を行い、次のラウンドへ進みます。';
+        : 'ラウンド終了です。中央ボタンで夜の処理と動物チップの補充を行い、次のラウンドへ進みます。';
 
   }
 
@@ -2149,7 +2555,7 @@ function renderReveal(){
 
 
 /* =========================
-   中央進行表示
+   CENTER ACTION
 ========================= */
 
 function renderCenterAction(){
@@ -2267,13 +2673,13 @@ function renderCenterAction(){
 
       game.pendingBattled.length
 
-        ? '被った牧場のチップが移動します'
+        ? '被った牧場の動物チップが移動します'
 
         : 'そのまま次へ進めます';
 
 
     button.textContent=
-      'チップを移動';
+      '動物チップを移動';
 
   }
 
@@ -2283,15 +2689,15 @@ function renderCenterAction(){
   ){
 
     guide.textContent=
-      '移動したチップを確認！';
+      '移動した動物チップを確認！';
 
 
     sub.textContent=
-      '次はチップを獲得します';
+      '次は牧場の動物チップを獲得します';
 
 
     button.textContent=
-      'チップを獲得';
+      '動物チップを獲得';
 
   }
 
@@ -2342,7 +2748,7 @@ function renderCenterAction(){
 
 
       sub.textContent=
-        '夜のオオカミ移動＋牧場補充';
+        '夜のオオカミ移動＋動物チップ補充';
 
 
       button.textContent=
@@ -2375,7 +2781,7 @@ function renderCenterAction(){
 
 
 /* =========================
-   牧場上のプレイヤー表示
+   PLAYER SELECTION
 ========================= */
 
 function shouldShowSelections(){
@@ -2420,12 +2826,16 @@ function selectedPlayersForColor(
 
         choice===colorId
 
-          ? game.players[index]
+          ? game.players[
+              index
+            ]
 
           : null
     )
 
-    .filter(Boolean);
+    .filter(
+      Boolean
+    );
 
 }
 
@@ -2454,14 +2864,58 @@ function renderBoard(){
 
 
 
-const fences=[
-  {x:50,y:10,rot:'180deg',img:'../assets/fence_card_front_03.jpg'},   // 上
-  {x:81,y:27,rot:'240deg',img:'../assets/fence_card_front_02.jpg'}, // 右上
-  {x:81,y:73,rot:'300deg',img:'../assets/fence_card_front_01.jpg'}, // 右下
-  {x:50,y:90,rot:'0deg',img:'../assets/fence_card_front_06.jpg'},   // 下
-  {x:19,y:73,rot:'60deg',img:'../assets/fence_card_front_08.jpg'},  // 左下
-  {x:19,y:27,rot:'120deg',img:'../assets/fence_card_front_07.jpg'}  // 左上
-];
+  const fences=[
+
+    {
+      x:50,
+      y:10,
+      rot:'180deg',
+      img:
+        '../assets/fence_card_front_03.jpg'
+    },
+
+    {
+      x:81,
+      y:27,
+      rot:'240deg',
+      img:
+        '../assets/fence_card_front_02.jpg'
+    },
+
+    {
+      x:81,
+      y:73,
+      rot:'300deg',
+      img:
+        '../assets/fence_card_front_01.jpg'
+    },
+
+    {
+      x:50,
+      y:90,
+      rot:'0deg',
+      img:
+        '../assets/fence_card_front_06.jpg'
+    },
+
+    {
+      x:19,
+      y:73,
+      rot:'60deg',
+      img:
+        '../assets/fence_card_front_08.jpg'
+    },
+
+    {
+      x:19,
+      y:27,
+      rot:'120deg',
+      img:
+        '../assets/fence_card_front_07.jpg'
+    }
+
+  ];
+
 
 
   fences.forEach(
@@ -2486,10 +2940,12 @@ const fences=[
         fence.y+'%';
 
 
-      element.style.setProperty(
-        '--rot',
-        fence.rot
-      );
+      element
+        .style
+        .setProperty(
+          '--rot',
+          fence.rot
+        );
 
 
       element.innerHTML=`
@@ -2512,13 +2968,26 @@ const fences=[
 
 
   const gapPos={
-  red:[32,16],
-  cyan:[68,16],
-  green:[85,50],
-  yellow:[68,84],
-  blue:[32,84],
-  pink:[15,50]
-　};
+
+    red:
+      [32,16],
+
+    cyan:
+      [68,16],
+
+    green:
+      [85,50],
+
+    yellow:
+      [68,84],
+
+    blue:
+      [32,84],
+
+    pink:
+      [15,50]
+
+  };
 
 
 
@@ -2573,7 +3042,9 @@ const fences=[
 
             .filter(
               choice=>
-                choice===color.id
+                choice
+                ===
+                color.id
             )
 
             .length;
@@ -2681,7 +3152,10 @@ const fences=[
 
 
 
-      const [x,y]=
+      const [
+        x,
+        y
+      ]=
         gapPos[
           color.id
         ];
@@ -2697,17 +3171,19 @@ const fences=[
 
 
 
-      element.style.setProperty(
+      element
+        .style
+        .setProperty(
 
-        '--chip-rotation',
+          '--chip-rotation',
 
-        chipRotations[
-          color.id
-        ]
-        ||
-        '0deg'
+          chipRotations[
+            color.id
+          ]
+          ||
+          '0deg'
 
-      );
+        );
 
 
 
@@ -2718,7 +3194,8 @@ const fences=[
           <span
             class="gap-dot"
             style="
-              background:${color.hex}
+              background:
+              ${color.hex}
             "
           ></span>
 
@@ -2781,6 +3258,7 @@ function chipHTML(
 ){
 
   const animal=
+
     ANIMALS[
       chip.type
     ];
@@ -2858,13 +3336,16 @@ function renderPlayers(){
       index
     )=>{
 
+
       const sheep=
 
         player.hut
 
           .filter(
             chip=>
-              chip.type!=='wolf'
+              chip.type
+              !==
+              'wolf'
           )
 
           .length;
@@ -2920,12 +3401,14 @@ function renderPlayers(){
         );
 
 
+
       element.innerHTML=`
 
         <div
           class="avatar"
           style="
-            background:${avatarBg}
+            background:
+            ${avatarBg}
           "
         >
 
@@ -2963,6 +3446,7 @@ function renderPlayers(){
       `;
 
 
+
       box.appendChild(
         element
       );
@@ -2975,7 +3459,7 @@ function renderPlayers(){
 
 
 /* =========================
-   色カード
+   COLOR CARDS
 ========================= */
 
 function renderCards(){
@@ -3032,7 +3516,9 @@ function renderCards(){
 
         ||
 
-        game.step!=='choose'
+        game.step
+        !==
+        'choose'
 
         ||
 
@@ -3045,7 +3531,9 @@ function renderCards(){
         if(
           game.busy
           ||
-          game.step!=='choose'
+          game.step
+          !==
+          'choose'
         ){
 
           return;
@@ -3179,6 +3667,7 @@ function cpuChoice(
 
     COLORS.map(
       color=>{
+
 
         const chips=
 
@@ -3361,7 +3850,7 @@ function cpuChoice(
 
 
 /* =========================
-   色確定
+   COLOR CONFIRM
 ========================= */
 
 function confirmColorSelection(){
@@ -3372,7 +3861,9 @@ function confirmColorSelection(){
 
     ||
 
-    game.step!=='choose'
+    game.step
+    !==
+    'choose'
 
     ||
 
@@ -3391,6 +3882,7 @@ function confirmColorSelection(){
     game.pendingHumanColor;
 
 
+
   game.busy=
     true;
 
@@ -3404,7 +3896,9 @@ function confirmColorSelection(){
 
     </span>
 
-    あなたは「${colorName(humanColor)}」を選びました。`
+    あなたは
+    「${colorName(humanColor)}」
+    を選びました。`
 
   );
 
@@ -3493,7 +3987,9 @@ function confirmColorSelection(){
 
 
   log(
+
     '全員の選択が完了しました。中央のボタンからカードを公開してください。'
+
   );
 
 
@@ -3504,7 +4000,7 @@ function confirmColorSelection(){
 
 
 /* =========================
-   カード公開
+   REVEAL
 ========================= */
 
 function processRevealStep(){
@@ -3586,7 +4082,7 @@ function processRevealStep(){
 
 
 /* =========================
-   チップ移動
+   MOVE
 ========================= */
 
 function processMoveStep(){
@@ -3654,7 +4150,9 @@ function processMoveStep(){
 
       COLORS.findIndex(
         color=>
-          color.id===colorId
+          color.id
+          ===
+          colorId
       );
 
 
@@ -3741,9 +4239,9 @@ function processMoveStep(){
 
     battled.size
 
-      ? 'バッティングした牧場のチップを、向いている方向へ移動しました。'
+      ? 'バッティングした牧場の動物チップを、向いている方向へ移動しました。'
 
-      : '移動するチップはありません。'
+      : '移動する動物チップはありません。'
 
   );
 
@@ -3755,7 +4253,7 @@ function processMoveStep(){
 
 
 /* =========================
-   チップ獲得
+   ACQUIRE
 ========================= */
 
 function processAcquireStep(){
@@ -3816,7 +4314,7 @@ function processAcquireStep(){
 
         log(
 
-          `${game.players[i].name} が ${colorName(colorId)}牧場から ${obtained.length}枚 獲得。`
+          `${game.players[i].name} が ${colorName(colorId)}牧場から動物チップを${obtained.length}枚獲得。`
 
         );
 
@@ -3826,7 +4324,7 @@ function processAcquireStep(){
 
         log(
 
-          `${game.players[i].name} の ${colorName(colorId)}牧場は空でした。`
+          `${game.players[i].name} の ${colorName(colorId)}牧場には動物チップがありませんでした。`
 
         );
 
@@ -3871,7 +4369,7 @@ function finishRoundStep(){
 
     </span>
 
-    盤面と各プレイヤーの小屋を確認してください。`
+    牧場と各プレイヤーの小屋を確認してください。`
 
   );
 
@@ -3883,7 +4381,7 @@ function finishRoundStep(){
 
 
 /* =========================
-   中央ボタン
+   CENTRAL BUTTON
 ========================= */
 
 function advanceCentralAction(){
@@ -3981,7 +4479,6 @@ function resolveWolfBursts(){
             ? index
 
             : -1
-
       )
 
       .filter(
@@ -4035,6 +4532,7 @@ function resolveWolfBursts(){
   ){
 
     const hut=
+
       originalHuts[
         index
       ];
@@ -4045,7 +4543,9 @@ function resolveWolfBursts(){
 
       hut.filter(
         chip=>
-          chip.type==='wolf'
+          chip.type
+          ===
+          'wolf'
       );
 
 
@@ -4054,7 +4554,9 @@ function resolveWolfBursts(){
 
       hut.filter(
         chip=>
-          chip.type!=='wolf'
+          chip.type
+          !==
+          'wolf'
       );
 
 
@@ -4098,7 +4600,7 @@ function resolveWolfBursts(){
 
     log(
 
-      `🐺 <span class="major">${game.players[index].name} にオオカミが3匹以上！</span> 羊${sheep.length}枚が隣の小屋へ逃げ、狼${wolves.length}枚は除外。`
+      `🐺 <span class="major">${game.players[index].name} にオオカミが3匹以上！</span> 羊${sheep.length}枚が隣の小屋へ逃げ、オオカミ${wolves.length}枚は除外。`
 
     );
 
@@ -4113,7 +4615,9 @@ function resolveWolfBursts(){
   ){
 
     if(
-      !bursting.includes(i)
+      !bursting.includes(
+        i
+      )
     ){
 
       newHuts[i]=[
@@ -4149,7 +4653,9 @@ function resolveWolfBursts(){
 function advanceRound(){
 
   if(
-    game.step!=='roundEnd'
+    game.step
+    !==
+    'roundEnd'
   ){
 
     return;
@@ -4180,7 +4686,9 @@ function advanceRound(){
 
 
   log(
+
     '🌙 夜：牧場に残ったオオカミが向いている方向へ1牧場移動。'
+
   );
 
 
@@ -4213,7 +4721,7 @@ function advanceRound(){
 
   log(
 
-    `ROUND ${nextRound}準備：各牧場に ${addCount}枚追加。`
+    `ROUND ${nextRound}準備：各牧場に動物チップを${addCount}枚追加。`
 
     +
 
@@ -4299,7 +4807,9 @@ function nightWolfMove(){
           ]
           .filter(
             chip=>
-              chip.type!=='wolf'
+              chip.type
+              !==
+              'wolf'
           )
         ]
       )
@@ -4320,11 +4830,14 @@ function nightWolfMove(){
 
       .filter(
         chip=>
-          chip.type==='wolf'
+          chip.type
+          ===
+          'wolf'
       )
 
       .forEach(
         chip=>{
+
 
           const destinationIndex=
 
@@ -4421,7 +4934,9 @@ function endGame(){
 
               .filter(
                 chip=>
-                  chip.type!=='wolf'
+                  chip.type
+                  !==
+                  'wolf'
               )
 
               .length
@@ -4600,14 +5115,12 @@ document
     advanceCentralAction;
 
 
-
 document
   .getElementById(
     'resetBtn'
   )
   .onclick=
     newGame;
-
 
 
 document
@@ -4630,7 +5143,6 @@ document
       newGame();
 
     };
-
 
 
 newGame();

@@ -96,6 +96,18 @@
       : '<li class="events-empty">これまでの参加履歴はまだありません</li>';
   }
 
+  function renderMembers() {
+    var el = document.getElementById("members-list");
+    if (!el || typeof MEMBERS === "undefined") return;
+    el.innerHTML = MEMBERS.map(function (m) {
+      var body = '<span class="member-name">' + esc(m.name) + "</span>" +
+                 '<span class="member-role">' + esc(m.role) + "</span>";
+      return m.url
+        ? '<a class="member-card" href="' + esc(m.url) + '" target="_blank" rel="noopener">' + body + "</a>"
+        : '<span class="member-card">' + body + "</span>";
+    }).join("");
+  }
+  
   // ---- リンク差し込み ----
   function applySiteLinks() {
     if (typeof SITE === "undefined") return;
@@ -129,6 +141,7 @@
   try {
     renderGames();
     renderEvents();
+    renderMembers();
     applySiteLinks();
   } catch (err) {
     console.error("render error:", err);

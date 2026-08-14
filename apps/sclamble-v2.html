@@ -22,16 +22,28 @@
 
 body{
   margin:0;
+
   font-family:
     ui-rounded,
     "Hiragino Maru Gothic ProN",
     "Yu Gothic",
     system-ui,
     sans-serif;
+
   color:var(--ink);
+
   background:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95), transparent 35%),
-    linear-gradient(180deg,#fff8e8,#ffe6bd);
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255,255,255,.95),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #fff8e8,
+      #ffe6bd
+    );
+
   min-height:100vh;
 }
 
@@ -42,112 +54,170 @@ body{
 }
 
 
-/* =============================
+/* =========================
    HEADER
-============================= */
+========================= */
 
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+
   gap:8px;
+
   margin-bottom:6px;
 }
 
 .brand h1{
   margin:0;
-  font-size:clamp(24px,3vw,34px);
+
+  font-size:
+    clamp(24px,3vw,34px);
+
   letter-spacing:.04em;
+
   color:#0d7199;
-  text-shadow:0 2px 0 white;
+
+  text-shadow:
+    0 2px 0 white;
 }
 
 .brand small{
   display:block;
+
   color:#7e6a55;
+
   margin-top:3px;
 }
 
 .roundbox{
   background:#fff;
-  border:2px solid #f0c77e;
+
+  border:
+    2px solid #f0c77e;
+
   border-radius:18px;
+
   padding:7px 10px;
+
   min-width:130px;
+
   text-align:center;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
 }
 
 .roundbox strong{
   font-size:17px;
-  color:var(--accent);
+
+  color:
+    var(--accent);
 }
 
 
-/* =============================
-   MAIN
-============================= */
+/* =========================
+   LAYOUT
+========================= */
 
 .layout{
   display:grid;
-  grid-template-columns:minmax(0,1.75fr) minmax(250px,.72fr);
+
+  grid-template-columns:
+    minmax(0,1.75fr)
+    minmax(250px,.72fr);
+
   gap:10px;
 }
 
 .panel{
-  background:rgba(255,250,240,.95);
-  border:2px solid #efd2a2;
+  background:
+    rgba(255,250,240,.95);
+
+  border:
+    2px solid #efd2a2;
+
   border-radius:18px;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
 }
 
 
-/* =============================
-   牧場エリア
-============================= */
+/* =========================
+   BOARD
+========================= */
 
 .board-panel{
   padding:10px;
+
   background:
-    radial-gradient(circle at 22% 18%, rgba(255,255,255,.16), transparent 30%),
-    linear-gradient(180deg,#8fcf73 0%,#6fb457 100%);
+    radial-gradient(
+      circle at 22% 18%,
+      rgba(255,255,255,.16),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #8fcf73 0%,
+      #6fb457 100%
+    );
 }
 
 .board-title{
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
   gap:12px;
+
   margin-bottom:7px;
 }
 
 .board-title h2{
   margin:0;
+
   font-size:17px;
+
   color:#244b20;
 }
 
 
-/* =============================
-   チップ説明
-============================= */
+/* =========================
+   LEGEND
+========================= */
 
 .legend{
   font-size:12px;
+
   color:#294d26;
-  background:rgba(255,255,255,.74);
+
+  background:
+    rgba(255,255,255,.74);
+
   padding:5px 9px;
+
   border-radius:16px;
+
   display:flex;
+
   flex-direction:column;
+
   align-items:flex-start;
+
   gap:3px;
 }
 
 .legend-row{
   display:flex;
+
   align-items:center;
+
   gap:10px;
+
   flex-wrap:wrap;
 }
 
@@ -157,14 +227,18 @@ header{
 
 .legend-item{
   display:inline-flex;
+
   align-items:center;
+
   gap:4px;
+
   white-space:nowrap;
 }
 
 .legend-chip{
   width:20px;
   height:20px;
+
   object-fit:contain;
 }
 
@@ -173,345 +247,559 @@ header{
 }
 
 
-/* =============================
-   BOARD
-============================= */
+/* =========================
+   BOARD WRAP
+========================= */
 
 .board-wrap{
   position:relative;
+
   aspect-ratio:1/1;
+
   max-width:600px;
+
   margin:0 auto;
 }
 
+
+/* =========================
+   中央ガイド
+========================= */
+
 .center-card{
   position:absolute;
-  inset:38% 38%;
-  border-radius:15px;
+
+  inset:33% 33%;
+
+  border-radius:20px;
+
   display:flex;
+
+  flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
-  background:#fff7e7;
-  border:3px dashed #d7a765;
+
+  gap:10px;
+
+  background:
+    rgba(255,247,231,.97);
+
+  border:
+    3px dashed #d7a765;
+
   text-align:center;
-  font-weight:800;
-  font-size:14px;
-  line-height:1.45;
-  padding:10px;
+
+  padding:14px;
+
   color:#9c5b2d;
-  z-index:2;
+
+  z-index:5;
+
+  box-shadow:
+    0 8px 20px rgba(91,67,36,.12);
+}
+
+.center-guide{
+  font-weight:900;
+
+  font-size:16px;
+
+  line-height:1.35;
+}
+
+.center-sub{
+  font-size:11px;
+
+  color:#7f6a52;
+
+  line-height:1.4;
+
+  min-height:15px;
+}
+
+.center-action{
+  width:100%;
+
+  border:none;
+
+  border-radius:14px;
+
+  padding:10px 8px;
+
+  font-size:13px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  background:#c85a24;
+
+  color:white;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.14);
+}
+
+.center-action:disabled{
+  opacity:.38;
+
+  cursor:not-allowed;
+}
+
+.center-action.secondary-state{
+  background:#0d7199;
 }
 
 
-/* =============================
-   柵カード
-============================= */
+/* =========================
+   FENCE
+========================= */
 
 .fence-card{
   position:absolute;
+
   width:18%;
+
   height:auto;
-  transform:translate(-50%,-50%) rotate(var(--rot,0deg));
+
+  transform:
+    translate(-50%,-50%)
+    rotate(var(--rot,0deg));
+
   background:transparent;
-  box-shadow:0 5px 14px rgba(0,0,0,.12);
+
+  box-shadow:
+    0 5px 14px rgba(0,0,0,.12);
+
   overflow:visible;
+
   z-index:1;
 }
 
 .fence-card img{
   width:100%;
+
   height:auto;
+
   display:block;
+
   object-fit:contain;
 }
 
 
-/* =============================
-   牧場
-============================= */
+/* =========================
+   PASTURE
+========================= */
 
 .gap-pasture{
   position:absolute;
+
   width:19%;
+
   min-height:13%;
-  transform:translate(-50%,-50%);
+
+  transform:
+    translate(-50%,-50%);
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   gap:3px;
+
   padding:2px;
+
   z-index:3;
+
   border-radius:14px;
-  transition:.15s box-shadow,.15s transform;
+
+  transition:
+    .15s box-shadow,
+    .15s transform;
 }
 
 .gap-pasture.battled{
-  box-shadow:0 0 0 7px rgba(255,72,72,.16);
-  transform:translate(-50%,-50%) scale(1.04);
+  box-shadow:
+    0 0 0 7px
+    rgba(255,72,72,.16);
+
+  transform:
+    translate(-50%,-50%)
+    scale(1.04);
 }
 
 .gap-pasture.target{
-  box-shadow:0 0 0 5px rgba(255,179,0,.20);
+  box-shadow:
+    0 0 0 5px
+    rgba(255,179,0,.20);
 }
 
 .gap-head{
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   gap:4px;
+
   white-space:nowrap;
+
   font-size:11px;
+
   font-weight:800;
+
   color:#5f4b37;
-  background:rgba(255,255,255,.88);
+
+  background:
+    rgba(255,255,255,.88);
+
   border-radius:999px;
+
   padding:2px 6px;
 }
 
 .gap-dot{
   width:9px;
+
   height:9px;
+
   border-radius:50%;
+
   flex:0 0 auto;
 }
 
 
-/* =============================
-   選択プレイヤー
-============================= */
+/* =========================
+   PLAYER ICON
+========================= */
 
 .choice-icons{
   display:flex;
+
   flex-wrap:wrap;
+
   justify-content:center;
+
   gap:3px;
+
   min-height:18px;
 }
 
 .choice-icon{
   width:21px;
+
   height:21px;
+
   border-radius:50%;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   font-size:12px;
-  background:rgba(255,255,255,.92);
-  border:1px solid rgba(87,63,37,.18);
+
+  background:
+    rgba(255,255,255,.92);
+
+  border:
+    1px solid
+    rgba(87,63,37,.18);
 }
 
 
-/* =============================
-   動物チップ
-============================= */
+/* =========================
+   CHIP
+========================= */
 
 .chips{
   display:flex;
+
   flex-wrap:wrap;
+
   justify-content:center;
+
   align-content:flex-start;
+
   gap:4px;
+
   min-height:50px;
 }
 
 .chip{
   width:34px;
+
   height:34px;
+
   border-radius:50%;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   background:transparent;
-  box-shadow:0 2px 5px rgba(0,0,0,.10);
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,.10);
 }
 
 .chip img{
   width:100%;
+
   height:100%;
+
   display:block;
+
   object-fit:contain;
+
   border-radius:50%;
-  transform:rotate(var(--chip-rotation,0deg));
-  transform-origin:center center;
+
+  transform:
+    rotate(
+      var(
+        --chip-rotation,
+        0deg
+      )
+    );
+
+  transform-origin:
+    center center;
 }
 
 
-/* =============================
+/* =========================
    SIDE
-============================= */
+========================= */
 
 .side{
   padding:9px;
+
   display:flex;
+
   flex-direction:column;
+
   gap:8px;
 }
 
 .section-title{
   font-weight:800;
+
   color:#915026;
+
   margin-bottom:4px;
 }
 
 
-/* =============================
+/* =========================
    PLAYERS
-============================= */
+========================= */
 
 .players{
   display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0,1fr)
+    );
+
   gap:5px;
 }
 
 .player{
   display:grid;
-  grid-template-columns:auto 1fr auto;
+
+  grid-template-columns:
+    auto 1fr auto;
+
   gap:6px;
+
   align-items:center;
+
   padding:6px 7px;
+
   background:white;
+
   border-radius:14px;
-  border:1px solid #ead8ba;
+
+  border:
+    1px solid #ead8ba;
+
   min-width:0;
 }
 
 .avatar{
   width:28px;
+
   height:28px;
+
   border-radius:50%;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   background:#f4e0bd;
+
   font-size:15px;
-  border:1px solid rgba(95,70,38,.18);
+
+  border:
+    1px solid
+    rgba(95,70,38,.18);
 }
 
 .player.you{
-  border:2px solid #0d7199;
+  border:
+    2px solid #0d7199;
+
   background:#f3fbff;
 }
 
 .hut{
   font-size:10px;
+
   color:#71624f;
 }
 
 .pts{
   font-weight:900;
+
   font-size:12px;
 }
 
 
-/* =============================
-   色カード
-============================= */
+/* =========================
+   COLOR CARDS
+========================= */
 
 .cards{
   display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
+
+  grid-template-columns:
+    repeat(
+      6,
+      minmax(0,1fr)
+    );
+
   gap:6px;
 }
 
 .cardbtn{
   border:none;
+
   border-radius:14px;
+
   padding:8px 4px;
+
   color:white;
+
   font-weight:900;
+
   cursor:pointer;
+
   min-height:86px;
-  writing-mode:vertical-rl;
-  text-orientation:upright;
+
+  writing-mode:
+    vertical-rl;
+
+  text-orientation:
+    upright;
+
   letter-spacing:.06em;
-  box-shadow:0 4px 10px rgba(0,0,0,.11);
-  transition:.15s transform,.15s opacity,.15s box-shadow;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.11);
+
+  transition:
+    .15s transform,
+    .15s opacity,
+    .15s box-shadow;
 }
 
 .cardbtn.selected{
-  outline:4px solid #fff;
+  outline:
+    4px solid #fff;
+
   box-shadow:
     0 0 0 3px #3f3024,
     0 6px 14px rgba(0,0,0,.18);
-  transform:translateY(-2px);
+
+  transform:
+    translateY(-2px);
 }
 
 .cardbtn:hover{
-  transform:translateY(-2px);
+  transform:
+    translateY(-2px);
 }
 
 .cardbtn:disabled{
   opacity:.35;
+
   cursor:not-allowed;
+
   transform:none;
 }
 
 
-/* =============================
-   BUTTON
-============================= */
-
-.actionbar{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
-button.primary,
-button.secondary{
-  border:none;
-  border-radius:14px;
-  padding:8px 10px;
-  font-weight:900;
-  cursor:pointer;
-}
-
-button.primary{
-  background:#c85a24;
-  color:white;
-}
-
-button.primary:disabled{
-  opacity:.4;
-  cursor:not-allowed;
-}
-
-button.secondary{
-  background:#f2ddbc;
-  color:#68472c;
-}
-
-
-/* =============================
+/* =========================
    HELP
-============================= */
+========================= */
 
 .step-help{
-  margin-top:6px;
+  margin-top:2px;
+
   font-size:12px;
+
   color:#7f6a52;
+
   line-height:1.45;
+
+  background:#fff8ec;
+
+  border-radius:10px;
+
+  padding:7px 8px;
 }
 
 
-/* =============================
+/* =========================
    REVEAL
-============================= */
+========================= */
 
 .reveal-panel{
-  margin-bottom:6px;
+  margin-bottom:2px;
+
   padding:6px;
+
   border-radius:14px;
+
   background:#fff;
-  border:2px solid #efd2a2;
+
+  border:
+    2px solid #efd2a2;
 }
 
 .reveal-head{
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
   gap:10px;
+
   margin-bottom:6px;
 }
 
@@ -521,66 +809,100 @@ button.secondary{
 
 #phaseText{
   font-size:12px;
+
   color:#7f6a52;
+
   text-align:right;
 }
 
 .reveal-grid{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+
+  grid-template-columns:
+    repeat(6,1fr);
+
   gap:7px;
 }
 
 .reveal-card{
   border-radius:12px;
+
   padding:5px 4px;
+
   text-align:center;
-  border:1px solid #ead8ba;
+
+  border:
+    1px solid #ead8ba;
+
   background:#faf7f0;
+
   min-height:50px;
+
   display:flex;
+
   flex-direction:column;
+
   justify-content:center;
+
   gap:5px;
 }
 
 .reveal-card.you{
-  border:2px solid #0d7199;
+  border:
+    2px solid #0d7199;
+
   background:#f3fbff;
 }
 
 .reveal-name{
   font-size:12px;
+
   font-weight:800;
 }
 
 .reveal-color{
   color:white;
+
   border-radius:10px;
+
   padding:5px 3px;
+
   font-weight:900;
-  box-shadow:inset 0 -2px 0 rgba(0,0,0,.10);
+
+  box-shadow:
+    inset 0 -2px 0
+    rgba(0,0,0,.10);
 }
 
 .reveal-hidden{
   color:#8a7a67;
+
   font-weight:700;
+
   font-size:11px;
 }
 
 
-/* =============================
+/* =========================
    LOG
-============================= */
+========================= */
 
 .log{
   height:150px;
+
   overflow:auto;
+
   background:#fff;
-  border:1px solid #ead8ba;
+
+  border:
+    1px solid #ead8ba;
+
   border-radius:14px;
+
   padding:8px;
+
   font-size:11px;
+
   line-height:1.55;
 }
 
@@ -590,30 +912,70 @@ button.secondary{
 
 .log .major{
   font-weight:900;
+
   color:#b44819;
 }
 
 .cpu-note{
   font-size:12px;
+
   line-height:1.5;
+
   background:#fff5df;
+
   border-radius:12px;
+
   padding:9px;
 }
 
 
-/* =============================
+/* =========================
+   RESET
+========================= */
+
+.secondary{
+  border:none;
+
+  border-radius:14px;
+
+  padding:8px 10px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  background:#f2ddbc;
+
+  color:#68472c;
+}
+
+.reset-row{
+  display:flex;
+
+  justify-content:flex-end;
+}
+
+
+/* =========================
    RESULT
-============================= */
+========================= */
 
 .overlay{
   position:fixed;
+
   inset:0;
-  background:rgba(47,32,20,.55);
+
+  background:
+    rgba(47,32,20,.55);
+
   display:none;
+
   align-items:center;
+
   justify-content:center;
+
   padding:20px;
+
   z-index:20;
 }
 
@@ -623,46 +985,74 @@ button.secondary{
 
 .modal{
   background:#fffaf0;
+
   border-radius:26px;
+
   padding:22px;
+
   max-width:620px;
+
   width:100%;
-  box-shadow:0 24px 70px rgba(0,0,0,.30);
-  border:3px solid #efc884;
+
+  box-shadow:
+    0 24px 70px
+    rgba(0,0,0,.30);
+
+  border:
+    3px solid #efc884;
 }
 
 .modal h2{
   margin-top:0;
+
   color:#0d7199;
 }
 
 .results{
   display:grid;
+
   gap:6px;
+
   margin:15px 0;
 }
 
 .result{
   display:flex;
-  justify-content:space-between;
+
+  justify-content:
+    space-between;
+
   align-items:center;
+
   padding:10px 12px;
+
   border-radius:14px;
+
   background:#fff;
-  border:1px solid #ead8ba;
+
+  border:
+    1px solid #ead8ba;
 }
 
 .result.win{
-  border:3px solid #f2b640;
+  border:
+    3px solid #f2b640;
+
   background:#fff8d9;
 }
 
 
-/* =============================
+/* =========================
    RESPONSIVE
-============================= */
+========================= */
 
-@media(max-height:780px) and (min-width:861px){
+@media(
+  max-height:780px
+)
+and
+(
+  min-width:861px
+){
 
   .log{
     height:110px;
@@ -674,97 +1064,170 @@ button.secondary{
 
   .cpu-note{
     font-size:10px;
+
     padding:6px;
   }
+
 }
 
 
-@media(max-width:860px){
+@media(
+  max-width:860px
+){
 
   .layout{
-    grid-template-columns:1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .board-wrap{
     max-width:640px;
   }
+
 }
 
 
-@media(max-width:560px){
+@media(
+  max-width:560px
+){
 
   .side{
     display:flex;
+
     flex-direction:column;
   }
 
-  .cards-section{order:1}
-  .reveal-panel{order:2}
-  .actionbar{order:3}
-  .step-help{order:4}
-  .players-section{order:5}
-  .log-section{order:6}
-  .cpu-note{order:7}
+
+  .cards-section{
+    order:1;
+  }
+
+  .reveal-panel{
+    order:2;
+  }
+
+  .step-help{
+    order:3;
+  }
+
+  .players-section{
+    order:4;
+  }
+
+  .log-section{
+    order:5;
+  }
+
+  .cpu-note{
+    order:6;
+  }
+
+  .reset-row{
+    order:7;
+  }
+
 
   .board-wrap{
     width:100%;
+
     max-width:100%;
-    aspect-ratio:1/1.05;
+
+    aspect-ratio:
+      1/1.05;
   }
+
 
   .fence-card{
     width:21%;
   }
 
+
   .gap-pasture{
     width:21%;
   }
 
+
   .chip{
     width:27px;
+
     height:27px;
   }
 
+
   .choice-icon{
     width:17px;
+
     height:17px;
+
     font-size:9px;
   }
+
 
   .gap-head{
     font-size:9px;
+
     padding:1px 4px;
   }
 
+
   .center-card{
-    inset:37% 37%;
-    font-size:12px;
-    padding:8px;
+    inset:32% 32%;
+
+    padding:10px;
+
+    gap:7px;
   }
+
+
+  .center-guide{
+    font-size:13px;
+  }
+
+
+  .center-sub{
+    font-size:10px;
+  }
+
+
+  .center-action{
+    font-size:12px;
+
+    padding:8px 6px;
+  }
+
 
   .cards{
     gap:4px;
   }
 
+
   .cardbtn{
     min-height:76px;
+
     padding:6px 2px;
+
     font-size:11px;
   }
 
+
   .legend{
     font-size:11px;
+
     padding:4px 6px;
   }
+
 
   .legend-row{
     gap:6px;
   }
 
+
   .legend-chip{
     width:18px;
+
     height:18px;
   }
+
 }
 </style>
 </head>
@@ -774,61 +1237,128 @@ button.secondary{
 
 <div class="app">
 
+
 <header>
 
   <div class="brand">
-    <h1>SCLAMBLE</h1>
-    <small>6人プレイ / 3ラウンド体験版</small>
+
+    <h1>
+      SCLAMBLE
+    </h1>
+
+    <small>
+      6人プレイ /
+      3ラウンド体験版
+    </small>
+
   </div>
 
+
   <div class="roundbox">
-    ROUND<br>
-    <strong id="roundLabel">1 / 3</strong>
+
+    ROUND
+
+    <br>
+
+    <strong
+      id="roundLabel"
+    >
+      1 / 3
+    </strong>
+
   </div>
 
 </header>
 
 
+
 <div class="layout">
 
 
-<section class="panel board-panel">
+<section
+  class="
+    panel
+    board-panel
+  "
+>
+
 
   <div class="board-title">
 
-    <h2>牧場</h2>
+    <h2>
+      牧場
+    </h2>
+
 
     <div class="legend">
 
       <div class="legend-row">
 
         <span class="legend-item">
-          <img class="legend-chip" src="../assets/white_chip.jpg" alt="白羊">
+
+          <img
+            class="legend-chip"
+            src="../assets/white_chip.jpg"
+            alt="白羊"
+          >
+
           白=1点
+
         </span>
 
+
         <span class="legend-item">
-          <img class="legend-chip" src="../assets/red_chip.jpg" alt="赤羊">
+
+          <img
+            class="legend-chip"
+            src="../assets/red_chip.jpg"
+            alt="赤羊"
+          >
+
           赤=2点
+
         </span>
 
+
         <span class="legend-item">
-          <img class="legend-chip" src="../assets/gold_chip.jpg" alt="金羊">
+
+          <img
+            class="legend-chip"
+            src="../assets/gold_chip.jpg"
+            alt="金羊"
+          >
+
           金=3点
+
         </span>
 
       </div>
 
 
-      <div class="legend-row legend-wolf-row">
+      <div
+        class="
+          legend-row
+          legend-wolf-row
+        "
+      >
 
         <span class="legend-item">
-          <img class="legend-chip" src="../assets/wolf_right_chip.jpg" alt="オオカミ">
+
+          <img
+            class="legend-chip"
+            src="../assets/wolf_right_chip.jpg"
+            alt="オオカミ"
+          >
+
           =0点
+
         </span>
 
+
         <span class="legend-note">
+
           (3匹集めると羊を失う)
+
         </span>
 
       </div>
@@ -838,12 +1368,46 @@ button.secondary{
   </div>
 
 
-  <div class="board-wrap" id="board">
+
+  <div
+    class="board-wrap"
+    id="board"
+  >
 
     <div class="center-card">
-      同じ色の牧場を選ぶと
-      <br>
-      逃げちゃうぞ
+
+
+      <div
+        class="center-guide"
+        id="centerGuide"
+      >
+
+        色カードを選ぼう！
+
+      </div>
+
+
+      <div
+        class="center-sub"
+        id="centerSub"
+      >
+
+        決定するまでは変更できます
+
+      </div>
+
+
+      <button
+        class="center-action"
+        id="centerActionBtn"
+        disabled
+      >
+
+        色を決定する
+
+      </button>
+
+
     </div>
 
   </div>
@@ -852,16 +1416,27 @@ button.secondary{
 
 
 
-<aside class="panel side">
+<aside
+  class="
+    panel
+    side
+  "
+>
 
 
   <div class="players-section">
 
     <div class="section-title">
+
       プレイヤー
+
     </div>
 
-    <div class="players" id="players"></div>
+
+    <div
+      class="players"
+      id="players"
+    ></div>
 
   </div>
 
@@ -870,64 +1445,51 @@ button.secondary{
   <div class="cards-section">
 
     <div class="section-title">
+
       あなたの色カード
+
     </div>
 
-    <div class="cards" id="cards"></div>
 
-
-    <button
-      class="primary"
-      id="confirmColorBtn"
-      style="display:none;width:100%;margin-top:8px"
-    >
-      色を決定する
-    </button>
+    <div
+      class="cards"
+      id="cards"
+    ></div>
 
   </div>
 
 
 
-  <div class="reveal-panel" id="revealPanel">
+  <div
+    class="reveal-panel"
+    id="revealPanel"
+  >
 
     <div class="reveal-head">
 
       <strong>
+
         今回のカード
+
       </strong>
 
+
       <span id="phaseText">
+
         色カードを1枚選んでください
+
       </span>
 
     </div>
 
-    <div class="reveal-grid" id="revealGrid"></div>
+
+    <div
+      class="reveal-grid"
+      id="revealGrid"
+    ></div>
 
   </div>
 
-
-
-  <div class="actionbar">
-
-    <button
-      class="primary"
-      id="nextStepBtn"
-      style="display:none"
-    >
-      OK
-    </button>
-
-
-    <button
-      class="secondary"
-      id="resetBtn"
-      style="display:none"
-    >
-      最初から
-    </button>
-
-  </div>
 
 
   <div
@@ -940,10 +1502,16 @@ button.secondary{
   <div class="log-section">
 
     <div class="section-title">
+
       ゲームログ
+
     </div>
 
-    <div class="log" id="log"></div>
+
+    <div
+      class="log"
+      id="log"
+    ></div>
 
   </div>
 
@@ -951,11 +1519,32 @@ button.secondary{
 
   <div class="cpu-note">
 
-    CPUは「羊の得点価値」「オオカミの危険」「他者とのバッティング予測」に
-    ランダムな揺らぎを加えて判断します。
+    CPUは
+    「羊の得点価値」
+    「オオカミの危険」
+    「他者とのバッティング予測」
+    にランダムな揺らぎを加えて判断します。
+
     CPU同士は互いの選択を事前には知りません。
 
   </div>
+
+
+
+  <div class="reset-row">
+
+    <button
+      class="secondary"
+      id="resetBtn"
+      style="display:none"
+    >
+
+      最初から
+
+    </button>
+
+  </div>
+
 
 </aside>
 
@@ -966,7 +1555,10 @@ button.secondary{
 
 
 
-<div class="overlay" id="overlay">
+<div
+  class="overlay"
+  id="overlay"
+>
 
   <div class="modal">
 
@@ -974,16 +1566,27 @@ button.secondary{
       体験版 終了！
     </h2>
 
+
     <p>
       3ラウンド終了です。
       製品版では全6ラウンド、
       5・6ラウンド目に各牧場へ2チップ追加されます。
     </p>
 
-    <div class="results" id="results"></div>
 
-    <button class="primary" id="replayBtn">
+    <div
+      class="results"
+      id="results"
+    ></div>
+
+
+    <button
+      class="center-action"
+      id="replayBtn"
+    >
+
       もう一度遊ぶ
+
     </button>
 
   </div>
@@ -994,23 +1597,66 @@ button.secondary{
 
 <script>
 
+/* =========================
+   DATA
+========================= */
+
 const COLORS=[
-  {id:'yellow',name:'黄',hex:'#e4c400',soft:'#fff4a8'},
-  {id:'green',name:'緑',hex:'#28a84b',soft:'#d9f3dc'},
-  {id:'cyan',name:'水',hex:'#17a6d1',soft:'#d8f2fa'},
-  {id:'red',name:'赤',hex:'#e83f43',soft:'#ffdcdc'},
-  {id:'blue',name:'青',hex:'#2348b8',soft:'#dde4ff'},
-  {id:'pink',name:'桃',hex:'#d83aa8',soft:'#f8dcf1'}
+
+  {
+    id:'yellow',
+    name:'黄',
+    hex:'#e4c400',
+    soft:'#fff4a8'
+  },
+
+  {
+    id:'green',
+    name:'緑',
+    hex:'#28a84b',
+    soft:'#d9f3dc'
+  },
+
+  {
+    id:'cyan',
+    name:'水',
+    hex:'#17a6d1',
+    soft:'#d8f2fa'
+  },
+
+  {
+    id:'red',
+    name:'赤',
+    hex:'#e83f43',
+    soft:'#ffdcdc'
+  },
+
+  {
+    id:'blue',
+    name:'青',
+    hex:'#2348b8',
+    soft:'#dde4ff'
+  },
+
+  {
+    id:'pink',
+    name:'桃',
+    hex:'#d83aa8',
+    soft:'#f8dcf1'
+  }
+
 ];
 
 
 const PLAYER_AVATAR_BG=[
+
   '#dff4ff',
   '#ffe6cc',
   '#efe6d8',
   '#fde8f2',
   '#e7f0ff',
   '#e3f6e4'
+
 ];
 
 
@@ -1037,8 +1683,10 @@ const ANIMALS={
   wolf:{
     label:'オオカミ',
     score:0,
-    imgLeft:'../assets/wolf_left_chip.jpg',
-    imgRight:'../assets/wolf_right_chip.jpg'
+    imgLeft:
+      '../assets/wolf_left_chip.jpg',
+    imgRight:
+      '../assets/wolf_right_chip.jpg'
   }
 
 };
@@ -1048,33 +1696,62 @@ let game;
 
 
 
+/* =========================
+   BAG
+========================= */
+
 function freshBag(){
 
   const spec=[
+
     ['white',18],
     ['red',6],
     ['gold',18],
     ['wolf',6]
+
   ];
 
+
   let bag=[];
+
   let id=0;
 
-  for(const [type,count] of spec){
 
-    for(let i=0;i<count;i++){
+  for(
+    const [
+      type,
+      count
+    ]
+    of spec
+  ){
+
+    for(
+      let i=0;
+      i<count;
+      i++
+    ){
 
       bag.push({
+
         id:++id,
+
         type,
-        dir:Math.random()<.5?-1:1
+
+        dir:
+          Math.random()<.5
+            ? -1
+            : 1
+
       });
 
     }
 
   }
 
-  return shuffle(bag);
+
+  return shuffle(
+    bag
+  );
 
 }
 
@@ -1084,22 +1761,33 @@ function shuffle(a){
 
   a=[...a];
 
-  for(let i=a.length-1;i>0;i--){
+
+  for(
+    let i=a.length-1;
+    i>0;
+    i--
+  ){
 
     const j=
       Math.floor(
-        Math.random()*(i+1)
+        Math.random()
+        *
+        (i+1)
       );
+
 
     [
       a[i],
       a[j]
-    ]=[
+    ]
+    =
+    [
       a[j],
       a[i]
     ];
 
   }
+
 
   return a;
 
@@ -1107,40 +1795,58 @@ function shuffle(a){
 
 
 
+/* =========================
+   NEW GAME
+========================= */
+
 function newGame(){
 
   document
-    .getElementById('overlay')
+    .getElementById(
+      'overlay'
+    )
     .classList
-    .remove('show');
+    .remove(
+      'show'
+    );
 
 
   const resetBtn=
-    document.getElementById('resetBtn');
+    document.getElementById(
+      'resetBtn'
+    );
 
 
-  if(resetBtn){
+  if(
+    resetBtn
+  ){
 
-    resetBtn.style.display='none';
+    resetBtn.style.display=
+      'none';
 
   }
+
 
 
   game={
 
     round:1,
 
-    bag:freshBag(),
+    bag:
+      freshBag(),
 
     pastures:
       Object.fromEntries(
+
         COLORS.map(
-          c=>[
-            c.id,
+          color=>[
+            color.id,
             []
           ]
         )
+
       ),
+
 
     players:[
 
@@ -1183,6 +1889,7 @@ function newGame(){
 
     ],
 
+
     currentChoices:null,
 
     pendingHumanColor:null,
@@ -1199,7 +1906,11 @@ function newGame(){
 
 
   COLORS.forEach(
-    c=>drawTo(c.id,1)
+    color=>
+      drawTo(
+        color.id,
+        1
+      )
   );
 
 
@@ -1207,7 +1918,9 @@ function newGame(){
 
 
   log(
+
     '<span class="major">ゲーム開始！</span> 各牧場に動物を1枚ずつ配置しました。'
+
   );
 
 
@@ -1217,17 +1930,37 @@ function newGame(){
 
 
 
-function drawTo(colorId,n){
+/* =========================
+   DRAW
+========================= */
 
-  for(let i=0;i<n;i++){
+function drawTo(
+  colorId,
+  number
+){
 
-    if(!game.bag.length){
+  for(
+    let i=0;
+    i<number;
+    i++
+  ){
+
+    if(
+      !game.bag.length
+    ){
+
       break;
+
     }
 
-    game.pastures[colorId].push(
-      game.bag.pop()
-    );
+
+    game
+      .pastures[
+        colorId
+      ]
+      .push(
+        game.bag.pop()
+      );
 
   }
 
@@ -1235,13 +1968,26 @@ function drawTo(colorId,n){
 
 
 
-function scoreChips(chips){
+/* =========================
+   SCORE
+========================= */
+
+function scoreChips(
+  chips
+){
 
   return chips.reduce(
 
-    (total,chip)=>
-      total+
-      ANIMALS[chip.type].score,
+    (
+      total,
+      chip
+    )=>
+
+      total
+      +
+      ANIMALS[
+        chip.type
+      ].score,
 
     0
 
@@ -1251,25 +1997,43 @@ function scoreChips(chips){
 
 
 
-function countType(chips,type){
+function countType(
+  chips,
+  type
+){
 
   return chips.filter(
-    chip=>chip.type===type
+    chip=>
+      chip.type
+      ===
+      type
   ).length;
 
 }
 
 
 
+/* =========================
+   RENDER
+========================= */
+
 function render(){
 
   renderBoard();
+
   renderPlayers();
+
   renderCards();
+
   renderReveal();
 
+  renderCenterAction();
+
+
   document
-    .getElementById('roundLabel')
+    .getElementById(
+      'roundLabel'
+    )
     .textContent=
       `${game.round} / 3`;
 
@@ -1277,38 +2041,57 @@ function render(){
 
 
 
-/* =============================
+/* =========================
    今回のカード
-============================= */
+========================= */
 
 function renderReveal(){
 
   const grid=
-    document.getElementById('revealGrid');
+    document.getElementById(
+      'revealGrid'
+    );
+
 
   const phase=
-    document.getElementById('phaseText');
+    document.getElementById(
+      'phaseText'
+    );
 
-  const stepBtn=
-    document.getElementById('nextStepBtn');
 
   const help=
-    document.getElementById('stepHelp');
+    document.getElementById(
+      'stepHelp'
+    );
 
 
 
-  if(game.step==='locked'){
+  if(
+    game.step==='locked'
+  ){
 
     grid.innerHTML=
-      game.players
-        .map(
-          (player,index)=>{
 
-            if(index===0){
+      game.players
+
+        .map(
+          (
+            player,
+            index
+          )=>{
+
+
+            if(
+              index===0
+            ){
 
               const color=
+
                 COLORS.find(
-                  x=>x.id===game.currentChoices[0]
+                  x=>
+                    x.id
+                    ===
+                    game.currentChoices[0]
                 );
 
 
@@ -1323,9 +2106,13 @@ function renderReveal(){
 
                   </div>
 
+
                   <div
                     class="reveal-color"
-                    style="background:${color.hex}"
+                    style="
+                      background:
+                      ${color.hex}
+                    "
                   >
 
                     ${color.name}カード
@@ -1350,6 +2137,7 @@ function renderReveal(){
 
                 </div>
 
+
                 <div class="reveal-hidden">
 
                   選択済み
@@ -1362,29 +2150,41 @@ function renderReveal(){
 
           }
         )
+
         .join('');
 
   }
 
 
-  else if(game.currentChoices){
+  else if(
+    game.currentChoices
+  ){
 
     grid.innerHTML=
 
       game.currentChoices
 
         .map(
-          (colorId,index)=>{
+          (
+            colorId,
+            index
+          )=>{
+
 
             const color=
+
               COLORS.find(
-                x=>x.id===colorId
+                x=>
+                  x.id===colorId
               );
 
 
             const label=
+
               index===0
+
                 ? `${game.players[0].avatar} あなた`
+
                 : `${game.players[index].avatar} CPU ${index}`;
 
 
@@ -1393,7 +2193,11 @@ function renderReveal(){
               <div
                 class="
                   reveal-card
-                  ${index===0?'you':''}
+                  ${
+                    index===0
+                      ? 'you'
+                      : ''
+                  }
                 "
               >
 
@@ -1403,9 +2207,13 @@ function renderReveal(){
 
                 </div>
 
+
                 <div
                   class="reveal-color"
-                  style="background:${color.hex}"
+                  style="
+                    background:
+                    ${color.hex}
+                  "
                 >
 
                   ${color.name}カード
@@ -1431,12 +2239,19 @@ function renderReveal(){
       game.players
 
         .map(
-          (player,index)=>`
+          (
+            player,
+            index
+          )=>`
 
           <div
             class="
               reveal-card
-              ${index===0?'you':''}
+              ${
+                index===0
+                  ? 'you'
+                  : ''
+              }
             "
           >
 
@@ -1446,6 +2261,7 @@ function renderReveal(){
               ${player.name}
 
             </div>
+
 
             <div class="reveal-hidden">
 
@@ -1467,102 +2283,101 @@ function renderReveal(){
   const phases={
 
     choose:
-      '色カードを1枚選んでください',
+      '色カードを選択中',
 
     locked:
-      '全員がカードを選択済み。まだ公開されていません',
+      '全員が選択済み',
 
     reveal:
-      'カードを公開してバッティングを確認！',
+      'カード公開中',
 
     move:
-      'チップ移動後。移動先を確認してください',
+      'チップ移動後',
 
     acquire:
-      'チップ獲得後。各プレイヤーの小屋を確認してください',
+      'チップ獲得後',
 
     roundEnd:
-      'ラウンド処理終了'
+      'ラウンド終了'
 
   };
 
 
   phase.textContent=
-    phases[game.step]||'';
+    phases[
+      game.step
+    ]
+    ||
+    '';
 
 
 
-  if(game.step==='choose'){
-
-    stepBtn.style.display='none';
-
+  if(
+    game.step==='choose'
+  ){
 
     help.textContent=
 
       game.pendingHumanColor
 
-        ? `${colorName(game.pendingHumanColor)}を選択中です。「色を決定する」で確定します。`
+        ? `${colorName(game.pendingHumanColor)}を選択中。別の色を押せば変更できます。`
 
-        : '色カードを1枚選択してください。決定するまでは何度でも変更できます。';
-
-
-    return;
+        : '色カードを1枚選んでください。選ぶだけでは確定しません。';
 
   }
 
 
+  else if(
+    game.step==='locked'
+  ){
 
-  stepBtn.style.display=
-    'inline-block';
+    help.textContent=
+      'あなたのカードだけ見えています。中央ボタンで全員のカードを公開します。';
 
-
-
-  const labels={
-
-    locked:
-      'OK・カード公開',
-
-    reveal:
-      'OK・チップ移動',
-
-    move:
-      'OK・チップを獲得',
-
-    acquire:
-      'OK・ラウンド終了確認'
-
-  };
+  }
 
 
-  if(game.step==='roundEnd'){
+  else if(
+    game.step==='reveal'
+  ){
 
-    stepBtn.textContent=
+    help.textContent=
+      '同じ色が2人以上ならバッティングです。盤面を確認してから中央ボタンを押してください。';
 
-      game.round===3
+  }
 
-        ? 'OK・最終結果を見る'
 
-        : 'OK・次のラウンドへ';
+  else if(
+    game.step==='move'
+  ){
 
+    help.textContent=
+      'バッティングした牧場のチップが移動しました。移動先を確認してください。';
+
+  }
+
+
+  else if(
+    game.step==='acquire'
+  ){
+
+    help.textContent=
+      'バッティングしなかったプレイヤーがチップを獲得しました。小屋を確認してください。';
+
+  }
+
+
+  else if(
+    game.step==='roundEnd'
+  ){
 
     help.textContent=
 
       game.round===3
 
-        ? '結果を確認してから最終順位へ進みます。'
+        ? '3ラウンド終了です。中央ボタンから最終結果を確認できます。'
 
-        : '押すと夜のオオカミ移動と補充を行って次ラウンドへ進みます。';
-
-  }
-
-  else{
-
-    stepBtn.textContent=
-      labels[game.step]||'OK';
-
-
-    help.textContent=
-      '確認できたらOKを押してください。次の処理は自動では進みません。';
+        : 'ラウンド終了です。中央ボタンで夜処理と補充を行い、次のラウンドへ進みます。';
 
   }
 
@@ -1570,13 +2385,245 @@ function renderReveal(){
 
 
 
+/* =========================
+   CENTER ACTION
+========================= */
+
+function renderCenterAction(){
+
+  const guide=
+    document.getElementById(
+      'centerGuide'
+    );
+
+
+  const sub=
+    document.getElementById(
+      'centerSub'
+    );
+
+
+  const button=
+    document.getElementById(
+      'centerActionBtn'
+    );
+
+
+  button
+    .classList
+    .remove(
+      'secondary-state'
+    );
+
+
+  button.style.display=
+    'block';
+
+
+  button.disabled=
+    false;
+
+
+
+  if(
+    game.step==='choose'
+  ){
+
+    guide.textContent=
+
+      game.pendingHumanColor
+
+        ? `${colorName(game.pendingHumanColor)}を選択中！`
+
+        : '色カードを選ぼう！';
+
+
+    sub.textContent=
+
+      game.pendingHumanColor
+
+        ? '別の色に変更してもOK'
+
+        : '決定するまでは変更できます';
+
+
+    button.textContent=
+      '色を決定する';
+
+
+    button.disabled=
+
+      !game.pendingHumanColor
+
+      ||
+
+      game.busy;
+
+  }
+
+
+  else if(
+    game.step==='locked'
+  ){
+
+    guide.textContent=
+      'みんなのカードを公開しよう！';
+
+
+    sub.textContent=
+      '誰とバッティングしたかな？';
+
+
+    button.textContent=
+      'カードを公開';
+
+
+    button
+      .classList
+      .add(
+        'secondary-state'
+      );
+
+  }
+
+
+  else if(
+    game.step==='reveal'
+  ){
+
+    guide.textContent=
+
+      game.pendingBattled.length
+
+        ? 'バッティングを確認！'
+
+        : '今回はバッティングなし！';
+
+
+    sub.textContent=
+
+      game.pendingBattled.length
+
+        ? '被った牧場のチップが移動します'
+
+        : 'そのまま次へ進めます';
+
+
+    button.textContent=
+      'チップを移動';
+
+  }
+
+
+  else if(
+    game.step==='move'
+  ){
+
+    guide.textContent=
+      '移動したチップを確認！';
+
+
+    sub.textContent=
+      '次はチップを獲得します';
+
+
+    button.textContent=
+      'チップを獲得';
+
+  }
+
+
+  else if(
+    game.step==='acquire'
+  ){
+
+    guide.textContent=
+      'みんなの小屋を確認！';
+
+
+    sub.textContent=
+      '得点とオオカミの数をチェック';
+
+
+    button.textContent=
+      'ラウンド終了';
+
+  }
+
+
+  else if(
+    game.step==='roundEnd'
+  ){
+
+    if(
+      game.round===3
+    ){
+
+      guide.textContent=
+        '3ラウンド終了！';
+
+
+      sub.textContent=
+        '最終順位を確認しよう';
+
+
+      button.textContent=
+        '最終結果を見る';
+
+    }
+
+    else{
+
+      guide.textContent=
+        '次のラウンドへ！';
+
+
+      sub.textContent=
+        '夜のオオカミ移動＋牧場補充';
+
+
+      button.textContent=
+        '次のラウンド';
+
+    }
+
+  }
+
+
+  else if(
+    game.step==='ended'
+  ){
+
+    guide.textContent=
+      'ゲーム終了！';
+
+
+    sub.textContent=
+      '結果画面を確認してください';
+
+
+    button.style.display=
+      'none';
+
+  }
+
+}
+
+
+
+/* =========================
+   PLAYER SELECTION
+========================= */
+
 function shouldShowSelections(){
 
   return [
+
     'reveal',
     'move',
     'acquire',
     'roundEnd'
+
   ].includes(
     game.step
   );
@@ -1585,7 +2632,9 @@ function shouldShowSelections(){
 
 
 
-function selectedPlayersForColor(colorId){
+function selectedPlayersForColor(
+  colorId
+){
 
   if(
     !game.currentChoices
@@ -1601,26 +2650,38 @@ function selectedPlayersForColor(colorId){
   return game.currentChoices
 
     .map(
-      (choice,index)=>
+      (
+        choice,
+        index
+      )=>
+
         choice===colorId
-          ? game.players[index]
+
+          ? game.players[
+              index
+            ]
+
           : null
     )
 
-    .filter(Boolean);
+    .filter(
+      Boolean
+    );
 
 }
 
 
 
-/* =============================
+/* =========================
    BOARD
-============================= */
+========================= */
 
 function renderBoard(){
 
   const board=
-    document.getElementById('board');
+    document.getElementById(
+      'board'
+    );
 
 
   board
@@ -1628,53 +2689,64 @@ function renderBoard(){
       '.fence-card,.gap-pasture'
     )
     .forEach(
-      element=>element.remove()
+      element=>
+        element.remove()
     );
 
 
+
+  /* =====================
+     柵を外側へ拡張
+  ===================== */
 
   const fences=[
 
     {
       x:50,
-      y:13,
+      y:10,
       rot:'180deg',
-      img:'../assets/fence_card_front_03.jpg'
+      img:
+        '../assets/fence_card_front_03.jpg'
     },
 
     {
-      x:78,
-      y:30,
+      x:81,
+      y:27,
       rot:'240deg',
-      img:'../assets/fence_card_front_02.jpg'
+      img:
+        '../assets/fence_card_front_02.jpg'
     },
 
     {
-      x:78,
-      y:70,
+      x:81,
+      y:73,
       rot:'300deg',
-      img:'../assets/fence_card_front_01.jpg'
+      img:
+        '../assets/fence_card_front_01.jpg'
     },
 
     {
       x:50,
-      y:87,
+      y:90,
       rot:'0deg',
-      img:'../assets/fence_card_front_06.jpg'
+      img:
+        '../assets/fence_card_front_06.jpg'
     },
 
     {
-      x:22,
-      y:70,
+      x:19,
+      y:73,
       rot:'60deg',
-      img:'../assets/fence_card_front_08.jpg'
+      img:
+        '../assets/fence_card_front_08.jpg'
     },
 
     {
-      x:22,
-      y:30,
+      x:19,
+      y:27,
       rot:'120deg',
-      img:'../assets/fence_card_front_07.jpg'
+      img:
+        '../assets/fence_card_front_07.jpg'
     }
 
   ];
@@ -1685,7 +2757,10 @@ function renderBoard(){
     fence=>{
 
       const element=
-        document.createElement('div');
+
+        document.createElement(
+          'div'
+        );
 
 
       element.className=
@@ -1700,10 +2775,12 @@ function renderBoard(){
         fence.y+'%';
 
 
-      element.style.setProperty(
-        '--rot',
-        fence.rot
-      );
+      element
+        .style
+        .setProperty(
+          '--rot',
+          fence.rot
+        );
 
 
       element.innerHTML=`
@@ -1725,19 +2802,29 @@ function renderBoard(){
 
 
 
+  /* =====================
+     チップも外側へ拡張
+  ===================== */
+
   const gapPos={
 
-    red:[34,19],
+    red:
+      [32,16],
 
-    cyan:[66,19],
+    cyan:
+      [68,16],
 
-    green:[82,50],
+    green:
+      [85,50],
 
-    yellow:[66,81],
+    yellow:
+      [68,84],
 
-    blue:[34,81],
+    blue:
+      [32,84],
 
-    pink:[18,50]
+    pink:
+      [15,50]
 
   };
 
@@ -1745,17 +2832,23 @@ function renderBoard(){
 
   const chipRotations={
 
-    yellow:'-45deg',
+    yellow:
+      '-45deg',
 
-    green:'-90deg',
+    green:
+      '-90deg',
 
-    cyan:'-135deg',
+    cyan:
+      '-135deg',
 
-    red:'135deg',
+    red:
+      '135deg',
 
-    blue:'45deg',
+    blue:
+      '45deg',
 
-    pink:'90deg'
+    pink:
+      '90deg'
 
   };
 
@@ -1765,7 +2858,10 @@ function renderBoard(){
     color=>{
 
       const element=
-        document.createElement('div');
+
+        document.createElement(
+          'div'
+        );
 
 
       element.className=
@@ -1784,26 +2880,38 @@ function renderBoard(){
           game.currentChoices
 
             .filter(
-              x=>x===color.id
+              choice=>
+                choice
+                ===
+                color.id
             )
 
             .length;
 
 
 
-        if(selectedCount>=2){
+        if(
+          selectedCount>=2
+        ){
 
           element
             .classList
-            .add('battled');
+            .add(
+              'battled'
+            );
 
         }
 
-        else if(selectedCount===1){
+
+        else if(
+          selectedCount===1
+        ){
 
           element
             .classList
-            .add('target');
+            .add(
+              'target'
+            );
 
         }
 
@@ -1812,6 +2920,7 @@ function renderBoard(){
 
 
       const selectedPlayers=
+
         selectedPlayersForColor(
           color.id
         );
@@ -1833,6 +2942,7 @@ function renderBoard(){
                   player=>{
 
                     const index=
+
                       game.players
                         .indexOf(
                           player
@@ -1846,7 +2956,9 @@ function renderBoard(){
                         style="
                           background:
                           ${
-                            PLAYER_AVATAR_BG[index]
+                            PLAYER_AVATAR_BG[
+                              index
+                            ]
                             ||
                             '#fff'
                           }
@@ -1870,6 +2982,7 @@ function renderBoard(){
 
           `
 
+
           : `
 
           <div class="choice-icons"></div>
@@ -1878,8 +2991,14 @@ function renderBoard(){
 
 
 
-      const [x,y]=
-        gapPos[color.id];
+      const [
+        x,
+        y
+      ]=
+        gapPos[
+          color.id
+        ];
+
 
 
       element.style.left=
@@ -1890,15 +3009,20 @@ function renderBoard(){
         y+'%';
 
 
-      element.style.setProperty(
 
-        '--chip-rotation',
+      element
+        .style
+        .setProperty(
 
-        chipRotations[color.id]
-        ||
-        '0deg'
+          '--chip-rotation',
 
-      );
+          chipRotations[
+            color.id
+          ]
+          ||
+          '0deg'
+
+        );
 
 
 
@@ -1909,7 +3033,8 @@ function renderBoard(){
           <span
             class="gap-dot"
             style="
-              background:${color.hex}
+              background:
+              ${color.hex}
             "
           ></span>
 
@@ -1963,13 +3088,16 @@ function renderBoard(){
 
 
 
-/* =============================
+/* =========================
    CHIP
-============================= */
+========================= */
 
-function chipHTML(chip){
+function chipHTML(
+  chip
+){
 
   const animal=
+
     ANIMALS[
       chip.type
     ];
@@ -2024,13 +3152,14 @@ function chipHTML(chip){
 
 
 
-/* =============================
-   PLAYER
-============================= */
+/* =========================
+   PLAYERS
+========================= */
 
 function renderPlayers(){
 
   const box=
+
     document.getElementById(
       'players'
     );
@@ -2046,13 +3175,16 @@ function renderPlayers(){
       index
     )=>{
 
+
       const sheep=
 
         player.hut
 
           .filter(
             chip=>
-              chip.type!=='wolf'
+              chip.type
+              !==
+              'wolf'
           )
 
           .length;
@@ -2095,7 +3227,6 @@ function renderPlayers(){
         );
 
 
-
       element.className=
 
         'player'
@@ -2115,7 +3246,8 @@ function renderPlayers(){
         <div
           class="avatar"
           style="
-            background:${avatarBg}
+            background:
+            ${avatarBg}
           "
         >
 
@@ -2165,21 +3297,16 @@ function renderPlayers(){
 
 
 
-/* =============================
-   色カード
-============================= */
+/* =========================
+   COLOR CARDS
+========================= */
 
 function renderCards(){
 
   const box=
+
     document.getElementById(
       'cards'
-    );
-
-
-  const confirmBtn=
-    document.getElementById(
-      'confirmColorBtn'
     );
 
 
@@ -2195,7 +3322,6 @@ function renderCards(){
         document.createElement(
           'button'
         );
-
 
 
       button.className=
@@ -2215,15 +3341,12 @@ function renderCards(){
         );
 
 
-
       button.style.background=
         color.hex;
 
 
-
       button.textContent=
         color.name;
-
 
 
       button.disabled=
@@ -2232,7 +3355,9 @@ function renderCards(){
 
         ||
 
-        game.step!=='choose'
+        game.step
+        !==
+        'choose'
 
         ||
 
@@ -2245,7 +3370,9 @@ function renderCards(){
         if(
           game.busy
           ||
-          game.step!=='choose'
+          game.step
+          !==
+          'choose'
         ){
 
           return;
@@ -2259,14 +3386,9 @@ function renderCards(){
 
         renderCards();
 
+        renderReveal();
 
-        document
-          .getElementById(
-            'stepHelp'
-          )
-          .textContent=
-
-          `${color.name}を選択中です。「色を決定する」で確定します。`;
+        renderCenterAction();
 
       };
 
@@ -2278,60 +3400,32 @@ function renderCards(){
     }
   );
 
-
-
-  const canConfirm=
-
-    game.step==='choose'
-
-    &&
-
-    !!game.pendingHumanColor
-
-    &&
-
-    !game.busy
-
-    &&
-
-    game.round<=3;
-
-
-
-  confirmBtn.style.display=
-
-    game.step==='choose'
-
-      ? 'block'
-
-      : 'none';
-
-
-
-  confirmBtn.disabled=
-    !canConfirm;
-
 }
 
 
 
-/* =============================
+/* =========================
    LOG
-============================= */
+========================= */
 
 function clearLog(){
 
   document
-    .getElementById('log')
+    .getElementById(
+      'log'
+    )
     .innerHTML='';
 
 }
 
 
 
-function log(message){
+function log(
+  message
+){
 
   const box=
+
     document.getElementById(
       'log'
     );
@@ -2360,12 +3454,19 @@ function log(message){
 
 
 
-function colorName(id){
+/* =========================
+   COLOR NAME
+========================= */
+
+function colorName(
+  id
+){
 
   const color=
 
     COLORS.find(
-      color=>color.id===id
+      color=>
+        color.id===id
     );
 
 
@@ -2377,13 +3478,16 @@ function colorName(id){
 
 
 
-/* =============================
+/* =========================
    CPU
-============================= */
+========================= */
 
-function cpuChoice(cpuIndex){
+function cpuChoice(
+  cpuIndex
+){
 
   const me=
+
     game.players[
       cpuIndex
     ];
@@ -2403,6 +3507,7 @@ function cpuChoice(cpuIndex){
     COLORS.map(
       color=>{
 
+
         const chips=
 
           game.pastures[
@@ -2410,13 +3515,11 @@ function cpuChoice(cpuIndex){
           ];
 
 
-
         const sheepValue=
 
           scoreChips(
             chips
           );
-
 
 
         const wolves=
@@ -2445,7 +3548,11 @@ function cpuChoice(cpuIndex){
 
 
         if(
-          wolfCount+wolves>=3
+          wolfCount
+          +
+          wolves
+          >=
+          3
         ){
 
           wolfRisk+=5.5;
@@ -2474,6 +3581,7 @@ function cpuChoice(cpuIndex){
           )
 
           *
+
           .32;
 
 
@@ -2489,6 +3597,7 @@ function cpuChoice(cpuIndex){
           )
 
           *
+
           2.2;
 
 
@@ -2562,8 +3671,14 @@ function cpuChoice(cpuIndex){
 
 
   scored.sort(
-    (a,b)=>
-      b.value-a.value
+    (
+      a,
+      b
+    )=>
+
+      b.value
+      -
+      a.value
   );
 
 
@@ -2573,18 +3688,26 @@ function cpuChoice(cpuIndex){
 
 
 
-/* =============================
-   色確定
-============================= */
+/* =========================
+   COLOR CONFIRM
+========================= */
 
 function confirmColorSelection(){
 
   if(
+
     game.busy
+
     ||
-    game.step!=='choose'
+
+    game.step
+    !==
+    'choose'
+
     ||
+
     !game.pendingHumanColor
+
   ){
 
     return;
@@ -2594,11 +3717,13 @@ function confirmColorSelection(){
 
 
   const humanColor=
+
     game.pendingHumanColor;
 
 
 
-  game.busy=true;
+  game.busy=
+    true;
 
 
 
@@ -2610,14 +3735,18 @@ function confirmColorSelection(){
 
     </span>
 
-    あなたは「${colorName(humanColor)}」を選びました。`
+    あなたは
+    「${colorName(humanColor)}」
+    を選びました。`
 
   );
 
 
 
   const choices=[
+
     humanColor
+
   ];
 
 
@@ -2640,7 +3769,6 @@ function confirmColorSelection(){
     choices;
 
 
-
   game.pendingHumanColor=
     null;
 
@@ -2654,12 +3782,15 @@ function confirmColorSelection(){
     colorId=>{
 
       counts[colorId]=
+
         (
           counts[colorId]
           ||
           0
         )
+
         +
+
         1;
 
     }
@@ -2689,16 +3820,16 @@ function confirmColorSelection(){
     'locked';
 
 
-
   game.busy=
     false;
 
 
 
   log(
-    '全員の選択が完了しました。OKを押してカードを公開してください。'
-  );
 
+    '全員の選択が完了しました。中央のボタンからカードを公開してください。'
+
+  );
 
 
   render();
@@ -2707,9 +3838,9 @@ function confirmColorSelection(){
 
 
 
-/* =============================
-   カード公開
-============================= */
+/* =========================
+   REVEAL
+========================= */
 
 function processRevealStep(){
 
@@ -2761,7 +3892,8 @@ function processRevealStep(){
         game.pendingBattled
 
           .map(
-            color=>colorName(color)
+            color=>
+              colorName(color)
           )
 
           .join('・')
@@ -2782,16 +3914,15 @@ function processRevealStep(){
   }
 
 
-
   render();
 
 }
 
 
 
-/* =============================
-   チップ移動
-============================= */
+/* =========================
+   MOVE
+========================= */
 
 function processMoveStep(){
 
@@ -2858,7 +3989,9 @@ function processMoveStep(){
 
       COLORS.findIndex(
         color=>
-          color.id===colorId
+          color.id
+          ===
+          colorId
       );
 
 
@@ -2952,24 +4085,25 @@ function processMoveStep(){
   );
 
 
-
   render();
 
 }
 
 
 
-/* =============================
-   チップ獲得
-============================= */
+/* =========================
+   ACQUIRE
+========================= */
 
 function processAcquireStep(){
 
   const choices=
+
     game.currentChoices;
 
 
   const counts=
+
     game.pendingCounts;
 
 
@@ -2981,6 +4115,7 @@ function processAcquireStep(){
   ){
 
     const colorId=
+
       choices[i];
 
 
@@ -3048,16 +4183,15 @@ function processAcquireStep(){
     'acquire';
 
 
-
   render();
 
 }
 
 
 
-/* =============================
+/* =========================
    ROUND END
-============================= */
+========================= */
 
 function finishRoundStep(){
 
@@ -3079,49 +4213,76 @@ function finishRoundStep(){
   );
 
 
-
   render();
 
 }
 
 
 
-/* =============================
-   STEP
-============================= */
+/* =========================
+   CENTRAL BUTTON
+========================= */
 
-function advanceStep(){
+function advanceCentralAction(){
 
-  if(game.busy){
+  if(
+    game.busy
+  ){
+
     return;
+
   }
 
 
-  if(game.step==='locked'){
+
+  if(
+    game.step==='choose'
+  ){
+
+    confirmColorSelection();
+
+  }
+
+
+  else if(
+    game.step==='locked'
+  ){
 
     processRevealStep();
 
   }
 
-  else if(game.step==='reveal'){
+
+  else if(
+    game.step==='reveal'
+  ){
 
     processMoveStep();
 
   }
 
-  else if(game.step==='move'){
+
+  else if(
+    game.step==='move'
+  ){
 
     processAcquireStep();
 
   }
 
-  else if(game.step==='acquire'){
+
+  else if(
+    game.step==='acquire'
+  ){
 
     finishRoundStep();
 
   }
 
-  else if(game.step==='roundEnd'){
+
+  else if(
+    game.step==='roundEnd'
+  ){
 
     advanceRound();
 
@@ -3131,9 +4292,9 @@ function advanceStep(){
 
 
 
-/* =============================
-   WOLF
-============================= */
+/* =========================
+   WOLF BURST
+========================= */
 
 function resolveWolfBursts(){
 
@@ -3142,25 +4303,33 @@ function resolveWolfBursts(){
     game.players
 
       .map(
-        (player,index)=>
+        (
+          player,
+          index
+        )=>
 
           countType(
             player.hut,
             'wolf'
-          )>=3
+          )
+          >=
+          3
 
             ? index
-            : -1
 
+            : -1
       )
 
       .filter(
-        index=>index>=0
+        index=>
+          index>=0
       );
 
 
 
-  if(!bursting.length){
+  if(
+    !bursting.length
+  ){
 
     return;
 
@@ -3202,26 +4371,38 @@ function resolveWolfBursts(){
   ){
 
     const hut=
-      originalHuts[index];
+
+      originalHuts[
+        index
+      ];
+
 
 
     const wolves=
 
       hut.filter(
         chip=>
-          chip.type==='wolf'
+          chip.type
+          ===
+          'wolf'
       );
+
 
 
     const sheep=
 
       hut.filter(
         chip=>
-          chip.type!=='wolf'
+          chip.type
+          !==
+          'wolf'
       );
 
 
-    newHuts[index]=[];
+
+    newHuts[
+      index
+    ]=[];
 
 
 
@@ -3273,19 +4454,26 @@ function resolveWolfBursts(){
   ){
 
     if(
-      !bursting.includes(i)
+      !bursting.includes(
+        i
+      )
     ){
 
       newHuts[i]=[
+
         ...originalHuts[i]
+
       ];
 
     }
 
 
-    newHuts[i].push(
-      ...transfers[i]
-    );
+
+    newHuts[i]
+      .push(
+        ...transfers[i]
+      );
+
 
 
     game.players[i].hut=
@@ -3297,14 +4485,16 @@ function resolveWolfBursts(){
 
 
 
-/* =============================
+/* =========================
    NEXT ROUND
-============================= */
+========================= */
 
 function advanceRound(){
 
   if(
-    game.step!=='roundEnd'
+    game.step
+    !==
+    'roundEnd'
   ){
 
     return;
@@ -3325,7 +4515,8 @@ function advanceRound(){
 
 
 
-  game.busy=true;
+  game.busy=
+    true;
 
 
 
@@ -3342,6 +4533,7 @@ function advanceRound(){
 
 
   const nextRound=
+
     game.round+1;
 
 
@@ -3349,7 +4541,9 @@ function advanceRound(){
   const addCount=
 
     nextRound===3
+
       ? 2
+
       : 1;
 
 
@@ -3366,7 +4560,15 @@ function advanceRound(){
 
   log(
 
-    `ROUND ${nextRound}準備：各牧場に ${addCount}枚追加。${nextRound===3?'（製品版の5・6ラウンド目を模倣）':''}`
+    `ROUND ${nextRound}準備：各牧場に ${addCount}枚追加。`
+
+    +
+
+    `${
+      nextRound===3
+        ? '（製品版の5・6ラウンド目を模倣）'
+        : ''
+    }`
 
   );
 
@@ -3400,16 +4602,15 @@ function advanceRound(){
     false;
 
 
-
   render();
 
 }
 
 
 
-/* =============================
+/* =========================
    NIGHT WOLF
-============================= */
+========================= */
 
 function nightWolfMove(){
 
@@ -3445,7 +4646,9 @@ function nightWolfMove(){
           ]
           .filter(
             chip=>
-              chip.type!=='wolf'
+              chip.type
+              !==
+              'wolf'
           )
         ]
       )
@@ -3466,11 +4669,14 @@ function nightWolfMove(){
 
       .filter(
         chip=>
-          chip.type==='wolf'
+          chip.type
+          ===
+          'wolf'
       )
 
       .forEach(
         chip=>{
+
 
           const destinationIndex=
 
@@ -3513,19 +4719,26 @@ function nightWolfMove(){
 
 
 
-/* =============================
+/* =========================
    END GAME
-============================= */
+========================= */
 
 function endGame(){
 
-  game.busy=true;
+  game.busy=
+    true;
 
-  game.currentChoices=null;
 
-  game.pendingHumanColor=null;
+  game.currentChoices=
+    null;
 
-  game.step='ended';
+
+  game.pendingHumanColor=
+    null;
+
+
+  game.step=
+    'ended';
 
 
   render();
@@ -3557,23 +4770,34 @@ function endGame(){
 
           sheep:
             player.hut
+
               .filter(
                 chip=>
-                  chip.type!=='wolf'
+                  chip.type
+                  !==
+                  'wolf'
               )
+
               .length
 
         })
       )
 
       .sort(
-        (a,b)=>
+        (
+          a,
+          b
+        )=>
 
-          b.score-a.score
+          b.score
+          -
+          a.score
 
           ||
 
-          b.sheep-a.sheep
+          b.sheep
+          -
+          a.sheep
       );
 
 
@@ -3594,11 +4818,15 @@ function endGame(){
       .filter(
         result=>
 
-          result.score===bestScore
+          result.score
+          ===
+          bestScore
 
           &&
 
-          result.sheep===bestSheep
+          result.sheep
+          ===
+          bestSheep
       )
 
       .map(
@@ -3641,7 +4869,7 @@ function endGame(){
 
           <span>
 
-            ${rank+1}位
+            ${rank+1}位　
 
             ${result.avatar}
 
@@ -3695,12 +4923,15 @@ function endGame(){
 
 
   const resetBtn=
+
     document.getElementById(
       'resetBtn'
     );
 
 
-  if(resetBtn){
+  if(
+    resetBtn
+  ){
 
     resetBtn.style.display=
       'inline-block';
@@ -3711,24 +4942,16 @@ function endGame(){
 
 
 
-/* =============================
+/* =========================
    EVENT
-============================= */
+========================= */
 
 document
   .getElementById(
-    'confirmColorBtn'
+    'centerActionBtn'
   )
   .onclick=
-    confirmColorSelection;
-
-
-document
-  .getElementById(
-    'nextStepBtn'
-  )
-  .onclick=
-    advanceStep;
+    advanceCentralAction;
 
 
 document

@@ -582,29 +582,101 @@ button,a{-webkit-tap-highlight-color:transparent}
   color:rgba(255,255,255,.86);
 }
 
-/* END RESULTS */
+/* 最終順位はコンパクトに */
 .end-content .results{
   display:grid;
-  gap:7px;
-  margin:0 auto 24px;
-  max-width:500px;
+  gap:4px;
+  max-width:420px;
+  margin:0 auto 18px;
 }
+
 .end-content .result{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  padding:10px 12px;
-  border-radius:14px;
-  background:rgba(255,255,255,.95);
-  color:#3f3024;
-  border:none;
-  text-align:left;
+  padding:5px 9px;
+  border-radius:9px;
+  font-size:10px;
 }
-.end-content .result strong{white-space:nowrap}
+
 .end-content .result.win{
-  background:#fff4bd;
-  border:3px solid #f2b640;
+  border:2px solid #f2b640;
+}
+
+/* 対人戦メッセージ */
+.end-message{
+  max-width:540px;
+  margin:0 auto 22px;
+  padding:18px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.22);
+}
+
+.end-message h3{
+  margin:0 0 12px;
+  font-size:21px;
+  line-height:1.4;
+  color:#fff;
+}
+
+.end-message p{
+  margin:0 0 12px;
+  font-size:13px;
+  line-height:1.75;
+  color:rgba(255,255,255,.88);
+}
+
+.end-quotes{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin:14px 0;
+  font-size:14px;
+  font-weight:900;
+  line-height:1.55;
+  color:#fff4bd;
+}
+
+.end-message-last{
+  margin-bottom:0!important;
+}
+
+.end-message-last strong{
+  color:#fff;
+}
+
+.mobile-br{
+  display:none;
+}
+
+@media(max-width:560px){
+  .end-content .results{
+    margin-bottom:14px;
+  }
+
+  .end-content .result{
+    padding:4px 7px;
+    font-size:9px;
+  }
+
+  .end-message{
+    padding:15px 12px;
+    margin-bottom:18px;
+  }
+
+  .end-message h3{
+    font-size:18px;
+  }
+
+  .end-message p{
+    font-size:12px;
+  }
+
+  .end-quotes{
+    font-size:13px;
+  }
+
+  .mobile-br{
+    display:block;
+  }
 }
 
 /* END ACTIONS */
@@ -849,6 +921,31 @@ button,a{-webkit-tap-highlight-color:transparent}
       <h2>SCLAMBLEを遊んでくれて<br>ありがとう！</h2>
       <p class="end-lead">3ラウンドの体験版はここまでです。<br>製品版では全6ラウンドを遊べます。</p>
       <div class="results" id="results"></div>
+      <div class="end-message">
+  <h3>SCLAMBLEは、<br class="mobile-br">みんなで遊ぶともっと面白い！</h3>
+
+  <p>
+    この体験版ではCPUとの駆け引きを体験できますが、<br>
+    SCLAMBLEの本当の魅力は対人戦。
+  </p>
+
+  <div class="end-quotes">
+    <span>「あの人はあの色を狙いそう」</span>
+    <span>「ここはあえて外そう」</span>
+    <span>「まさか全員バッティング!?」</span>
+  </div>
+
+  <p>
+    相手の表情や性格を読みながらカードを選ぶことで、<br>
+    予想・裏切り・笑いが生まれます。
+  </p>
+
+  <p class="end-message-last">
+    ぜひ家族や友達と、<br>
+    <strong>本物のSCLAMBLEを遊んでみてください。</strong>
+  </p>
+</div>
+      
       <div class="end-actions">
         <button class="end-btn end-btn-main" id="replayBtn">↻ もう一度遊ぶ</button>
         <a class="end-btn end-btn-booth" id="boothLink" href="https://porcube.booth.pm/">SCLAMBLEをBOOTHで見る</a>

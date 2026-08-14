@@ -613,7 +613,7 @@ function renderBoard(){
 
     const [x,y]=gapPos[c.id];
     el.style.left=x+'%'; el.style.top=y+'%';
-    const chipRotations = {yellow:'180deg', green:'-90deg', cyan:'-90deg', red:'0deg', blue:'90deg', pink:'90deg'};
+    const chipRotations = {yellow:'-45deg', green:'-90deg', cyan:'-135deg', red:'135deg', blue:'45deg', pink:'90deg'};
     el.style.setProperty('--chip-rotation', chipRotations[c.id] || '0deg');
     el.innerHTML=`<div class="gap-head"><span class="gap-dot" style="background:${c.hex}"></span>${c.name}牧場 <span>${scoreChips(game.pastures[c.id])}点</span></div>${selectedIconsHTML}<div class="chips">${game.pastures[c.id].map(chipHTML).join('')}</div>`;
     board.appendChild(el);

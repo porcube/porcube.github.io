@@ -478,3 +478,17 @@ a:focus-visible, .btn:focus-visible {
 }
 .event-arrow { flex: 0 0 auto; font-weight: 800; font-size: 16px; }
 .events-list--past .event-row--link:hover { box-shadow: 4px 4px 0 #bbbbbb; }
+
+.members-strip { border-top: var(--line) solid var(--ink); padding: 30px 20px 26px; text-align: center; }
+.members-sub { font-size: 11px; font-weight: 800; letter-spacing: .24em; color: var(--gray); }
+.members-title { font-size: 15px; font-weight: 800; margin-bottom: 18px; }
+.members-list { max-width: 400px; margin: 0 auto; border: 2px solid var(--ink); border-radius: 16px; overflow: hidden; }
+.member-card {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 16px; padding: 11px 18px;
+  text-decoration: none; color: inherit;
+}
+.member-card + .member-card { border-top: 2px dashed #cccccc; }
+a.member-card:hover { background: var(--mist); }
+.member-name { font-size: 13px; font-weight: 800; }
+.member-role { font-size: 11px; color: var(--gray); text-align: right; }

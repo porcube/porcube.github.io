@@ -41,7 +41,7 @@ const GAMES = [
     players: "2～4人",
     time: "15～30分",
     age: "8歳～",
-    desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。「爽快感×スリル」スキマ争奪カードゲーム",
+    desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。<br>「爽快感×スリル」スキマ争奪カードゲーム",
     image: "assets/outbaaaan.jpg",
     isNew: false,
     links: [ 
@@ -60,6 +60,7 @@ const EVENTS = [
     place: "幕張メッセ",
     booth: null,
     note: "新作「SCLAMBLE(スクランブル)」を頒布予定です。",
+    url: "https://www.gamemarket.jp/booth/6044",          // ← 決まったら公式サイトのURLを入れる
   },
    {
     date: "2026-05-24",
@@ -67,6 +68,7 @@ const EVENTS = [
     place: "幕張メッセ",
     booth: "横-20",
     note: "「メェメェメェデェ」",
+    url: "https://www.gamemarket.jp/gamemarket/2026s",
   },
   {
     date: "2025-11-23",
@@ -74,5 +76,5 @@ const EVENTS = [
     place: "幕張メッセ",
     booth: "P-32",
     note: "サークル初出展。「OUTBAAAAN」",
-  },
+    url: "https://www.gamemarket.jp/gamemarket/2025a",
 ];

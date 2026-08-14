@@ -77,5 +77,5 @@ const EVENTS = [
     booth: "P-32",
     note: "サークル初出展。「OUTBAAAAN」",
     url: "https://www.gamemarket.jp/gamemarket/2025a",
-  ｝,
+  },
 ];

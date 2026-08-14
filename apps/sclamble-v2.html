@@ -71,57 +71,37 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   gap:8px;
-
   margin-bottom:6px;
 }
 
 .brand h1{
   margin:0;
-
-  font-size:
-    clamp(24px,3vw,34px);
-
+  font-size:clamp(24px,3vw,34px);
   letter-spacing:.04em;
-
   color:#0d7199;
-
-  text-shadow:
-    0 2px 0 white;
+  text-shadow:0 2px 0 white;
 }
 
 .brand small{
   display:block;
-
   color:#7e6a55;
-
   margin-top:3px;
 }
 
 .roundbox{
   background:#fff;
-
-  border:
-    2px solid #f0c77e;
-
+  border:2px solid #f0c77e;
   border-radius:18px;
-
   padding:7px 10px;
-
   min-width:130px;
-
   text-align:center;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 .roundbox strong{
   font-size:17px;
-
-  color:
-    var(--accent);
+  color:var(--accent);
 }
 
 
@@ -131,25 +111,17 @@ header{
 
 .layout{
   display:grid;
-
   grid-template-columns:
     minmax(0,1.75fr)
     minmax(250px,.72fr);
-
   gap:10px;
 }
 
 .panel{
-  background:
-    rgba(255,250,240,.95);
-
-  border:
-    2px solid #efd2a2;
-
+  background:rgba(255,250,240,.95);
+  border:2px solid #efd2a2;
   border-radius:18px;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 
@@ -175,22 +147,15 @@ header{
 
 .board-title{
   display:flex;
-
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
   align-items:center;
-
   gap:12px;
-
   margin-bottom:7px;
 }
 
 .board-title h2{
   margin:0;
-
   font-size:17px;
-
   color:#244b20;
 }
 
@@ -201,32 +166,21 @@ header{
 
 .legend{
   font-size:12px;
-
   color:#294d26;
-
-  background:
-    rgba(255,255,255,.74);
-
+  background:rgba(255,255,255,.74);
   padding:5px 9px;
-
   border-radius:16px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:flex-start;
-
   gap:3px;
 }
 
 .legend-row{
   display:flex;
-
   align-items:center;
-
   gap:10px;
-
   flex-wrap:wrap;
 }
 
@@ -236,19 +190,14 @@ header{
 
 .legend-item{
   display:inline-flex;
-
   align-items:center;
-
   gap:4px;
-
   white-space:nowrap;
 }
 
 .legend-chip{
   width:20px;
-
   height:20px;
-
   object-fit:contain;
 }
 
@@ -263,11 +212,8 @@ header{
 
 .board-wrap{
   position:relative;
-
   aspect-ratio:1/1;
-
   max-width:600px;
-
   margin:0 auto;
 }
 
@@ -278,26 +224,20 @@ header{
 
 .center-card{
   position:absolute;
-
   inset:33% 33%;
 
   border-radius:20px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
 
   gap:8px;
 
-  background:
-    rgba(255,247,231,.97);
+  background:rgba(255,247,231,.97);
 
-  border:
-    3px dashed #d7a765;
+  border:3px dashed #d7a765;
 
   text-align:center;
 
@@ -314,19 +254,14 @@ header{
 
 .center-guide{
   font-weight:900;
-
   font-size:14px;
-
   line-height:1.35;
 }
 
 .center-sub{
   font-size:10px;
-
   color:#7f6a52;
-
   line-height:1.35;
-
   min-height:14px;
 }
 
@@ -334,19 +269,16 @@ header{
   width:100%;
 
   border:none;
-
   border-radius:13px;
 
   padding:8px 7px;
 
   font-size:12px;
-
   font-weight:900;
 
   cursor:pointer;
 
   background:#c85a24;
-
   color:white;
 
   box-shadow:
@@ -360,13 +292,11 @@ header{
 }
 
 .center-action:hover:not(:disabled){
-  transform:
-    translateY(-1px);
+  transform:translateY(-1px);
 }
 
 .center-action:disabled{
   opacity:.38;
-
   cursor:not-allowed;
 }
 
@@ -403,11 +333,8 @@ header{
 
 .fence-card img{
   width:100%;
-
   height:auto;
-
   display:block;
-
   object-fit:contain;
 }
 
@@ -420,20 +347,16 @@ header{
   position:absolute;
 
   width:19%;
-
   min-height:13%;
 
   transform:
     translate(-50%,-50%);
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
 
   gap:3px;
-
   padding:2px;
 
   z-index:3;
@@ -463,9 +386,7 @@ header{
 
 .gap-head{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:4px;
@@ -473,13 +394,11 @@ header{
   white-space:nowrap;
 
   font-size:11px;
-
   font-weight:800;
 
   color:#5f4b37;
 
-  background:
-    rgba(255,255,255,.88);
+  background:rgba(255,255,255,.88);
 
   border-radius:999px;
 
@@ -488,11 +407,8 @@ header{
 
 .gap-dot{
   width:9px;
-
   height:9px;
-
   border-radius:50%;
-
   flex:0 0 auto;
 }
 
@@ -503,37 +419,28 @@ header{
 
 .choice-icons{
   display:flex;
-
   flex-wrap:wrap;
-
   justify-content:center;
-
   gap:3px;
-
   min-height:18px;
 }
 
 .choice-icon{
   width:21px;
-
   height:21px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   font-size:12px;
 
-  background:
-    rgba(255,255,255,.92);
+  background:rgba(255,255,255,.92);
 
   border:
-    1px solid
-    rgba(87,63,37,.18);
+    1px solid rgba(87,63,37,.18);
 }
 
 
@@ -543,11 +450,8 @@ header{
 
 .chips{
   display:flex;
-
   flex-wrap:wrap;
-
   justify-content:center;
-
   align-content:flex-start;
 
   gap:4px;
@@ -557,27 +461,22 @@ header{
 
 .chip{
   width:34px;
-
   height:34px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:transparent;
 
   box-shadow:
-    0 2px 5px
-    rgba(0,0,0,.10);
+    0 2px 5px rgba(0,0,0,.10);
 }
 
 .chip img{
   width:100%;
-
   height:100%;
 
   display:block;
@@ -587,15 +486,9 @@ header{
   border-radius:50%;
 
   transform:
-    rotate(
-      var(
-        --chip-rotation,
-        0deg
-      )
-    );
+    rotate(var(--chip-rotation,0deg));
 
-  transform-origin:
-    center center;
+  transform-origin:center center;
 }
 
 
@@ -607,7 +500,6 @@ header{
   padding:9px;
 
   display:flex;
-
   flex-direction:column;
 
   gap:8px;
@@ -615,9 +507,7 @@ header{
 
 .section-title{
   font-weight:800;
-
   color:#915026;
-
   margin-bottom:4px;
 }
 
@@ -630,10 +520,7 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(
-      2,
-      minmax(0,1fr)
-    );
+    repeat(2,minmax(0,1fr));
 
   gap:5px;
 }
@@ -662,15 +549,12 @@ header{
 
 .avatar{
   width:28px;
-
   height:28px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:#f4e0bd;
@@ -678,26 +562,21 @@ header{
   font-size:15px;
 
   border:
-    1px solid
-    rgba(95,70,38,.18);
+    1px solid rgba(95,70,38,.18);
 }
 
 .player.you{
-  border:
-    2px solid #0d7199;
-
+  border:2px solid #0d7199;
   background:#f3fbff;
 }
 
 .hut{
   font-size:10px;
-
   color:#71624f;
 }
 
 .pts{
   font-weight:900;
-
   font-size:12px;
 }
 
@@ -710,10 +589,7 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(
-      6,
-      minmax(0,1fr)
-    );
+    repeat(6,minmax(0,1fr));
 
   gap:6px;
 }
@@ -733,17 +609,13 @@ header{
 
   min-height:86px;
 
-  writing-mode:
-    vertical-rl;
-
-  text-orientation:
-    upright;
+  writing-mode:vertical-rl;
+  text-orientation:upright;
 
   letter-spacing:.06em;
 
   box-shadow:
-    0 4px 10px
-    rgba(0,0,0,.11);
+    0 4px 10px rgba(0,0,0,.11);
 
   transition:
     .15s transform,
@@ -752,28 +624,22 @@ header{
 }
 
 .cardbtn.selected{
-  outline:
-    4px solid #fff;
+  outline:4px solid #fff;
 
   box-shadow:
     0 0 0 3px #3f3024,
-    0 6px 14px
-    rgba(0,0,0,.18);
+    0 6px 14px rgba(0,0,0,.18);
 
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 }
 
 .cardbtn:hover{
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 }
 
 .cardbtn:disabled{
   opacity:.35;
-
   cursor:not-allowed;
-
   transform:none;
 }
 
@@ -818,10 +684,7 @@ header{
 
 .reveal-head{
   display:flex;
-
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
   align-items:center;
 
   gap:10px;
@@ -835,18 +698,13 @@ header{
 
 #phaseText{
   font-size:12px;
-
   color:#7f6a52;
-
   text-align:right;
 }
 
 .reveal-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(6,1fr);
-
+  grid-template-columns:repeat(6,1fr);
   gap:7px;
 }
 
@@ -865,24 +723,19 @@ header{
   min-height:50px;
 
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
 
   gap:5px;
 }
 
 .reveal-card.you{
-  border:
-    2px solid #0d7199;
-
+  border:2px solid #0d7199;
   background:#f3fbff;
 }
 
 .reveal-name{
   font-size:12px;
-
   font-weight:800;
 }
 
@@ -896,15 +749,12 @@ header{
   font-weight:900;
 
   box-shadow:
-    inset 0 -2px 0
-    rgba(0,0,0,.10);
+    inset 0 -2px 0 rgba(0,0,0,.10);
 }
 
 .reveal-hidden{
   color:#8a7a67;
-
   font-weight:700;
-
   font-size:11px;
 }
 
@@ -938,7 +788,6 @@ header{
 
 .log .major{
   font-weight:900;
-
   color:#b44819;
 }
 
@@ -982,7 +831,6 @@ header{
 
 .reset-row{
   display:flex;
-
   justify-content:flex-end;
 }
 
@@ -1008,9 +856,7 @@ header{
   margin:0 auto;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
 
   gap:7px;
@@ -1028,7 +874,6 @@ header{
 
 .footer-text{
   font-size:11px;
-
   color:#8b7762;
 }
 
@@ -1036,7 +881,6 @@ header{
   display:inline-flex;
 
   align-items:center;
-
   justify-content:center;
 
   margin-top:3px;
@@ -1053,14 +897,12 @@ header{
   color:#915026;
 
   font-size:12px;
-
   font-weight:900;
 
   text-decoration:none;
 
   box-shadow:
-    0 4px 12px
-    rgba(93,59,27,.08);
+    0 4px 12px rgba(93,59,27,.08);
 
   transition:
     .15s transform,
@@ -1069,19 +911,17 @@ header{
 }
 
 .footer-home:hover{
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 
   background:#fff8ec;
 
   box-shadow:
-    0 6px 16px
-    rgba(93,59,27,.12);
+    0 6px 16px rgba(93,59,27,.12);
 }
 
 
 /* =========================
-   RESULT
+   GAME END SCREEN
 ========================= */
 
 .overlay{
@@ -1089,80 +929,254 @@ header{
 
   inset:0;
 
-  background:
-    rgba(47,32,20,.55);
-
   display:none;
+
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255,255,255,.20),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #0d7199 0%,
+      #095b7b 100%
+    );
+
+  z-index:100;
+
+  overflow-y:auto;
+
+  overscroll-behavior:contain;
+}
+
+.overlay.show{
+  display:block;
+}
+
+.end-screen{
+  min-height:100dvh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    32px 18px;
+}
+
+.end-content{
+  width:100%;
+  max-width:620px;
+
+  text-align:center;
+
+  color:white;
+}
+
+.end-badge{
+  display:inline-block;
+
+  margin-bottom:14px;
+
+  padding:6px 14px;
+
+  border-radius:999px;
+
+  background:
+    rgba(255,255,255,.15);
+
+  border:
+    1px solid rgba(255,255,255,.38);
+
+  font-size:12px;
+
+  font-weight:900;
+
+  letter-spacing:.08em;
+}
+
+.end-content h2{
+  margin:
+    0 0 10px;
+
+  font-size:
+    clamp(28px,6vw,44px);
+
+  line-height:1.3;
+
+  color:white;
+}
+
+.end-lead{
+  margin:
+    0 0 20px;
+
+  font-size:14px;
+
+  line-height:1.8;
+
+  color:
+    rgba(255,255,255,.86);
+}
+
+
+/* =========================
+   END RESULTS
+========================= */
+
+.end-content .results{
+  display:grid;
+
+  gap:7px;
+
+  margin:
+    0 auto 24px;
+
+  max-width:500px;
+}
+
+.end-content .result{
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+    10px 12px;
+
+  border-radius:14px;
+
+  background:
+    rgba(255,255,255,.95);
+
+  color:#3f3024;
+
+  border:none;
+
+  text-align:left;
+}
+
+.end-content .result strong{
+  white-space:nowrap;
+}
+
+.end-content .result.win{
+  background:#fff4bd;
+
+  border:
+    3px solid #f2b640;
+}
+
+
+/* =========================
+   END ACTIONS
+========================= */
+
+.end-actions{
+  display:grid;
+
+  gap:10px;
+
+  width:100%;
+
+  max-width:430px;
+
+  margin:0 auto;
+}
+
+.end-btn{
+  width:100%;
+
+  min-height:54px;
+
+  display:flex;
 
   align-items:center;
 
   justify-content:center;
 
-  padding:20px;
+  border:none;
 
-  z-index:20;
+  border-radius:16px;
+
+  padding:
+    12px 16px;
+
+  font:inherit;
+
+  font-size:14px;
+
+  font-weight:900;
+
+  text-decoration:none;
+
+  cursor:pointer;
+
+  transition:
+    .15s transform,
+    .15s opacity,
+    .15s box-shadow,
+    .15s background;
 }
 
-.overlay.show{
-  display:flex;
+.end-btn:hover{
+  transform:translateY(-2px);
 }
 
-.modal{
-  background:#fffaf0;
-
-  border-radius:26px;
-
-  padding:22px;
-
-  max-width:620px;
-
-  width:100%;
-
-  box-shadow:
-    0 24px 70px
-    rgba(0,0,0,.30);
-
-  border:
-    3px solid #efc884;
-}
-
-.modal h2{
-  margin-top:0;
-
-  color:#0d7199;
-}
-
-.results{
-  display:grid;
-
-  gap:6px;
-
-  margin:15px 0;
-}
-
-.result{
-  display:flex;
-
-  justify-content:
-    space-between;
-
-  align-items:center;
-
-  padding:10px 12px;
-
-  border-radius:14px;
-
+.end-btn-main{
   background:#fff;
 
-  border:
-    1px solid #ead8ba;
+  color:#0d7199;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.18);
 }
 
-.result.win{
-  border:
-    3px solid #f2b640;
+.end-btn-main:hover{
+  background:#f4fbff;
+}
 
-  background:#fff8d9;
+.end-btn-booth{
+  background:#f4ae45;
+
+  color:#3f3024;
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.14);
+}
+
+.end-btn-booth:hover{
+  background:#f7b95b;
+}
+
+.end-btn-other{
+  background:
+    rgba(255,255,255,.12);
+
+  color:white;
+
+  border:
+    2px solid rgba(255,255,255,.65);
+}
+
+.end-btn-other:hover{
+  background:
+    rgba(255,255,255,.20);
+}
+
+.end-brand{
+  margin-top:24px;
+
+  font-size:11px;
+
+  letter-spacing:.08em;
+
+  color:
+    rgba(255,255,255,.60);
 }
 
 
@@ -1170,13 +1184,7 @@ header{
    RESPONSIVE
 ========================= */
 
-@media(
-  max-height:780px
-)
-and
-(
-  min-width:861px
-){
+@media(max-height:780px) and (min-width:861px){
 
   .log{
     height:110px;
@@ -1188,20 +1196,16 @@ and
 
   .cpu-note{
     font-size:10px;
-
     padding:6px;
   }
 
 }
 
 
-@media(
-  max-width:860px
-){
+@media(max-width:860px){
 
   .layout{
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
   .board-wrap{
@@ -1211,16 +1215,12 @@ and
 }
 
 
-@media(
-  max-width:560px
-){
+@media(max-width:560px){
 
   .side{
     display:flex;
-
     flex-direction:column;
   }
-
 
   .cards-section{
     order:1;
@@ -1253,11 +1253,8 @@ and
 
   .board-wrap{
     width:100%;
-
     max-width:100%;
-
-    aspect-ratio:
-      1/1.05;
+    aspect-ratio:1/1.05;
   }
 
 
@@ -1273,32 +1270,26 @@ and
 
   .chip{
     width:27px;
-
     height:27px;
   }
 
 
   .choice-icon{
     width:17px;
-
     height:17px;
-
     font-size:9px;
   }
 
 
   .gap-head{
     font-size:9px;
-
     padding:1px 4px;
   }
 
 
   .center-card{
     inset:32% 32%;
-
     padding:8px;
-
     gap:6px;
   }
 
@@ -1315,7 +1306,6 @@ and
 
   .center-action{
     font-size:11px;
-
     padding:7px 5px;
   }
 
@@ -1327,16 +1317,13 @@ and
 
   .cardbtn{
     min-height:76px;
-
     padding:6px 2px;
-
     font-size:11px;
   }
 
 
   .legend{
     font-size:11px;
-
     padding:4px 6px;
   }
 
@@ -1348,7 +1335,6 @@ and
 
   .legend-chip{
     width:18px;
-
     height:18px;
   }
 
@@ -1358,6 +1344,40 @@ and
 
     padding:
       14px 10px 24px;
+  }
+
+
+  .end-screen{
+    align-items:flex-start;
+
+    padding:
+      26px 14px;
+  }
+
+
+  .end-content h2{
+    font-size:28px;
+  }
+
+
+  .end-lead{
+    font-size:12px;
+  }
+
+
+  .end-content .result{
+    padding:9px 10px;
+
+    font-size:12px;
+  }
+
+
+  .end-btn{
+    min-height:50px;
+
+    font-size:13px;
+
+    border-radius:14px;
   }
 
 }
@@ -1379,8 +1399,7 @@ and
     </h1>
 
     <small>
-      6人プレイ /
-      3ラウンド体験版
+      6人プレイ / 3ラウンド体験版
     </small>
 
   </div>
@@ -1392,9 +1411,7 @@ and
 
     <br>
 
-    <strong
-      id="roundLabel"
-    >
+    <strong id="roundLabel">
       1 / 3
     </strong>
 
@@ -1407,12 +1424,7 @@ and
 <div class="layout">
 
 
-<section
-  class="
-    panel
-    board-panel
-  "
->
+<section class="panel board-panel">
 
 
   <div class="board-title">
@@ -1467,12 +1479,7 @@ and
       </div>
 
 
-      <div
-        class="
-          legend-row
-          legend-wolf-row
-        "
-      >
+      <div class="legend-row legend-wolf-row">
 
         <span class="legend-item">
 
@@ -1513,9 +1520,7 @@ and
         class="center-guide"
         id="centerGuide"
       >
-
         色カードを選ぼう！
-
       </div>
 
 
@@ -1523,9 +1528,7 @@ and
         class="center-sub"
         id="centerSub"
       >
-
         決定するまでは変更できます
-
       </div>
 
 
@@ -1534,9 +1537,7 @@ and
         id="centerActionBtn"
         disabled
       >
-
         色を決定する
-
       </button>
 
 
@@ -1548,20 +1549,13 @@ and
 
 
 
-<aside
-  class="
-    panel
-    side
-  "
->
+<aside class="panel side">
 
 
   <div class="players-section">
 
     <div class="section-title">
-
       プレイヤー
-
     </div>
 
 
@@ -1577,9 +1571,7 @@ and
   <div class="cards-section">
 
     <div class="section-title">
-
       あなたの色カード
-
     </div>
 
 
@@ -1600,16 +1592,12 @@ and
     <div class="reveal-head">
 
       <strong>
-
         今回のカード
-
       </strong>
 
 
       <span id="phaseText">
-
         色カードを1枚選んでください
-
       </span>
 
     </div>
@@ -1634,9 +1622,7 @@ and
   <div class="log-section">
 
     <div class="section-title">
-
       ゲームログ
-
     </div>
 
 
@@ -1670,9 +1656,7 @@ and
       id="resetBtn"
       style="display:none"
     >
-
       最初から
-
     </button>
 
   </div>
@@ -1692,26 +1676,18 @@ and
   <div class="footer-inner">
 
     <div class="footer-brand">
-
       PORCUBE
-
     </div>
-
 
     <div class="footer-text">
-
       SCLAMBLE 3ラウンド体験版
-
     </div>
-
 
     <a
       class="footer-home"
       href="https://porcube.github.io"
     >
-
       PORCUBEホームへ
-
     </a>
 
   </div>
@@ -1720,43 +1696,83 @@ and
 
 
 
+<!-- =========================
+     FULL SCREEN END
+========================= -->
+
 <div
   class="overlay"
   id="overlay"
 >
 
-  <div class="modal">
+  <div class="end-screen">
 
-    <h2>
-
-      体験版 終了！
-
-    </h2>
+    <div class="end-content">
 
 
-    <p>
-
-      3ラウンド終了です。
-      製品版では全6ラウンド、
-      5・6ラウンド目に各牧場へ2枚の動物チップが追加されます。
-
-    </p>
+      <div class="end-badge">
+        体験版終了
+      </div>
 
 
-    <div
-      class="results"
-      id="results"
-    ></div>
+      <h2>
+        SCLAMBLEを遊んでくれて<br>
+        ありがとう！
+      </h2>
 
 
-    <button
-      class="center-action"
-      id="replayBtn"
-    >
+      <p class="end-lead">
 
-      もう一度遊ぶ
+        3ラウンドの体験版はここまでです。<br>
+        製品版では全6ラウンドを遊べます。
 
-    </button>
+      </p>
+
+
+      <div
+        class="results"
+        id="results"
+      ></div>
+
+
+      <div class="end-actions">
+
+
+        <button
+          class="end-btn end-btn-main"
+          id="replayBtn"
+        >
+          ↻ もう一度遊ぶ
+        </button>
+
+
+        <a
+          class="end-btn end-btn-booth"
+          id="boothLink"
+          href="YOUR_BOOTH_URL_HERE"
+        >
+          SCLAMBLEをBOOTHで見る
+        </a>
+
+
+        <a
+          class="end-btn end-btn-other"
+          id="otherWorksLink"
+          href="https://porcube.github.io"
+        >
+          他の作品を見る
+        </a>
+
+
+      </div>
+
+
+      <div class="end-brand">
+        PORCUBE
+      </div>
+
+
+    </div>
 
   </div>
 
@@ -1852,10 +1868,8 @@ const ANIMALS={
   wolf:{
     label:'オオカミ',
     score:0,
-    imgLeft:
-      '../assets/wolf_left_chip.jpg',
-    imgRight:
-      '../assets/wolf_right_chip.jpg'
+    imgLeft:'../assets/wolf_left_chip.jpg',
+    imgRight:'../assets/wolf_right_chip.jpg'
   }
 
 };
@@ -1887,10 +1901,7 @@ function freshBag(){
 
 
   for(
-    const [
-      type,
-      count
-    ]
+    const [type,count]
     of spec
   ){
 
@@ -1978,6 +1989,9 @@ function newGame(){
     .remove(
       'show'
     );
+
+
+  document.body.style.overflow='';
 
 
   const resetBtn=
@@ -2211,7 +2225,7 @@ function render(){
 
 
 /* =========================
-   今回のカード
+   REVEAL PANEL
 ========================= */
 
 function renderReveal(){
@@ -2870,48 +2884,42 @@ function renderBoard(){
       x:50,
       y:10,
       rot:'180deg',
-      img:
-        '../assets/fence_card_front_03.jpg'
+      img:'../assets/fence_card_front_03.jpg'
     },
 
     {
       x:81,
       y:27,
       rot:'240deg',
-      img:
-        '../assets/fence_card_front_02.jpg'
+      img:'../assets/fence_card_front_02.jpg'
     },
 
     {
       x:81,
       y:73,
       rot:'300deg',
-      img:
-        '../assets/fence_card_front_01.jpg'
+      img:'../assets/fence_card_front_01.jpg'
     },
 
     {
       x:50,
       y:90,
       rot:'0deg',
-      img:
-        '../assets/fence_card_front_06.jpg'
+      img:'../assets/fence_card_front_06.jpg'
     },
 
     {
       x:19,
       y:73,
       rot:'60deg',
-      img:
-        '../assets/fence_card_front_08.jpg'
+      img:'../assets/fence_card_front_08.jpg'
     },
 
     {
       x:19,
       y:27,
       rot:'120deg',
-      img:
-        '../assets/fence_card_front_07.jpg'
+      img:'../assets/fence_card_front_07.jpg'
     }
 
   ];
@@ -2922,7 +2930,6 @@ function renderBoard(){
     fence=>{
 
       const element=
-
         document.createElement(
           'div'
         );
@@ -2969,23 +2976,17 @@ function renderBoard(){
 
   const gapPos={
 
-    red:
-      [32,16],
+    red:[32,16],
 
-    cyan:
-      [68,16],
+    cyan:[68,16],
 
-    green:
-      [85,50],
+    green:[85,50],
 
-    yellow:
-      [68,84],
+    yellow:[68,84],
 
-    blue:
-      [32,84],
+    blue:[32,84],
 
-    pink:
-      [15,50]
+    pink:[15,50]
 
   };
 
@@ -2993,23 +2994,17 @@ function renderBoard(){
 
   const chipRotations={
 
-    yellow:
-      '-45deg',
+    yellow:'-45deg',
 
-    green:
-      '-90deg',
+    green:'-90deg',
 
-    cyan:
-      '-135deg',
+    cyan:'-135deg',
 
-    red:
-      '135deg',
+    red:'135deg',
 
-    blue:
-      '45deg',
+    blue:'45deg',
 
-    pink:
-      '90deg'
+    pink:'90deg'
 
   };
 
@@ -3019,7 +3014,6 @@ function renderBoard(){
     color=>{
 
       const element=
-
         document.createElement(
           'div'
         );
@@ -3042,9 +3036,7 @@ function renderBoard(){
 
             .filter(
               choice=>
-                choice
-                ===
-                color.id
+                choice===color.id
             )
 
             .length;
@@ -3152,10 +3144,7 @@ function renderBoard(){
 
 
 
-      const [
-        x,
-        y
-      ]=
+      const [x,y]=
         gapPos[
           color.id
         ];
@@ -3420,9 +3409,7 @@ function renderPlayers(){
         <div>
 
           <strong>
-
             ${player.name}
-
           </strong>
 
 
@@ -3438,9 +3425,7 @@ function renderPlayers(){
 
 
         <div class="pts">
-
           ${points}点
-
         </div>
 
       `;
@@ -4621,9 +4606,7 @@ function resolveWolfBursts(){
     ){
 
       newHuts[i]=[
-
         ...originalHuts[i]
-
       ];
 
     }
@@ -5082,6 +5065,10 @@ function endGame(){
     );
 
 
+  document.body.style.overflow=
+    'hidden';
+
+
 
   const resetBtn=
 
@@ -5104,7 +5091,7 @@ function endGame(){
 
 
 /* =========================
-   EVENT
+   EVENTS
 ========================= */
 
 document
@@ -5115,12 +5102,14 @@ document
     advanceCentralAction;
 
 
+
 document
   .getElementById(
     'resetBtn'
   )
   .onclick=
     newGame;
+
 
 
 document
@@ -5130,19 +5119,15 @@ document
   .onclick=
     ()=>{
 
-      document
-        .getElementById(
-          'overlay'
-        )
-        .classList
-        .remove(
-          'show'
-        );
-
-
       newGame();
 
+      window.scrollTo({
+        top:0,
+        behavior:'smooth'
+      });
+
     };
+
 
 
 newGame();

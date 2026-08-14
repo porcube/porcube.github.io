@@ -370,24 +370,18 @@ button,a{-webkit-tap-highlight-color:transparent}
   transform:translateY(-5px) scale(1.03);
   z-index:3;
 }
-.cardbtn.selected::before{
-  background:rgba(255,174,69,.14);
-}
+.cardbtn.selected::before{background:rgba(255,174,69,.14)}
 .cardbtn.selected::after{
   opacity:1;
   transform:translate(-50%,0);
 }
-.cardbtn:hover:not(:disabled):not(.selected){
-  transform:translateY(-2px);
-}
+.cardbtn:hover:not(:disabled):not(.selected){transform:translateY(-2px)}
 .cardbtn:disabled{
   opacity:.35;
   cursor:not-allowed;
   transform:none;
 }
-.cardbtn.selected:disabled{
-  opacity:1;
-}
+.cardbtn.selected:disabled{opacity:1}
 
 /* HELP */
 .step-help{
@@ -550,7 +544,7 @@ button,a{-webkit-tap-highlight-color:transparent}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:32px 18px;
+  padding:30px 18px;
 }
 .end-content{
   width:100%;
@@ -560,7 +554,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .end-badge{
   display:inline-block;
-  margin-bottom:14px;
+  margin-bottom:10px;
   padding:6px 14px;
   border-radius:999px;
   background:rgba(255,255,255,.15);
@@ -571,112 +565,85 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .end-content h2{
   margin:0 0 10px;
-  font-size:clamp(28px,6vw,44px);
+  font-size:clamp(26px,5vw,40px);
   line-height:1.3;
   color:white;
 }
 .end-lead{
-  margin:0 0 20px;
-  font-size:14px;
-  line-height:1.8;
-  color:rgba(255,255,255,.86);
+  margin:0 0 16px;
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(255,255,255,.82);
 }
 
-/* 最終順位はコンパクトに */
-.end-content .results{
-  display:grid;
-  gap:4px;
-  max-width:420px;
-  margin:0 auto 18px;
-}
-
-.end-content .result{
-  padding:5px 9px;
-  border-radius:9px;
-  font-size:10px;
-}
-
-.end-content .result.win{
-  border:2px solid #f2b640;
-}
-
-/* 対人戦メッセージ */
+/* END MESSAGE */
 .end-message{
-  max-width:540px;
-  margin:0 auto 22px;
-  padding:18px 16px;
-  border-radius:18px;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.22);
+  max-width:560px;
+  margin:0 auto 16px;
+  padding:20px 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff4bd,#ffd784);
+  border:3px solid #f4ae45;
+  color:#5b361e;
+  box-shadow:0 12px 30px rgba(0,0,0,.20);
 }
-
 .end-message h3{
   margin:0 0 12px;
-  font-size:21px;
-  line-height:1.4;
-  color:#fff;
+  font-size:24px;
+  line-height:1.35;
+  font-weight:900;
+  color:#b54217;
 }
-
 .end-message p{
   margin:0 0 12px;
   font-size:13px;
   line-height:1.75;
-  color:rgba(255,255,255,.88);
+  color:#5b422f;
 }
-
+.end-message p strong{color:#9e3216}
 .end-quotes{
   display:flex;
   flex-direction:column;
-  gap:4px;
+  gap:5px;
   margin:14px 0;
+  padding:12px 10px;
+  border-radius:14px;
+  background:rgba(255,255,255,.58);
+  color:#9d3f1d;
   font-size:14px;
   font-weight:900;
   line-height:1.55;
-  color:#fff4bd;
 }
-
-.end-message-last{
-  margin-bottom:0!important;
-}
-
+.end-message-last{margin-bottom:0!important}
 .end-message-last strong{
-  color:#fff;
+  font-size:14px;
+  color:#9e3216;
 }
+.mobile-br{display:none}
 
-.mobile-br{
-  display:none;
+/* FINAL RESULTS */
+.end-content .results{
+  display:grid;
+  gap:3px;
+  max-width:400px;
+  margin:0 auto 16px;
 }
-
-@media(max-width:560px){
-  .end-content .results{
-    margin-bottom:14px;
-  }
-
-  .end-content .result{
-    padding:4px 7px;
-    font-size:9px;
-  }
-
-  .end-message{
-    padding:15px 12px;
-    margin-bottom:18px;
-  }
-
-  .end-message h3{
-    font-size:18px;
-  }
-
-  .end-message p{
-    font-size:12px;
-  }
-
-  .end-quotes{
-    font-size:13px;
-  }
-
-  .mobile-br{
-    display:block;
-  }
+.end-content .result{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding:4px 8px;
+  border-radius:8px;
+  background:rgba(255,255,255,.88);
+  color:#3f3024;
+  font-size:9px;
+  text-align:left;
+}
+.end-content .result strong{white-space:nowrap}
+.end-content .result.win{
+  background:#fff4bd;
+  border:2px solid #f2b640;
 }
 
 /* END ACTIONS */
@@ -689,7 +656,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .end-btn{
   width:100%;
-  min-height:54px;
+  min-height:52px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -704,18 +671,20 @@ button,a{-webkit-tap-highlight-color:transparent}
   transition:.15s transform,.15s opacity,.15s box-shadow,.15s background;
 }
 .end-btn:hover{transform:translateY(-2px)}
+.end-btn-booth{
+  min-height:60px;
+  background:#f4ae45;
+  color:#3f3024;
+  font-size:15px;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+}
+.end-btn-booth:hover{background:#f7b95b}
 .end-btn-main{
   background:#fff;
   color:#0d7199;
   box-shadow:0 8px 22px rgba(0,0,0,.18);
 }
 .end-btn-main:hover{background:#f4fbff}
-.end-btn-booth{
-  background:#f4ae45;
-  color:#3f3024;
-  box-shadow:0 8px 22px rgba(0,0,0,.14);
-}
-.end-btn-booth:hover{background:#f7b95b}
 .end-btn-other{
   background:rgba(255,255,255,.12);
   color:white;
@@ -723,7 +692,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 }
 .end-btn-other:hover{background:rgba(255,255,255,.20)}
 .end-brand{
-  margin-top:24px;
+  margin-top:22px;
   font-size:11px;
   letter-spacing:.08em;
   color:rgba(255,255,255,.60);
@@ -772,39 +741,37 @@ button,a{-webkit-tap-highlight-color:transparent}
     gap:4px;
   }
   .cardbtn{
-  width:100%;
-  aspect-ratio:5 / 7;
-  border-radius:3px;
-}
-.cardbtn img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-}
-.cardbtn::after{
-  content:"✓";
-  left:auto;
-  right:3px;
-  bottom:3px;
-  width:18px;
-  height:18px;
-  padding:0;
-  border-radius:2px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:12px;
-  transform:translateY(4px);
-}
-.cardbtn.selected{
-  outline:2px solid #fff;
-  box-shadow:0 0 0 4px #c85a24,0 6px 12px rgba(0,0,0,.25);
-  transform:translateY(-4px) scale(1.03);
-}
-.cardbtn.selected::after{
-  transform:translateY(0);
-}
+    width:100%;
+    aspect-ratio:5 / 7;
+    border-radius:3px;
+  }
+  .cardbtn img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+  .cardbtn::after{
+    content:"✓";
+    left:auto;
+    right:3px;
+    bottom:3px;
+    width:18px;
+    height:18px;
+    padding:0;
+    border-radius:2px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    transform:translateY(4px);
+  }
+  .cardbtn.selected{
+    outline:2px solid #fff;
+    box-shadow:0 0 0 4px #c85a24,0 6px 12px rgba(0,0,0,.25);
+    transform:translateY(-4px) scale(1.03);
+  }
+  .cardbtn.selected::after{transform:translateY(0)}
 
   .reveal-grid{gap:4px}
   .reveal-card{padding:4px 2px}
@@ -816,11 +783,51 @@ button,a{-webkit-tap-highlight-color:transparent}
   .legend-chip{width:18px;height:18px}
 
   .site-footer{margin-top:12px;padding:14px 10px 24px}
-  .end-screen{align-items:flex-start;padding:26px 14px}
-  .end-content h2{font-size:28px}
-  .end-lead{font-size:12px}
-  .end-content .result{padding:9px 10px;font-size:12px}
-  .end-btn{min-height:50px;font-size:13px;border-radius:14px}
+
+  .end-screen{
+    align-items:flex-start;
+    padding:22px 12px;
+  }
+  .end-content h2{
+    margin-bottom:8px;
+    font-size:25px;
+  }
+  .end-lead{
+    margin-bottom:12px;
+    font-size:11px;
+  }
+  .end-message{
+    padding:16px 12px;
+    margin-bottom:14px;
+    border-radius:16px;
+  }
+  .end-message h3{font-size:20px}
+  .end-message p{font-size:12px}
+  .end-quotes{
+    margin:11px 0;
+    padding:10px 7px;
+    font-size:13px;
+  }
+  .mobile-br{display:block}
+
+  .end-content .results{
+    margin-bottom:14px;
+    gap:2px;
+  }
+  .end-content .result{
+    padding:3px 6px;
+    font-size:8px;
+  }
+
+  .end-btn{
+    min-height:50px;
+    font-size:13px;
+    border-radius:14px;
+  }
+  .end-btn-booth{
+    min-height:56px;
+    font-size:14px;
+  }
 }
 </style>
 </head>
@@ -920,37 +927,48 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="end-badge">体験版終了</div>
       <h2>SCLAMBLEを遊んでくれて<br>ありがとう！</h2>
       <p class="end-lead">3ラウンドの体験版はここまでです。<br>製品版では全6ラウンドを遊べます。</p>
-      <div class="results" id="results"></div>
+
       <div class="end-message">
-  <h3>SCLAMBLEは、<br class="mobile-br">みんなで遊ぶともっと面白い！</h3>
+        <h3>SCLAMBLEは、<br class="mobile-br">みんなで遊ぶともっと面白い！</h3>
 
-  <p>
-    この体験版ではCPUとの駆け引きを体験できますが、<br>
-    SCLAMBLEの本当の魅力は対人戦。
-  </p>
+        <p>
+          この体験版ではCPUとの駆け引きを体験できますが、<br>
+          <strong>SCLAMBLEの本当の魅力は対人戦。</strong>
+        </p>
 
-  <div class="end-quotes">
-    <span>「あの人はあの色を狙いそう」</span>
-    <span>「ここはあえて外そう」</span>
-    <span>「まさか全員バッティング!?」</span>
-  </div>
+        <div class="end-quotes">
+          <span>「あの人はあの色を狙いそう」</span>
+          <span>「ここはあえて外そう」</span>
+          <span>「まさか全員バッティング!?」</span>
+        </div>
 
-  <p>
-    相手の表情や性格を読みながらカードを選ぶことで、<br>
-    予想・裏切り・笑いが生まれます。
-  </p>
+        <p>
+          相手の表情や性格を読みながらカードを選ぶことで、<br>
+          予想・裏切り・笑いが生まれます。
+        </p>
 
-  <p class="end-message-last">
-    ぜひ家族や友達と、<br>
-    <strong>本物のSCLAMBLEを遊んでみてください。</strong>
-  </p>
-</div>
-      
-      <div class="end-actions">
-        <button class="end-btn end-btn-main" id="replayBtn">↻ もう一度遊ぶ</button>
-        <a class="end-btn end-btn-booth" id="boothLink" href="https://porcube.booth.pm/">SCLAMBLEをBOOTHで見る</a>
-        <a class="end-btn end-btn-other" id="otherWorksLink" href="https://porcube.github.io">他の作品を見る</a>
+        <p class="end-message-last">
+          ぜひ家族や友達と、<br>
+          <strong>本物のSCLAMBLEを遊んでみてください。</strong>
+        </p>
       </div>
+
+      <div class="results" id="results"></div>
+
+      <div class="end-actions">
+        <a class="end-btn end-btn-booth" id="boothLink" href="https://porcube.booth.pm/">
+          SCLAMBLEをBOOTHで見る
+        </a>
+
+        <button class="end-btn end-btn-main" id="replayBtn">
+          ↻ もう一度遊ぶ
+        </button>
+
+        <a class="end-btn end-btn-other" id="otherWorksLink" href="https://porcube.github.io">
+          他の作品を見る
+        </a>
+      </div>
+
       <div class="end-brand">PORCUBE</div>
     </div>
   </div>
@@ -980,18 +998,28 @@ let game;
 function freshBag(){
   const spec=[['white',18],['red',6],['gold',18],['wolf',6]];
   let bag=[],id=0;
+
   for(const [type,count] of spec){
-    for(let i=0;i<count;i++) bag.push({id:++id,type,dir:Math.random()<.5?-1:1});
+    for(let i=0;i<count;i++){
+      bag.push({
+        id:++id,
+        type,
+        dir:Math.random()<.5?-1:1
+      });
+    }
   }
+
   return shuffle(bag);
 }
 
 function shuffle(a){
   a=[...a];
+
   for(let i=a.length-1;i>0;i--){
     const j=Math.floor(Math.random()*(i+1));
     [a[i],a[j]]=[a[j],a[i]];
   }
+
   return a;
 }
 
@@ -1061,6 +1089,7 @@ function renderReveal(){
     grid.innerHTML=game.players.map((player,index)=>{
       if(index===0){
         const color=COLORS.find(x=>x.id===game.currentChoices[0]);
+
         return `
           <div class="reveal-card you">
             <div class="reveal-name">${game.players[0].avatar} あなた</div>
@@ -1068,6 +1097,7 @@ function renderReveal(){
           </div>
         `;
       }
+
       return `
         <div class="reveal-card">
           <div class="reveal-name">${player.avatar} ${player.name}</div>
@@ -1078,7 +1108,10 @@ function renderReveal(){
   }else if(game.currentChoices){
     grid.innerHTML=game.currentChoices.map((colorId,index)=>{
       const color=COLORS.find(x=>x.id===colorId);
-      const label=index===0?`${game.players[0].avatar} あなた`:`${game.players[index].avatar} CPU ${index}`;
+      const label=index===0
+        ?`${game.players[0].avatar} あなた`
+        :`${game.players[index].avatar} CPU ${index}`;
+
       return `
         <div class="reveal-card ${index===0?'you':''}">
           <div class="reveal-name">${label}</div>
@@ -1103,6 +1136,7 @@ function renderReveal(){
     acquire:'動物チップ獲得後',
     roundEnd:'ラウンド終了'
   };
+
   phase.textContent=phases[game.step]||'';
 
   if(game.step==='choose'){
@@ -1134,8 +1168,14 @@ function renderCenterAction(){
   button.disabled=false;
 
   if(game.step==='choose'){
-    guide.textContent=game.pendingHumanColor?`${colorName(game.pendingHumanColor)}を選択中！`:'色カードを選ぼう！';
-    sub.textContent=game.pendingHumanColor?'別の色に変更してもOK':'決定するまでは変更できます';
+    guide.textContent=game.pendingHumanColor
+      ?`${colorName(game.pendingHumanColor)}を選択中！`
+      :'色カードを選ぼう！';
+
+    sub.textContent=game.pendingHumanColor
+      ?'別の色に変更してもOK'
+      :'決定するまでは変更できます';
+
     button.textContent='色を決定する';
     button.disabled=!game.pendingHumanColor||game.busy;
   }else if(game.step==='locked'){
@@ -1144,8 +1184,14 @@ function renderCenterAction(){
     button.textContent='カードを公開';
     button.classList.add('secondary-state');
   }else if(game.step==='reveal'){
-    guide.textContent=game.pendingBattled.length?'バッティングを確認！':'今回はバッティングなし！';
-    sub.textContent=game.pendingBattled.length?'被った牧場の動物チップが移動します':'そのまま次へ進めます';
+    guide.textContent=game.pendingBattled.length
+      ?'バッティングを確認！'
+      :'今回はバッティングなし！';
+
+    sub.textContent=game.pendingBattled.length
+      ?'被った牧場の動物チップが移動します'
+      :'そのまま次へ進めます';
+
     button.textContent='動物チップを移動';
   }else if(game.step==='move'){
     guide.textContent='移動した動物チップを確認！';
@@ -1178,6 +1224,7 @@ function shouldShowSelections(){
 
 function selectedPlayersForColor(colorId){
   if(!game.currentChoices||!shouldShowSelections()) return [];
+
   return game.currentChoices
     .map((choice,index)=>choice===colorId?game.players[index]:null)
     .filter(Boolean);
@@ -1230,19 +1277,26 @@ function renderBoard(){
 
     if(shouldShowSelections()&&game.currentChoices){
       const selectedCount=game.currentChoices.filter(choice=>choice===color.id).length;
-      if(selectedCount>=2) element.classList.add('battled');
-      else if(selectedCount===1) element.classList.add('target');
+
+      if(selectedCount>=2){
+        element.classList.add('battled');
+      }else if(selectedCount===1){
+        element.classList.add('target');
+      }
     }
 
     const selectedPlayers=selectedPlayersForColor(color.id);
+
     const selectedIconsHTML=selectedPlayers.length
       ?`<div class="choice-icons">${selectedPlayers.map(player=>{
           const index=game.players.indexOf(player);
+
           return `<span class="choice-icon" style="background:${PLAYER_AVATAR_BG[index]||'#fff'}" title="${player.name}">${player.avatar}</span>`;
         }).join('')}</div>`
-      :`<div class="choice-icons"></div>`;
+      :'<div class="choice-icons"></div>';
 
     const [x,y]=gapPos[color.id];
+
     element.style.left=x+'%';
     element.style.top=y+'%';
     element.style.setProperty('--chip-rotation',chipRotations[color.id]||'0deg');
@@ -1262,10 +1316,13 @@ function renderBoard(){
 
 function chipHTML(chip){
   const animal=ANIMALS[chip.type];
+
   const src=chip.type==='wolf'
-    ?(chip.dir<0
-      ?(animal.imgLeft||animal.img)
-      :(animal.imgRight||animal.imgLeft||animal.img))
+    ?(
+      chip.dir<0
+        ?(animal.imgLeft||animal.img)
+        :(animal.imgRight||animal.imgLeft||animal.img)
+    )
     :animal.img;
 
   return `
@@ -1307,14 +1364,21 @@ function renderCards(){
 
   COLORS.forEach(color=>{
     const button=document.createElement('button');
+
     button.className='cardbtn'+(game.pendingHumanColor===color.id?' selected':'');
     button.disabled=game.busy||game.step!=='choose'||game.round>3;
+
     button.setAttribute('aria-label',`${color.name}カードを選択`);
-    button.innerHTML=`<img src="${color.cardImg}" alt="${color.name}カード" draggable="false">`;
+
+    button.innerHTML=`
+      <img src="${color.cardImg}" alt="${color.name}カード" draggable="false">
+    `;
 
     button.onclick=()=>{
       if(game.busy||game.step!=='choose') return;
+
       game.pendingHumanColor=color.id;
+
       renderCards();
       renderReveal();
       renderCenterAction();
@@ -1331,7 +1395,9 @@ function clearLog(){
 function log(message){
   const box=document.getElementById('log');
   const paragraph=document.createElement('p');
+
   paragraph.innerHTML=message;
+
   box.appendChild(paragraph);
   box.scrollTop=box.scrollHeight;
 }
@@ -1351,7 +1417,10 @@ function cpuChoice(cpuIndex){
     const wolves=countType(chips,'wolf');
 
     let wolfRisk=wolves*(.7+wolfCount*1.15);
-    if(wolfCount+wolves>=3) wolfRisk+=5.5;
+
+    if(wolfCount+wolves>=3){
+      wolfRisk+=5.5;
+    }
 
     const attractiveness=sheepValue-wolves*.5;
     const crowdRisk=Math.max(0,attractiveness-2)*.32;
@@ -1367,6 +1436,7 @@ function cpuChoice(cpuIndex){
   });
 
   scored.sort((a,b)=>b.value-a.value);
+
   return scored[0].id;
 }
 
@@ -1379,12 +1449,16 @@ function confirmColorSelection(){
   log(`<span class="major">ROUND ${game.round}</span> あなたは「${colorName(humanColor)}」を選びました。`);
 
   const choices=[humanColor];
-  for(let i=1;i<6;i++) choices.push(cpuChoice(i));
+
+  for(let i=1;i<6;i++){
+    choices.push(cpuChoice(i));
+  }
 
   game.currentChoices=choices;
   game.pendingHumanColor=null;
 
   const counts={};
+
   choices.forEach(colorId=>{
     counts[colorId]=(counts[colorId]||0)+1;
   });
@@ -1395,6 +1469,7 @@ function confirmColorSelection(){
   game.busy=false;
 
   log('全員の選択が完了しました。中央のボタンからカードを公開してください。');
+
   render();
 }
 
@@ -1409,7 +1484,11 @@ function processRevealStep(){
   );
 
   if(game.pendingBattled.length){
-    log(`<span class="major">バッティング！</span> ${game.pendingBattled.map(color=>colorName(color)).join('・')}牧場`);
+    log(
+      `<span class="major">バッティング！</span> ${
+        game.pendingBattled.map(color=>colorName(color)).join('・')
+      }牧場`
+    );
   }else{
     log('今回はバッティングなし。');
   }
@@ -1421,13 +1500,18 @@ function processMoveStep(){
   const battled=new Set(game.pendingBattled);
 
   const original=Object.fromEntries(
-    COLORS.map(color=>[color.id,[...game.pastures[color.id]]])
+    COLORS.map(color=>[
+      color.id,
+      [...game.pastures[color.id]]
+    ])
   );
 
   const movedPastures=Object.fromEntries(
     COLORS.map(color=>[
       color.id,
-      battled.has(color.id)?[]:[...original[color.id]]
+      battled.has(color.id)
+        ?[]
+        :[...original[color.id]]
     ])
   );
 
@@ -1439,6 +1523,7 @@ function processMoveStep(){
 
       for(let step=0;step<COLORS.length;step++){
         currentIndex=(currentIndex+chip.dir+COLORS.length)%COLORS.length;
+
         const destination=COLORS[currentIndex].id;
 
         if(!battled.has(destination)){
@@ -1470,37 +1555,56 @@ function processAcquireStep(){
 
     if(counts[colorId]===1){
       const obtained=[...game.pastures[colorId]];
+
       game.pastures[colorId]=[];
 
       if(obtained.length){
         game.players[i].hut.push(...obtained);
-        log(`${game.players[i].name} が ${colorName(colorId)}牧場から動物チップを${obtained.length}枚獲得。`);
+
+        log(
+          `${game.players[i].name} が ${colorName(colorId)}牧場から動物チップを${obtained.length}枚獲得。`
+        );
       }else{
-        log(`${game.players[i].name} の ${colorName(colorId)}牧場には動物チップがありませんでした。`);
+        log(
+          `${game.players[i].name} の ${colorName(colorId)}牧場には動物チップがありませんでした。`
+        );
       }
     }
   }
 
   resolveWolfBursts();
+
   game.step='acquire';
+
   render();
 }
 
 function finishRoundStep(){
   game.step='roundEnd';
-  log(`<span class="major">ROUND ${game.round} の処理終了。</span> 牧場と各プレイヤーの小屋を確認してください。`);
+
+  log(
+    `<span class="major">ROUND ${game.round} の処理終了。</span> 牧場と各プレイヤーの小屋を確認してください。`
+  );
+
   render();
 }
 
 function advanceCentralAction(){
   if(game.busy) return;
 
-  if(game.step==='choose') confirmColorSelection();
-  else if(game.step==='locked') processRevealStep();
-  else if(game.step==='reveal') processMoveStep();
-  else if(game.step==='move') processAcquireStep();
-  else if(game.step==='acquire') finishRoundStep();
-  else if(game.step==='roundEnd') advanceRound();
+  if(game.step==='choose'){
+    confirmColorSelection();
+  }else if(game.step==='locked'){
+    processRevealStep();
+  }else if(game.step==='reveal'){
+    processMoveStep();
+  }else if(game.step==='move'){
+    processAcquireStep();
+  }else if(game.step==='acquire'){
+    finishRoundStep();
+  }else if(game.step==='roundEnd'){
+    advanceRound();
+  }
 }
 
 function resolveWolfBursts(){
@@ -1522,11 +1626,15 @@ function resolveWolfBursts(){
     newHuts[index]=[];
 
     sheep.forEach(chip=>{
-      const destination=(index+chip.dir+game.players.length)%game.players.length;
+      const destination=
+        (index+chip.dir+game.players.length)%game.players.length;
+
       transfers[destination].push(chip);
     });
 
-    log(`🐺 <span class="major">${game.players[index].name} にオオカミが3匹以上！</span> 羊${sheep.length}枚が隣の小屋へ逃げ、オオカミ${wolves.length}枚は除外。`);
+    log(
+      `🐺 <span class="major">${game.players[index].name} にオオカミが3匹以上！</span> 羊${sheep.length}枚が隣の小屋へ逃げ、オオカミ${wolves.length}枚は除外。`
+    );
   }
 
   for(let i=0;i<game.players.length;i++){
@@ -1550,7 +1658,10 @@ function advanceRound(){
   game.busy=true;
 
   nightWolfMove();
-  log('🌙 夜：牧場に残ったオオカミが向いている方向へ1牧場移動。');
+
+  log(
+    '🌙 夜：牧場に残ったオオカミが向いている方向へ1牧場移動。'
+  );
 
   const nextRound=game.round+1;
   const addCount=nextRound===3?2:1;
@@ -1559,7 +1670,11 @@ function advanceRound(){
 
   log(
     `ROUND ${nextRound}準備：各牧場に動物チップを${addCount}枚追加。`+
-    (nextRound===3?'（製品版の5・6ラウンド目を模倣）':'')
+    (
+      nextRound===3
+        ?'（製品版の5・6ラウンド目を模倣）'
+        :''
+    )
   );
 
   game.round=nextRound;
@@ -1575,7 +1690,10 @@ function advanceRound(){
 
 function nightWolfMove(){
   const original=Object.fromEntries(
-    COLORS.map(color=>[color.id,[...game.pastures[color.id]]])
+    COLORS.map(color=>[
+      color.id,
+      [...game.pastures[color.id]]
+    ])
   );
 
   const next=Object.fromEntries(
@@ -1589,7 +1707,9 @@ function nightWolfMove(){
     original[color.id]
       .filter(chip=>chip.type==='wolf')
       .forEach(chip=>{
-        const destinationIndex=(index+chip.dir+COLORS.length)%COLORS.length;
+        const destinationIndex=
+          (index+chip.dir+COLORS.length)%COLORS.length;
+
         next[COLORS[destinationIndex].id].push(chip);
       });
   });
@@ -1619,32 +1739,54 @@ function endGame(){
   const bestSheep=ranked[0].sheep;
 
   const winners=ranked
-    .filter(result=>result.score===bestScore&&result.sheep===bestSheep)
+    .filter(
+      result=>
+        result.score===bestScore&&
+        result.sheep===bestSheep
+    )
     .map(result=>result.index);
 
   const box=document.getElementById('results');
 
   box.innerHTML=ranked.map((result,rank)=>`
     <div class="result ${winners.includes(result.index)?'win':''}">
-      <span>${rank+1}位　${result.avatar} ${result.name}${winners.includes(result.index)?' 🏆':''}</span>
-      <strong>${result.score}点 / 羊${result.sheep}枚</strong>
+      <span>
+        ${rank+1}位　
+        ${result.avatar}
+        ${result.name}
+        ${winners.includes(result.index)?' 🏆':''}
+      </span>
+      <strong>
+        ${result.score}点 / 羊${result.sheep}枚
+      </strong>
     </div>
   `).join('');
 
-  log('<span class="major">3ラウンド終了！</span> 得点計算へ。');
+  log(
+    '<span class="major">3ラウンド終了！</span> 得点計算へ。'
+  );
 
   document.getElementById('overlay').classList.add('show');
+
   document.body.style.overflow='hidden';
 
   const resetBtn=document.getElementById('resetBtn');
-  if(resetBtn) resetBtn.style.display='inline-block';
+
+  if(resetBtn){
+    resetBtn.style.display='inline-block';
+  }
 }
 
 document.getElementById('centerActionBtn').onclick=advanceCentralAction;
 document.getElementById('resetBtn').onclick=newGame;
+
 document.getElementById('replayBtn').onclick=()=>{
   newGame();
-  window.scrollTo({top:0,behavior:'smooth'});
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
 };
 
 newGame();

@@ -62,6 +62,7 @@
     upcoming.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     past.sort(function (a, b) { return a.date > b.date ? -1 : 1; });
 
+  
     function row(ev) {
       var d = new Date(ev.date + "T00:00:00");
       var ym = d.getFullYear() + "." + (d.getMonth() + 1);
@@ -69,17 +70,22 @@
       var meta = [];
       if (ev.place) meta.push(esc(ev.place));
       if (ev.note) meta.push(esc(ev.note));
-      return (
-        '<li class="event-row reveal">' +
-          '<span class="event-date"><span class="ym">' + ym + '</span><span class="d">' + day + "</span></span>" +
-          '<span class="event-info">' +
-            '<span class="event-name">' + esc(ev.name) +
-              (ev.booth ? '<span class="event-booth">' + esc(ev.booth) + "</span>" : "") +
-            "</span><br>" +
-            '<span class="event-meta">' + meta.join("<br>") + "</span>" +
-          "</span>" +
-        "</li>"
-      );
+
+      var inner =
+        '<span class="event-date"><span class="ym">' + ym + '</span><span class="d">' + day + "</span></span>" +
+        '<span class="event-info">' +
+          '<span class="event-name">' + esc(ev.name) +
+            (ev.booth ? '<span class="event-booth">' + esc(ev.booth) + "</span>" : "") +
+          "</span><br>" +
+          '<span class="event-meta">' + meta.join("<br>") + "</span>" +
+        "</span>";
+
+      if (ev.url) {
+        return '<li class="reveal"><a class="event-row event-row--link" href="' + esc(ev.url) +
+               '" target="_blank" rel="noopener">' + inner +
+               '<span class="event-arrow" aria-hidden="true">→</span></a></li>';
+      }
+      return '<li class="event-row reveal">' + inner + "</li>";
     }
 
     upcomingEl.innerHTML = upcoming.length

@@ -224,14 +224,31 @@
   .hut{font-size:10px;color:#71624f}
   .pts{font-weight:900;font-size:12px}
   .cards{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
-  }
+  display:grid;
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:6px;
+　}
   .cardbtn{
-    border:none;border-radius:14px;padding:8px 5px;color:white;font-weight:900;
-    cursor:pointer;min-height:42px;
-    box-shadow:0 4px 10px rgba(0,0,0,.11);
-    transition:.15s transform,.15s opacity;
-  }
+  border:none;
+  border-radius:14px;
+  padding:8px 4px;
+  color:white;
+  font-weight:900;
+  cursor:pointer;
+  min-height:86px;
+
+  writing-mode:vertical-rl;
+  text-orientation:upright;
+  letter-spacing:.06em;
+　}
+　.cardbtn.selected{
+  outline:4px solid #fff;
+  box-shadow:
+    0 0 0 3px #3f3024,
+    0 6px 14px rgba(0,0,0,.18);
+
+  transform:translateY(-2px);
+　}
   .cardbtn:hover{transform:translateY(-2px)}
   .cardbtn:disabled{opacity:.35;cursor:not-allowed;transform:none}
   .actionbar{display:flex;gap:6px;flex-wrap:wrap}
@@ -429,10 +446,19 @@
       </div>
 
       <div class="cards-section">
-        <div class="section-title">あなたの色カード</div>
-        <div class="cards" id="cards"></div>
-        <div class="choice-strip" id="choiceStrip"></div>
-      </div>
+  <div class="section-title">あなたの色カード</div>
+
+  <div class="cards" id="cards"></div>
+
+  <button 
+    class="primary"
+    id="confirmColorBtn"
+    style="display:none;width:100%;margin-top:8px">
+    色を決定する
+  </button>
+
+  <div class="choice-strip" id="choiceStrip"></div>
+　　</div>
 
       <div class="reveal-panel" id="revealPanel">
         <div class="reveal-head">

@@ -554,6 +554,7 @@ function newGame(){
       {name:'CPU 5', avatar:'🐼', hut:[]},
     ],
     currentChoices:null,
+    pendingHumanColor:null,
     pendingCounts:null,
     pendingBattled:[],
     step:'choose',
@@ -632,11 +633,13 @@ function renderReveal(){
   };
   phase.textContent=phases[game.step]||'';
 
-  if(game.step==='choose'){
-    stepBtn.style.display='none';
-    help.textContent='色カードを選択してください。';
-    return;
-  }
+　if(game.step==='choose'){
+  stepBtn.style.display='none';
+  help.textContent=game.pendingHumanColor
+    ? `${colorName(game.pendingHumanColor)}を選択中です。「色を決定する」で確定します。`
+    : '色カードを1枚選択してください。決定するまでは何度でも変更できます。';
+  return;
+　}
 
   stepBtn.style.display='inline-block';
   const labels={
@@ -743,19 +746,59 @@ function renderPlayers(){
     box.appendChild(el);
   });
 }
+
 function renderCards(){
   const box=document.getElementById('cards');
+  const confirmBtn=document.getElementById('confirmColorBtn');
+
   box.innerHTML='';
+
   COLORS.forEach(c=>{
     const b=document.createElement('button');
-    b.className='cardbtn';
+
+    b.className=
+      'cardbtn' +
+      (game.pendingHumanColor===c.id ? ' selected' : '');
+
     b.style.background=c.hex;
-    b.textContent=`${c.name}を選ぶ`;
-    b.disabled=game.busy || game.step!=='choose' || game.round>3;
-    b.onclick=()=>playRound(c.id);
+
+    b.textContent=c.name;
+
+    b.disabled=
+      game.busy ||
+      game.step!=='choose' ||
+      game.round>3;
+
+    b.onclick=()=>{
+      if(game.busy || game.step!=='choose') return;
+
+      game.pendingHumanColor=c.id;
+
+      renderCards();
+
+      document.getElementById('stepHelp').textContent =
+        `${c.name}を選択中です。「色を決定する」で確定します。`;
+    };
+
     box.appendChild(b);
   });
+
+  if(confirmBtn){
+    const canConfirm =
+      game.step==='choose' &&
+      !!game.pendingHumanColor &&
+      !game.busy &&
+      game.round<=3;
+
+    confirmBtn.style.display =
+      game.step==='choose'
+        ? 'block'
+        : 'none';
+
+    confirmBtn.disabled=!canConfirm;
+  }
 }
+
 function clearLog(){document.getElementById('log').innerHTML=''}
 function log(msg){
   const box=document.getElementById('log');
@@ -800,16 +843,29 @@ function cpuChoice(cpuIndex){
   return scored[0].id;
 }
 
-async function playRound(humanColor){
-  if(game.busy || game.step!=='choose') return;
+async function confirmColorSelection(){
+  async function confirmColorSelection(){
+
+  if(
+    game.busy ||
+    game.step!=='choose' ||
+    !game.pendingHumanColor
+  ) return;
+
+  const humanColor=game.pendingHumanColor;
 
   game.busy=true;
-  log(`<span class="major">ROUND ${game.round}</span> あなたは「${colorName(humanColor)}」を選びました。`);
+
+  log(
+    `<span class="major">ROUND ${game.round}</span> あなたは「${colorName(humanColor)}」を選びました。`
+  );
 
   const choices=[humanColor];
+  
   for(let i=1;i<6;i++) choices.push(cpuChoice(i));
-
+  
   game.currentChoices=choices;
+  game.pendingHumanColor=null;
   const counts={};
   choices.forEach(x=>counts[x]=(counts[x]||0)+1);
   game.pendingCounts=counts;
@@ -968,6 +1024,7 @@ function advanceRound(){
 
   game.round=nextRound;
   game.currentChoices=null;
+  game.pendingHumanColor=null;
   game.pendingCounts=null;
   game.pendingBattled=[];
   game.step='choose';
@@ -1012,6 +1069,9 @@ function endGame(){
   const resetBtn=document.getElementById('resetBtn');
   if(resetBtn) resetBtn.style.display='inline-block';
 }
+
+document.getElementById('confirmColorBtn').onclick=
+  confirmColorSelection
 
 document.getElementById('nextStepBtn').onclick=advanceStep;
 document.getElementById('resetBtn').onclick=newGame;

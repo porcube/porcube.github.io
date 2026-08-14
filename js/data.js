@@ -79,3 +79,14 @@ const EVENTS = [
     url: "https://www.gamemarket.jp/gamemarket/2025a",
   },
 ];
+
+// ---- メンバー ----
+// 行を増やすときは { } の行をコピーしてください
+const MEMBERS = [
+  { name: "kazsaw", role: "ゲームデザイン", url: "" },
+  { name: "ふらぴぐ", role: "アートワーク", url: "" },
+  { name: "フジモリメライ", role: "制作進行", url: "" },
+  { name: "コスケ", role: "Web・アプリ制作", url: "" },
+  { name: "なまえ", role: "メンバー", url: "" },
+];
+

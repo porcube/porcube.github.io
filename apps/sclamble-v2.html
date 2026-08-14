@@ -93,7 +93,7 @@
   /* 6枚の柵カード + 柵の間の動物チップ */
   .fence-card{
     position:absolute;
-    width:21%;
+    width:18%;
     height:auto;
     transform:translate(-50%,-50%) rotate(var(--rot,0deg));
     background:transparent;
@@ -151,7 +151,11 @@
     background:transparent; position:relative;
     box-shadow:0 2px 5px rgba(0,0,0,.10);
   }
-  .chip img{width:100%;height:100%;display:block;object-fit:contain;border-radius:50%}
+  .chip img{
+    width:100%;height:100%;display:block;object-fit:contain;border-radius:50%;
+    transform:rotate(var(--chip-rotation,0deg));
+    transform-origin:center center;
+  }
   .side{padding:9px;display:flex;flex-direction:column;gap:8px}
   .section-title{font-weight:800;color:#915026;margin-bottom:4px}
   .players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
@@ -312,7 +316,7 @@
 
     .app{padding:10px}
     .board-wrap{width:100%;max-width:100%;aspect-ratio:1/1.05}
-    .fence-card{width:24%;height:auto}
+    .fence-card{width:21%;height:auto}
     .gap-pasture{width:21%;min-height:11%}
     .chip{width:27px;height:27px}
     .choice-icons{gap:2px;min-height:14px}

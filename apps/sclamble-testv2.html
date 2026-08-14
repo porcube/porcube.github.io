@@ -2454,52 +2454,14 @@ function renderBoard(){
 
 
 
-  const fences=[
-
-    {
-      x:50,
-      y:13,
-      rot:'180deg',
-      img:'../assets/fence_card_front_03.jpg'
-    },
-
-    {
-      x:78,
-      y:30,
-      rot:'240deg',
-      img:'../assets/fence_card_front_02.jpg'
-    },
-
-    {
-      x:78,
-      y:70,
-      rot:'300deg',
-      img:'../assets/fence_card_front_01.jpg'
-    },
-
-    {
-      x:50,
-      y:87,
-      rot:'0deg',
-      img:'../assets/fence_card_front_06.jpg'
-    },
-
-    {
-      x:22,
-      y:70,
-      rot:'60deg',
-      img:'../assets/fence_card_front_08.jpg'
-    },
-
-    {
-      x:22,
-      y:30,
-      rot:'120deg',
-      img:'../assets/fence_card_front_07.jpg'
-    }
-
-  ];
-
+const fences=[
+  {x:50,y:10,rot:'180deg',img:'../assets/fence_card_front_03.jpg'},   // 上
+  {x:81,y:27,rot:'240deg',img:'../assets/fence_card_front_02.jpg'}, // 右上
+  {x:81,y:73,rot:'300deg',img:'../assets/fence_card_front_01.jpg'}, // 右下
+  {x:50,y:90,rot:'0deg',img:'../assets/fence_card_front_06.jpg'},   // 下
+  {x:19,y:73,rot:'60deg',img:'../assets/fence_card_front_08.jpg'},  // 左下
+  {x:19,y:27,rot:'120deg',img:'../assets/fence_card_front_07.jpg'}  // 左上
+];
 
 
   fences.forEach(

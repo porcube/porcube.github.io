@@ -528,6 +528,321 @@ button,a{-webkit-tap-highlight-color:transparent}
   box-shadow:0 6px 16px rgba(93,59,27,.12);
 }
 
+/* START SCREEN */
+.start-overlay{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  overflow-y:auto;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,255,255,.95),transparent 35%),
+    linear-gradient(180deg,#fff8e8,#ffe6bd);
+  overscroll-behavior:contain;
+}
+.start-overlay.hide{
+  display:none;
+}
+
+.start-screen{
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px 16px;
+}
+
+.start-content{
+  width:100%;
+  max-width:620px;
+  padding:24px 22px 18px;
+  border:2px solid #efd2a2;
+  border-radius:26px;
+  background:rgba(255,250,240,.97);
+  box-shadow:0 18px 50px rgba(93,59,27,.18);
+  text-align:center;
+}
+
+.start-logo{
+  display:block;
+  width:100%;
+  max-width:500px;
+  height:auto;
+  margin:0 auto 6px;
+}
+
+.start-trial{
+  display:inline-block;
+  margin-bottom:18px;
+  padding:5px 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid #efd2a2;
+  color:#7e6a55;
+  font-size:11px;
+  font-weight:900;
+}
+
+.start-intro{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  margin-bottom:18px;
+  color:#5d402b;
+}
+
+.start-intro strong{
+  font-size:20px;
+  line-height:1.4;
+  color:#5c3a23;
+}
+
+.start-intro span{
+  font-size:14px;
+  line-height:1.65;
+}
+
+.start-intro b{
+  color:#c54821;
+  font-size:16px;
+}
+
+.start-steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.start-step{
+  min-width:0;
+  padding:13px 8px;
+  border-radius:16px;
+  background:#fff;
+  border:2px solid #efd2a2;
+}
+
+.start-step-icon{
+  margin-bottom:3px;
+  font-size:27px;
+  line-height:1;
+}
+
+.start-step-num{
+  margin-bottom:3px;
+  color:#b77a42;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.start-step strong{
+  display:block;
+  margin-bottom:4px;
+  color:#915026;
+  font-size:13px;
+}
+
+.start-step span{
+  display:block;
+  color:#76614d;
+  font-size:10px;
+  line-height:1.45;
+}
+
+.start-rules{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:6px;
+  margin-bottom:16px;
+}
+
+.start-rule{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-width:0;
+  padding:7px 5px;
+  border-radius:12px;
+  background:#fff8ec;
+  color:#66513c;
+  font-size:10px;
+  line-height:1.35;
+}
+
+.start-rule img{
+  width:29px;
+  height:29px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+.start-rule strong{
+  color:#9a4f25;
+}
+
+.start-rule.wolf-rule{
+  grid-column:1 / -1;
+  background:#fff0df;
+}
+
+.start-rule.wolf-rule strong{
+  color:#bc4524;
+}
+
+.start-btn{
+  width:100%;
+  max-width:430px;
+  min-height:58px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:none;
+  border-radius:17px;
+  background:linear-gradient(180deg,#d7652d,#bd4e1e);
+  color:#fff;
+  font:inherit;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 9px 20px rgba(135,65,28,.24);
+  transition:.15s transform,.15s box-shadow;
+}
+
+.start-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 24px rgba(135,65,28,.28);
+}
+
+.start-meta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-top:10px;
+  color:#7e6a55;
+  font-size:10px;
+  font-weight:800;
+}
+
+.start-legal{
+  max-width:500px;
+  margin:18px auto 0;
+  padding-top:12px;
+  border-top:1px solid #ead8ba;
+  color:#9b8976;
+  font-size:8px;
+  line-height:1.65;
+}
+
+.start-legal div{
+  margin-top:3px;
+  font-weight:900;
+}
+
+
+/* START SCREEN MOBILE */
+@media(max-width:560px){
+  .start-screen{
+    align-items:flex-start;
+    padding:14px 10px;
+  }
+
+  .start-content{
+    padding:18px 12px 14px;
+    border-radius:20px;
+  }
+
+  .start-logo{
+    margin-bottom:4px;
+  }
+
+  .start-trial{
+    margin-bottom:13px;
+    font-size:9px;
+  }
+
+  .start-intro{
+    margin-bottom:14px;
+  }
+
+  .start-intro strong{
+    font-size:17px;
+  }
+
+  .start-intro span{
+    font-size:12px;
+  }
+
+  .start-intro b{
+    font-size:14px;
+  }
+
+  .start-steps{
+    gap:5px;
+    margin-bottom:10px;
+  }
+
+  .start-step{
+    padding:10px 4px;
+    border-radius:12px;
+  }
+
+  .start-step-icon{
+    font-size:23px;
+  }
+
+  .start-step-num{
+    font-size:7px;
+  }
+
+  .start-step strong{
+    font-size:11px;
+  }
+
+  .start-step span{
+    font-size:8px;
+  }
+
+  .start-rules{
+    gap:4px;
+    margin-bottom:13px;
+  }
+
+  .start-rule{
+    padding:5px 2px;
+    font-size:8px;
+  }
+
+  .start-rule img{
+    width:24px;
+    height:24px;
+  }
+
+  .start-rule.wolf-rule{
+    font-size:9px;
+  }
+
+  .start-btn{
+    min-height:54px;
+    border-radius:15px;
+    font-size:15px;
+  }
+
+  .start-meta{
+    gap:12px;
+    margin-top:8px;
+    font-size:9px;
+  }
+
+  .start-legal{
+    margin-top:14px;
+    padding-top:9px;
+    font-size:7px;
+  }
+}
+
 /* GAME END SCREEN */
 .overlay{
   position:fixed;
@@ -840,6 +1155,97 @@ button,a{-webkit-tap-highlight-color:transparent}
 </head>
 
 <body>
+  <div class="start-overlay" id="startOverlay">
+  <div class="start-screen">
+    <div class="start-content">
+
+      <img
+        class="start-logo"
+        src="../assets/sclamble_title.png"
+        alt="SCLAMBLE"
+      >
+
+      <div class="start-trial">
+        6人プレイ / 3ラウンド体験版
+      </div>
+
+      <div class="start-intro">
+        <strong>欲しい牧場の色を選ぼう。</strong>
+        <span>
+          でも、他のプレイヤーと同じ色を選ぶと
+          <b>バッティング！</b>
+        </span>
+      </div>
+
+      <div class="start-steps">
+
+        <div class="start-step">
+          <div class="start-step-icon">🎴</div>
+          <div class="start-step-num">STEP 1</div>
+          <strong>色を選ぶ</strong>
+          <span>欲しい牧場の<br>色カードを1枚選択</span>
+        </div>
+
+        <div class="start-step">
+          <div class="start-step-icon">⚡</div>
+          <div class="start-step-num">STEP 2</div>
+          <strong>バッティング</strong>
+          <span>同じ色を選ぶと<br>誰も獲得できない！</span>
+        </div>
+
+        <div class="start-step">
+          <div class="start-step-icon">🐑</div>
+          <div class="start-step-num">STEP 3</div>
+          <strong>羊を集める</strong>
+          <span>動物チップを集めて<br>高得点を狙おう</span>
+        </div>
+
+      </div>
+
+      <div class="start-rules">
+        <div class="start-rule">
+          <img src="../assets/white_chip.jpg" alt="白羊">
+          <span>白羊<br><strong>1点</strong></span>
+        </div>
+
+        <div class="start-rule">
+          <img src="../assets/red_chip.jpg" alt="赤羊">
+          <span>赤羊<br><strong>2点</strong></span>
+        </div>
+
+        <div class="start-rule">
+          <img src="../assets/gold_chip.jpg" alt="金羊">
+          <span>金羊<br><strong>3点</strong></span>
+        </div>
+
+        <div class="start-rule wolf-rule">
+          <img src="../assets/wolf_right_chip.jpg" alt="オオカミ">
+          <span>
+            オオカミ<br>
+            <strong>3匹集まると羊が逃げる！</strong>
+          </span>
+        </div>
+      </div>
+
+      <button class="start-btn" id="startBtn">
+        体験版をはじめる
+      </button>
+
+      <div class="start-meta">
+        <span>👥 あなた＋CPU5人</span>
+        <span>⏱ 約3〜5分</span>
+      </div>
+
+      <div class="start-legal">
+        本体験版のゲーム内容・画像・ロゴ・カードデザイン等の
+        無断転載・複製・再配布・改変利用を禁止します。
+        <div>© PORCUBE</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+  
 <div class="app">
 
 <header class="site-header">
@@ -1787,16 +2193,20 @@ function endGame(){
 document.getElementById('centerActionBtn').onclick=advanceCentralAction;
 document.getElementById('resetBtn').onclick=newGame;
 
+document.getElementById('startBtn').onclick=()=>{
+  document.getElementById('startOverlay').classList.add('hide');
+  document.body.style.overflow='';
+  window.scrollTo({top:0,behavior:'instant'});
+};
+
 document.getElementById('replayBtn').onclick=()=>{
   newGame();
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+  window.scrollTo({top:0,behavior:'smooth'});
 };
 
 newGame();
+document.body.style.overflow='hidden';
+
 </script>
 </body>
 </html>

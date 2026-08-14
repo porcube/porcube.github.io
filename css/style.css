@@ -467,3 +467,14 @@ a:focus-visible, .btn:focus-visible {
   }
 }
 
+.event-row--link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.event-row--link:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.event-arrow { flex: 0 0 auto; font-weight: 800; font-size: 16px; }
+.events-list--past .event-row--link:hover { box-shadow: 4px 4px 0 #bbbbbb; }

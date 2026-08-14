@@ -224,6 +224,7 @@ header{
 
 .center-card{
   position:absolute;
+
   inset:33% 33%;
 
   border-radius:20px;
@@ -313,7 +314,6 @@ header{
   position:absolute;
 
   width:18%;
-
   height:auto;
 
   transform:
@@ -595,24 +595,23 @@ header{
 }
 
 .cardbtn{
+  position:relative;
+
   border:none;
 
-  border-radius:14px;
+  border-radius:12px;
 
-  padding:8px 4px;
+  padding:0;
 
-  color:white;
-
-  font-weight:900;
+  background:transparent;
 
   cursor:pointer;
 
-  min-height:86px;
+  overflow:hidden;
 
-  writing-mode:vertical-rl;
-  text-orientation:upright;
+  aspect-ratio:2 / 3;
 
-  letter-spacing:.06em;
+  min-width:0;
 
   box-shadow:
     0 4px 10px rgba(0,0,0,.11);
@@ -623,17 +622,26 @@ header{
     .15s box-shadow;
 }
 
+.cardbtn img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+}
+
 .cardbtn.selected{
   outline:4px solid #fff;
 
   box-shadow:
     0 0 0 3px #3f3024,
-    0 6px 14px rgba(0,0,0,.18);
+    0 6px 14px rgba(0,0,0,.22);
 
-  transform:translateY(-2px);
+  transform:translateY(-3px);
 }
 
-.cardbtn:hover{
+.cardbtn:hover:not(:disabled){
   transform:translateY(-2px);
 }
 
@@ -704,7 +712,10 @@ header{
 
 .reveal-grid{
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+
+  grid-template-columns:
+    repeat(6,1fr);
+
   gap:7px;
 }
 
@@ -727,6 +738,8 @@ header{
   justify-content:center;
 
   gap:5px;
+
+  min-width:0;
 }
 
 .reveal-card.you{
@@ -739,23 +752,33 @@ header{
   font-weight:800;
 }
 
-.reveal-color{
-  color:white;
+.reveal-card-image{
+  width:100%;
 
-  border-radius:10px;
+  aspect-ratio:2 / 3;
 
-  padding:5px 3px;
+  display:block;
 
-  font-weight:900;
+  object-fit:cover;
+
+  border-radius:8px;
 
   box-shadow:
-    inset 0 -2px 0 rgba(0,0,0,.10);
+    0 2px 6px rgba(0,0,0,.12);
 }
 
 .reveal-hidden{
   color:#8a7a67;
+
   font-weight:700;
+
   font-size:11px;
+
+  min-height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 
@@ -961,8 +984,7 @@ header{
   align-items:center;
   justify-content:center;
 
-  padding:
-    32px 18px;
+  padding:32px 18px;
 }
 
 .end-content{
@@ -997,8 +1019,7 @@ header{
 }
 
 .end-content h2{
-  margin:
-    0 0 10px;
+  margin:0 0 10px;
 
   font-size:
     clamp(28px,6vw,44px);
@@ -1009,8 +1030,7 @@ header{
 }
 
 .end-lead{
-  margin:
-    0 0 20px;
+  margin:0 0 20px;
 
   font-size:14px;
 
@@ -1045,8 +1065,7 @@ header{
 
   gap:10px;
 
-  padding:
-    10px 12px;
+  padding:10px 12px;
 
   border-radius:14px;
 
@@ -1103,8 +1122,7 @@ header{
 
   border-radius:16px;
 
-  padding:
-    12px 16px;
+  padding:12px 16px;
 
   font:inherit;
 
@@ -1316,9 +1334,36 @@ header{
 
 
   .cardbtn{
-    min-height:76px;
-    padding:6px 2px;
-    font-size:11px;
+    border-radius:8px;
+  }
+
+
+  .cardbtn.selected{
+    outline:3px solid #fff;
+
+    box-shadow:
+      0 0 0 2px #3f3024,
+      0 5px 10px rgba(0,0,0,.18);
+  }
+
+
+  .reveal-grid{
+    gap:4px;
+  }
+
+
+  .reveal-card{
+    padding:4px 2px;
+  }
+
+
+  .reveal-name{
+    font-size:9px;
+  }
+
+
+  .reveal-card-image{
+    border-radius:5px;
   }
 
 
@@ -1495,9 +1540,7 @@ header{
 
 
         <span class="legend-note">
-
           (3匹集めると羊を失う)
-
         </span>
 
       </div>
@@ -1514,7 +1557,6 @@ header{
   >
 
     <div class="center-card">
-
 
       <div
         class="center-guide"
@@ -1540,7 +1582,6 @@ header{
         色を決定する
       </button>
 
-
     </div>
 
   </div>
@@ -1558,7 +1599,6 @@ header{
       プレイヤー
     </div>
 
-
     <div
       class="players"
       id="players"
@@ -1573,7 +1613,6 @@ header{
     <div class="section-title">
       あなたの色カード
     </div>
-
 
     <div
       class="cards"
@@ -1594,7 +1633,6 @@ header{
       <strong>
         今回のカード
       </strong>
-
 
       <span id="phaseText">
         色カードを1枚選んでください
@@ -1624,7 +1662,6 @@ header{
     <div class="section-title">
       ゲームログ
     </div>
-
 
     <div
       class="log"
@@ -1792,42 +1829,52 @@ const COLORS=[
     id:'yellow',
     name:'黄',
     hex:'#e4c400',
-    soft:'#fff4a8'
+    soft:'#fff4a8',
+    cardImg:'../assets/iro_card_front_yellow.jpg'
   },
 
   {
     id:'green',
     name:'緑',
     hex:'#28a84b',
-    soft:'#d9f3dc'
+    soft:'#d9f3dc',
+    cardImg:'../assets/iro_card_front_green.jpg'
   },
 
   {
     id:'cyan',
     name:'水',
     hex:'#17a6d1',
-    soft:'#d8f2fa'
+    soft:'#d8f2fa',
+
+    /* 実物カードでは blue が水色 */
+    cardImg:'../assets/iro_card_front_blue.jpg'
   },
 
   {
     id:'red',
     name:'赤',
     hex:'#e83f43',
-    soft:'#ffdcdc'
+    soft:'#ffdcdc',
+    cardImg:'../assets/iro_card_front_red.jpg'
   },
 
   {
     id:'blue',
     name:'青',
     hex:'#2348b8',
-    soft:'#dde4ff'
+    soft:'#dde4ff',
+
+    /* 実物カードでは purple が青 */
+    cardImg:'../assets/iro_card_front_purple.jpg'
   },
 
   {
     id:'pink',
     name:'桃',
     hex:'#d83aa8',
-    soft:'#f8dcf1'
+    soft:'#f8dcf1',
+    cardImg:'../assets/iro_card_front_pink.jpg'
   }
 
 ];
@@ -2101,9 +2148,7 @@ function newGame(){
 
 
   log(
-
     '<span class="major">ゲーム開始！</span> 各牧場に動物チップを1枚ずつ配置しました。'
-
   );
 
 
@@ -2290,17 +2335,11 @@ function renderReveal(){
                   </div>
 
 
-                  <div
-                    class="reveal-color"
-                    style="
-                      background:
-                      ${color.hex}
-                    "
+                  <img
+                    class="reveal-card-image"
+                    src="${color.cardImg}"
+                    alt="${color.name}カード"
                   >
-
-                    ${color.name}カード
-
-                  </div>
 
                 </div>
 
@@ -2322,9 +2361,7 @@ function renderReveal(){
 
 
                 <div class="reveal-hidden">
-
                   選択済み
-
                 </div>
 
               </div>
@@ -2385,23 +2422,15 @@ function renderReveal(){
               >
 
                 <div class="reveal-name">
-
                   ${label}
-
                 </div>
 
 
-                <div
-                  class="reveal-color"
-                  style="
-                    background:
-                    ${color.hex}
-                  "
+                <img
+                  class="reveal-card-image"
+                  src="${color.cardImg}"
+                  alt="${color.name}カード"
                 >
-
-                  ${color.name}カード
-
-                </div>
 
               </div>
 
@@ -2447,9 +2476,7 @@ function renderReveal(){
 
 
             <div class="reveal-hidden">
-
               ？？？
-
             </div>
 
           </div>
@@ -3487,14 +3514,6 @@ function renderCards(){
         );
 
 
-      button.style.background=
-        color.hex;
-
-
-      button.textContent=
-        color.name;
-
-
       button.disabled=
 
         game.busy
@@ -3508,6 +3527,24 @@ function renderCards(){
         ||
 
         game.round>3;
+
+
+
+      button.setAttribute(
+        'aria-label',
+        `${color.name}カードを選択`
+      );
+
+
+      button.innerHTML=`
+
+        <img
+          src="${color.cardImg}"
+          alt="${color.name}カード"
+          draggable="false"
+        >
+
+      `;
 
 
 
@@ -5120,6 +5157,7 @@ document
     ()=>{
 
       newGame();
+
 
       window.scrollTo({
         top:0,

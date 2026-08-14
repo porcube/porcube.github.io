@@ -22,7 +22,6 @@
 
 body{
   margin:0;
-
   font-family:
     ui-rounded,
     "Hiragino Maru Gothic ProN",
@@ -62,57 +61,37 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   gap:8px;
-
   margin-bottom:6px;
 }
 
 .brand h1{
   margin:0;
-
-  font-size:
-    clamp(24px,3vw,34px);
-
+  font-size:clamp(24px,3vw,34px);
   letter-spacing:.04em;
-
   color:#0d7199;
-
-  text-shadow:
-    0 2px 0 white;
+  text-shadow:0 2px 0 white;
 }
 
 .brand small{
   display:block;
-
   color:#7e6a55;
-
   margin-top:3px;
 }
 
 .roundbox{
   background:#fff;
-
-  border:
-    2px solid #f0c77e;
-
+  border:2px solid #f0c77e;
   border-radius:18px;
-
   padding:7px 10px;
-
   min-width:130px;
-
   text-align:center;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 .roundbox strong{
   font-size:17px;
-
-  color:
-    var(--accent);
+  color:var(--accent);
 }
 
 
@@ -122,25 +101,17 @@ header{
 
 .layout{
   display:grid;
-
   grid-template-columns:
     minmax(0,1.75fr)
     minmax(250px,.72fr);
-
   gap:10px;
 }
 
 .panel{
-  background:
-    rgba(255,250,240,.95);
-
-  border:
-    2px solid #efd2a2;
-
+  background:rgba(255,250,240,.95);
+  border:2px solid #efd2a2;
   border-radius:18px;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 
@@ -166,22 +137,15 @@ header{
 
 .board-title{
   display:flex;
-
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
   align-items:center;
-
   gap:12px;
-
   margin-bottom:7px;
 }
 
 .board-title h2{
   margin:0;
-
   font-size:17px;
-
   color:#244b20;
 }
 
@@ -192,32 +156,21 @@ header{
 
 .legend{
   font-size:12px;
-
   color:#294d26;
-
-  background:
-    rgba(255,255,255,.74);
-
+  background:rgba(255,255,255,.74);
   padding:5px 9px;
-
   border-radius:16px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:flex-start;
-
   gap:3px;
 }
 
 .legend-row{
   display:flex;
-
   align-items:center;
-
   gap:10px;
-
   flex-wrap:wrap;
 }
 
@@ -227,18 +180,14 @@ header{
 
 .legend-item{
   display:inline-flex;
-
   align-items:center;
-
   gap:4px;
-
   white-space:nowrap;
 }
 
 .legend-chip{
   width:20px;
   height:20px;
-
   object-fit:contain;
 }
 
@@ -253,45 +202,39 @@ header{
 
 .board-wrap{
   position:relative;
-
   aspect-ratio:1/1;
-
   max-width:600px;
-
   margin:0 auto;
 }
 
 
 /* =========================
-   中央ガイド
+   中央進行ガイド
 ========================= */
 
 .center-card{
   position:absolute;
 
+  /* 箱自体は大きいまま */
   inset:33% 33%;
 
   border-radius:20px;
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
 
-  gap:10px;
+  /* 中身は少しコンパクト */
+  gap:8px;
 
-  background:
-    rgba(255,247,231,.97);
+  background:rgba(255,247,231,.97);
 
-  border:
-    3px dashed #d7a765;
+  border:3px dashed #d7a765;
 
   text-align:center;
 
-  padding:14px;
+  padding:12px;
 
   color:#9c5b2d;
 
@@ -304,19 +247,21 @@ header{
 .center-guide{
   font-weight:900;
 
-  font-size:16px;
+  /* 16px → 14px */
+  font-size:14px;
 
   line-height:1.35;
 }
 
 .center-sub{
-  font-size:11px;
+  /* 11px → 10px */
+  font-size:10px;
 
   color:#7f6a52;
 
-  line-height:1.4;
+  line-height:1.35;
 
-  min-height:15px;
+  min-height:14px;
 }
 
 .center-action{
@@ -324,11 +269,12 @@ header{
 
   border:none;
 
-  border-radius:14px;
+  border-radius:13px;
 
-  padding:10px 8px;
+  /* 少し小さく */
+  padding:8px 7px;
 
-  font-size:13px;
+  font-size:12px;
 
   font-weight:900;
 
@@ -344,7 +290,6 @@ header{
 
 .center-action:disabled{
   opacity:.38;
-
   cursor:not-allowed;
 }
 
@@ -380,11 +325,8 @@ header{
 
 .fence-card img{
   width:100%;
-
   height:auto;
-
   display:block;
-
   object-fit:contain;
 }
 
@@ -404,9 +346,7 @@ header{
     translate(-50%,-50%);
 
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
 
   gap:3px;
@@ -440,9 +380,7 @@ header{
 
 .gap-head{
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:4px;
@@ -450,7 +388,6 @@ header{
   white-space:nowrap;
 
   font-size:11px;
-
   font-weight:800;
 
   color:#5f4b37;
@@ -465,11 +402,8 @@ header{
 
 .gap-dot{
   width:9px;
-
   height:9px;
-
   border-radius:50%;
-
   flex:0 0 auto;
 }
 
@@ -480,9 +414,7 @@ header{
 
 .choice-icons{
   display:flex;
-
   flex-wrap:wrap;
-
   justify-content:center;
 
   gap:3px;
@@ -492,15 +424,12 @@ header{
 
 .choice-icon{
   width:21px;
-
   height:21px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   font-size:12px;
@@ -509,8 +438,7 @@ header{
     rgba(255,255,255,.92);
 
   border:
-    1px solid
-    rgba(87,63,37,.18);
+    1px solid rgba(87,63,37,.18);
 }
 
 
@@ -520,11 +448,8 @@ header{
 
 .chips{
   display:flex;
-
   flex-wrap:wrap;
-
   justify-content:center;
-
   align-content:flex-start;
 
   gap:4px;
@@ -534,15 +459,12 @@ header{
 
 .chip{
   width:34px;
-
   height:34px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:transparent;
@@ -553,7 +475,6 @@ header{
 
 .chip img{
   width:100%;
-
   height:100%;
 
   display:block;
@@ -563,15 +484,9 @@ header{
   border-radius:50%;
 
   transform:
-    rotate(
-      var(
-        --chip-rotation,
-        0deg
-      )
-    );
+    rotate(var(--chip-rotation,0deg));
 
-  transform-origin:
-    center center;
+  transform-origin:center center;
 }
 
 
@@ -583,7 +498,6 @@ header{
   padding:9px;
 
   display:flex;
-
   flex-direction:column;
 
   gap:8px;
@@ -606,10 +520,7 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(
-      2,
-      minmax(0,1fr)
-    );
+    repeat(2,minmax(0,1fr));
 
   gap:5px;
 }
@@ -638,15 +549,12 @@ header{
 
 .avatar{
   width:28px;
-
   height:28px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:#f4e0bd;
@@ -654,8 +562,7 @@ header{
   font-size:15px;
 
   border:
-    1px solid
-    rgba(95,70,38,.18);
+    1px solid rgba(95,70,38,.18);
 }
 
 .player.you{
@@ -667,13 +574,11 @@ header{
 
 .hut{
   font-size:10px;
-
   color:#71624f;
 }
 
 .pts{
   font-weight:900;
-
   font-size:12px;
 }
 
@@ -686,10 +591,7 @@ header{
   display:grid;
 
   grid-template-columns:
-    repeat(
-      6,
-      minmax(0,1fr)
-    );
+    repeat(6,minmax(0,1fr));
 
   gap:6px;
 }
@@ -709,11 +611,8 @@ header{
 
   min-height:86px;
 
-  writing-mode:
-    vertical-rl;
-
-  text-orientation:
-    upright;
+  writing-mode:vertical-rl;
+  text-orientation:upright;
 
   letter-spacing:.06em;
 
@@ -793,9 +692,7 @@ header{
 .reveal-head{
   display:flex;
 
-  justify-content:
-    space-between;
-
+  justify-content:space-between;
   align-items:center;
 
   gap:10px;
@@ -870,8 +767,7 @@ header{
   font-weight:900;
 
   box-shadow:
-    inset 0 -2px 0
-    rgba(0,0,0,.10);
+    inset 0 -2px 0 rgba(0,0,0,.10);
 }
 
 .reveal-hidden{
@@ -915,6 +811,11 @@ header{
 
   color:#b44819;
 }
+
+
+/* =========================
+   CPU NOTE
+========================= */
 
 .cpu-note{
   font-size:12px;
@@ -995,8 +896,7 @@ header{
   width:100%;
 
   box-shadow:
-    0 24px 70px
-    rgba(0,0,0,.30);
+    0 24px 70px rgba(0,0,0,.30);
 
   border:
     3px solid #efc884;
@@ -1019,8 +919,7 @@ header{
 .result{
   display:flex;
 
-  justify-content:
-    space-between;
+  justify-content:space-between;
 
   align-items:center;
 
@@ -1046,13 +945,7 @@ header{
    RESPONSIVE
 ========================= */
 
-@media(
-  max-height:780px
-)
-and
-(
-  min-width:861px
-){
+@media(max-height:780px) and (min-width:861px){
 
   .log{
     height:110px;
@@ -1064,20 +957,16 @@ and
 
   .cpu-note{
     font-size:10px;
-
     padding:6px;
   }
 
 }
 
 
-@media(
-  max-width:860px
-){
+@media(max-width:860px){
 
   .layout{
-    grid-template-columns:
-      1fr;
+    grid-template-columns:1fr;
   }
 
   .board-wrap{
@@ -1087,16 +976,12 @@ and
 }
 
 
-@media(
-  max-width:560px
-){
+@media(max-width:560px){
 
   .side{
     display:flex;
-
     flex-direction:column;
   }
-
 
   .cards-section{
     order:1;
@@ -1132,8 +1017,7 @@ and
 
     max-width:100%;
 
-    aspect-ratio:
-      1/1.05;
+    aspect-ratio:1/1.05;
   }
 
 
@@ -1149,14 +1033,12 @@ and
 
   .chip{
     width:27px;
-
     height:27px;
   }
 
 
   .choice-icon{
     width:17px;
-
     height:17px;
 
     font-size:9px;
@@ -1170,29 +1052,31 @@ and
   }
 
 
+  /* 中央の箱は大きいまま */
   .center-card{
     inset:32% 32%;
 
-    padding:10px;
+    padding:8px;
 
-    gap:7px;
+    gap:6px;
   }
 
 
+  /* 文字だけコンパクト */
   .center-guide{
-    font-size:13px;
+    font-size:12px;
   }
 
 
   .center-sub{
-    font-size:10px;
+    font-size:9px;
   }
 
 
   .center-action{
-    font-size:12px;
+    font-size:11px;
 
-    padding:8px 6px;
+    padding:7px 5px;
   }
 
 
@@ -1224,7 +1108,6 @@ and
 
   .legend-chip{
     width:18px;
-
     height:18px;
   }
 
@@ -1247,8 +1130,7 @@ and
     </h1>
 
     <small>
-      6人プレイ /
-      3ラウンド体験版
+      6人プレイ / 3ラウンド体験版
     </small>
 
   </div>
@@ -1260,9 +1142,7 @@ and
 
     <br>
 
-    <strong
-      id="roundLabel"
-    >
+    <strong id="roundLabel">
       1 / 3
     </strong>
 
@@ -1275,12 +1155,7 @@ and
 <div class="layout">
 
 
-<section
-  class="
-    panel
-    board-panel
-  "
->
+<section class="panel board-panel">
 
 
   <div class="board-title">
@@ -1335,12 +1210,7 @@ and
       </div>
 
 
-      <div
-        class="
-          legend-row
-          legend-wolf-row
-        "
-      >
+      <div class="legend-row legend-wolf-row">
 
         <span class="legend-item">
 
@@ -1416,20 +1286,13 @@ and
 
 
 
-<aside
-  class="
-    panel
-    side
-  "
->
+<aside class="panel side">
 
 
   <div class="players-section">
 
     <div class="section-title">
-
       プレイヤー
-
     </div>
 
 
@@ -1445,9 +1308,7 @@ and
   <div class="cards-section">
 
     <div class="section-title">
-
       あなたの色カード
-
     </div>
 
 
@@ -1468,16 +1329,12 @@ and
     <div class="reveal-head">
 
       <strong>
-
         今回のカード
-
       </strong>
 
 
       <span id="phaseText">
-
         色カードを1枚選んでください
-
       </span>
 
     </div>
@@ -1502,9 +1359,7 @@ and
   <div class="log-section">
 
     <div class="section-title">
-
       ゲームログ
-
     </div>
 
 
@@ -1519,11 +1374,8 @@ and
 
   <div class="cpu-note">
 
-    CPUは
-    「羊の得点価値」
-    「オオカミの危険」
-    「他者とのバッティング予測」
-    にランダムな揺らぎを加えて判断します。
+    CPUは「羊の得点価値」「オオカミの危険」「他者とのバッティング予測」に
+    ランダムな揺らぎを加えて判断します。
 
     CPU同士は互いの選択を事前には知りません。
 
@@ -1683,10 +1535,8 @@ const ANIMALS={
   wolf:{
     label:'オオカミ',
     score:0,
-    imgLeft:
-      '../assets/wolf_left_chip.jpg',
-    imgRight:
-      '../assets/wolf_right_chip.jpg'
+    imgLeft:'../assets/wolf_left_chip.jpg',
+    imgRight:'../assets/wolf_right_chip.jpg'
   }
 
 };
@@ -1718,10 +1568,7 @@ function freshBag(){
 
 
   for(
-    const [
-      type,
-      count
-    ]
+    const [type,count]
     of spec
   ){
 
@@ -1918,9 +1765,7 @@ function newGame(){
 
 
   log(
-
     '<span class="major">ゲーム開始！</span> 各牧場に動物を1枚ずつ配置しました。'
-
   );
 
 
@@ -2110,8 +1955,7 @@ function renderReveal(){
                   <div
                     class="reveal-color"
                     style="
-                      background:
-                      ${color.hex}
+                      background:${color.hex}
                     "
                   >
 
@@ -2211,8 +2055,7 @@ function renderReveal(){
                 <div
                   class="reveal-color"
                   style="
-                    background:
-                    ${color.hex}
+                    background:${color.hex}
                   "
                 >
 
@@ -2695,9 +2538,9 @@ function renderBoard(){
 
 
 
-  /* =====================
-     柵を外側へ拡張
-  ===================== */
+  /* =========================
+     柵：外側へ拡張済み
+  ========================= */
 
   const fences=[
 
@@ -2705,48 +2548,42 @@ function renderBoard(){
       x:50,
       y:10,
       rot:'180deg',
-      img:
-        '../assets/fence_card_front_03.jpg'
+      img:'../assets/fence_card_front_03.jpg'
     },
 
     {
       x:81,
       y:27,
       rot:'240deg',
-      img:
-        '../assets/fence_card_front_02.jpg'
+      img:'../assets/fence_card_front_02.jpg'
     },
 
     {
       x:81,
       y:73,
       rot:'300deg',
-      img:
-        '../assets/fence_card_front_01.jpg'
+      img:'../assets/fence_card_front_01.jpg'
     },
 
     {
       x:50,
       y:90,
       rot:'0deg',
-      img:
-        '../assets/fence_card_front_06.jpg'
+      img:'../assets/fence_card_front_06.jpg'
     },
 
     {
       x:19,
       y:73,
       rot:'60deg',
-      img:
-        '../assets/fence_card_front_08.jpg'
+      img:'../assets/fence_card_front_08.jpg'
     },
 
     {
       x:19,
       y:27,
       rot:'120deg',
-      img:
-        '../assets/fence_card_front_07.jpg'
+      img:'../assets/fence_card_front_07.jpg'
     }
 
   ];
@@ -2802,9 +2639,9 @@ function renderBoard(){
 
 
 
-  /* =====================
-     チップも外側へ拡張
-  ===================== */
+  /* =========================
+     チップ位置：外側へ拡張済み
+  ========================= */
 
   const gapPos={
 
@@ -3033,8 +2870,7 @@ function renderBoard(){
           <span
             class="gap-dot"
             style="
-              background:
-              ${color.hex}
+              background:${color.hex}
             "
           ></span>
 
@@ -3246,8 +3082,7 @@ function renderPlayers(){
         <div
           class="avatar"
           style="
-            background:
-            ${avatarBg}
+            background:${avatarBg}
           "
         >
 
@@ -3735,9 +3570,7 @@ function confirmColorSelection(){
 
     </span>
 
-    あなたは
-    「${colorName(humanColor)}」
-    を選びました。`
+    あなたは「${colorName(humanColor)}」を選びました。`
 
   );
 

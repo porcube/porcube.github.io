@@ -28,21 +28,10 @@ body{
     "Yu Gothic",
     system-ui,
     sans-serif;
-
   color:var(--ink);
-
   background:
-    radial-gradient(
-      circle at 20% 10%,
-      rgba(255,255,255,.95),
-      transparent 35%
-    ),
-    linear-gradient(
-      180deg,
-      #fff8e8,
-      #ffe6bd
-    );
-
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95), transparent 35%),
+    linear-gradient(180deg,#fff8e8,#ffe6bd);
   min-height:100vh;
 }
 
@@ -101,10 +90,7 @@ header{
 
 .layout{
   display:grid;
-  grid-template-columns:
-    minmax(0,1.75fr)
-    minmax(250px,.72fr);
-
+  grid-template-columns:minmax(0,1.75fr) minmax(250px,.72fr);
   gap:10px;
 }
 
@@ -122,18 +108,9 @@ header{
 
 .board-panel{
   padding:10px;
-
   background:
-    radial-gradient(
-      circle at 22% 18%,
-      rgba(255,255,255,.16),
-      transparent 30%
-    ),
-    linear-gradient(
-      180deg,
-      #8fcf73 0%,
-      #6fb457 100%
-    );
+    radial-gradient(circle at 22% 18%, rgba(255,255,255,.16), transparent 30%),
+    linear-gradient(180deg,#8fcf73 0%,#6fb457 100%);
 }
 
 .board-title{
@@ -158,16 +135,12 @@ header{
 .legend{
   font-size:12px;
   color:#294d26;
-
   background:rgba(255,255,255,.74);
-
   padding:5px 9px;
   border-radius:16px;
-
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-
   gap:3px;
 }
 
@@ -193,7 +166,6 @@ header{
   width:20px;
   height:20px;
   object-fit:contain;
-  vertical-align:middle;
 }
 
 .legend-note{
@@ -212,34 +184,21 @@ header{
   margin:0 auto;
 }
 
-
-/* 中央メッセージ */
-
 .center-card{
   position:absolute;
-
   inset:38% 38%;
-
   border-radius:15px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:#fff7e7;
-
   border:3px dashed #d7a765;
-
   text-align:center;
-
   font-weight:800;
   font-size:14px;
   line-height:1.45;
-
   padding:10px;
-
   color:#9c5b2d;
-
   z-index:2;
 }
 
@@ -250,108 +209,69 @@ header{
 
 .fence-card{
   position:absolute;
-
   width:18%;
   height:auto;
-
-  transform:
-    translate(-50%,-50%)
-    rotate(var(--rot,0deg));
-
+  transform:translate(-50%,-50%) rotate(var(--rot,0deg));
   background:transparent;
-
-  box-shadow:
-    0 5px 14px rgba(0,0,0,.12);
-
+  box-shadow:0 5px 14px rgba(0,0,0,.12);
   overflow:visible;
-
   z-index:1;
 }
 
 .fence-card img{
   width:100%;
   height:auto;
-
   display:block;
-
   object-fit:contain;
 }
 
 
 /* =============================
-   牧場チップ位置
+   牧場
 ============================= */
 
 .gap-pasture{
   position:absolute;
-
   width:19%;
   min-height:13%;
-
-  transform:
-    translate(-50%,-50%);
-
+  transform:translate(-50%,-50%);
   display:flex;
   flex-direction:column;
   align-items:center;
-
   gap:3px;
   padding:2px;
-
   z-index:3;
-
   border-radius:14px;
-
-  transition:
-    .15s box-shadow,
-    .15s transform;
+  transition:.15s box-shadow,.15s transform;
 }
 
 .gap-pasture.battled{
-  box-shadow:
-    0 0 0 7px rgba(255,72,72,.16);
-
-  transform:
-    translate(-50%,-50%)
-    scale(1.04);
+  box-shadow:0 0 0 7px rgba(255,72,72,.16);
+  transform:translate(-50%,-50%) scale(1.04);
 }
 
 .gap-pasture.target{
-  box-shadow:
-    0 0 0 5px rgba(255,179,0,.20);
+  box-shadow:0 0 0 5px rgba(255,179,0,.20);
 }
-
-
-/* 色 + 得点 */
 
 .gap-head{
   display:flex;
   align-items:center;
   justify-content:center;
-
   gap:4px;
-
   white-space:nowrap;
-
   font-size:11px;
   font-weight:800;
-
   color:#5f4b37;
-
-  background:
-    rgba(255,255,255,.88);
-
+  background:rgba(255,255,255,.88);
   border-radius:999px;
-
   padding:2px 6px;
 }
 
 .gap-dot{
   width:9px;
   height:9px;
-
   border-radius:50%;
-
   flex:0 0 auto;
 }
 
@@ -364,29 +284,20 @@ header{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-
   gap:3px;
-
   min-height:18px;
 }
 
 .choice-icon{
   width:21px;
   height:21px;
-
   border-radius:50%;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   font-size:12px;
-
-  background:
-    rgba(255,255,255,.92);
-
-  border:
-    1px solid rgba(87,63,37,.18);
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(87,63,37,.18);
 }
 
 
@@ -397,46 +308,30 @@ header{
 .chips{
   display:flex;
   flex-wrap:wrap;
-
   justify-content:center;
   align-content:flex-start;
-
   gap:4px;
-
   min-height:50px;
 }
 
 .chip{
   width:34px;
   height:34px;
-
   border-radius:50%;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:transparent;
-
-  position:relative;
-
-  box-shadow:
-    0 2px 5px rgba(0,0,0,.10);
+  box-shadow:0 2px 5px rgba(0,0,0,.10);
 }
 
 .chip img{
   width:100%;
   height:100%;
-
   display:block;
-
   object-fit:contain;
-
   border-radius:50%;
-
-  transform:
-    rotate(var(--chip-rotation,0deg));
-
+  transform:rotate(var(--chip-rotation,0deg));
   transform-origin:center center;
 }
 
@@ -447,17 +342,14 @@ header{
 
 .side{
   padding:9px;
-
   display:flex;
   flex-direction:column;
-
   gap:8px;
 }
 
 .section-title{
   font-weight:800;
   color:#915026;
-
   margin-bottom:4px;
 }
 
@@ -468,62 +360,36 @@ header{
 
 .players{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,minmax(0,1fr));
-
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:5px;
 }
 
 .player{
   display:grid;
-
-  grid-template-columns:
-    auto 1fr auto;
-
+  grid-template-columns:auto 1fr auto;
   gap:6px;
-
   align-items:center;
-
   padding:6px 7px;
-
   background:white;
-
   border-radius:14px;
-
-  border:
-    1px solid #ead8ba;
-
+  border:1px solid #ead8ba;
   min-width:0;
 }
 
 .avatar{
   width:28px;
   height:28px;
-
   border-radius:50%;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   background:#f4e0bd;
-
   font-size:15px;
-
-  border:
-    1px solid rgba(95,70,38,.18);
-
-  box-shadow:
-    inset 0 -2px 0 rgba(0,0,0,.06);
-
-  flex-shrink:0;
+  border:1px solid rgba(95,70,38,.18);
 }
 
 .player.you{
-  border:
-    2px solid #0d7199;
-
+  border:2px solid #0d7199;
   background:#f3fbff;
 }
 
@@ -544,64 +410,40 @@ header{
 
 .cards{
   display:grid;
-
-  grid-template-columns:
-    repeat(6,minmax(0,1fr));
-
+  grid-template-columns:repeat(6,minmax(0,1fr));
   gap:6px;
 }
 
 .cardbtn{
   border:none;
-
   border-radius:14px;
-
   padding:8px 4px;
-
   color:white;
-
   font-weight:900;
-
   cursor:pointer;
-
   min-height:86px;
-
   writing-mode:vertical-rl;
   text-orientation:upright;
-
   letter-spacing:.06em;
-
-  box-shadow:
-    0 4px 10px rgba(0,0,0,.11);
-
-  transition:
-    .15s transform,
-    .15s opacity,
-    .15s box-shadow;
+  box-shadow:0 4px 10px rgba(0,0,0,.11);
+  transition:.15s transform,.15s opacity,.15s box-shadow;
 }
 
 .cardbtn.selected{
-  outline:
-    4px solid #fff;
-
+  outline:4px solid #fff;
   box-shadow:
     0 0 0 3px #3f3024,
     0 6px 14px rgba(0,0,0,.18);
-
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 }
 
 .cardbtn:hover{
-  transform:
-    translateY(-2px);
+  transform:translateY(-2px);
 }
 
 .cardbtn:disabled{
   opacity:.35;
-
   cursor:not-allowed;
-
   transform:none;
 }
 
@@ -612,22 +454,16 @@ header{
 
 .actionbar{
   display:flex;
-
   gap:6px;
-
   flex-wrap:wrap;
 }
 
 button.primary,
 button.secondary{
   border:none;
-
   border-radius:14px;
-
   padding:8px 10px;
-
   font-weight:900;
-
   cursor:pointer;
 }
 
@@ -653,11 +489,8 @@ button.secondary{
 
 .step-help{
   margin-top:6px;
-
   font-size:12px;
-
   color:#7f6a52;
-
   line-height:1.45;
 }
 
@@ -668,25 +501,17 @@ button.secondary{
 
 .reveal-panel{
   margin-bottom:6px;
-
   padding:6px;
-
   border-radius:14px;
-
   background:#fff;
-
-  border:
-    2px solid #efd2a2;
+  border:2px solid #efd2a2;
 }
 
 .reveal-head{
   display:flex;
-
   justify-content:space-between;
   align-items:center;
-
   gap:10px;
-
   margin-bottom:6px;
 }
 
@@ -696,48 +521,31 @@ button.secondary{
 
 #phaseText{
   font-size:12px;
-
   color:#7f6a52;
-
   text-align:right;
 }
 
 .reveal-grid{
   display:grid;
-
-  grid-template-columns:
-    repeat(6,1fr);
-
+  grid-template-columns:repeat(6,1fr);
   gap:7px;
 }
 
 .reveal-card{
   border-radius:12px;
-
   padding:5px 4px;
-
   text-align:center;
-
-  border:
-    1px solid #ead8ba;
-
+  border:1px solid #ead8ba;
   background:#faf7f0;
-
   min-height:50px;
-
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
-
   gap:5px;
 }
 
 .reveal-card.you{
-  border:
-    2px solid #0d7199;
-
+  border:2px solid #0d7199;
   background:#f3fbff;
 }
 
@@ -748,50 +556,16 @@ button.secondary{
 
 .reveal-color{
   color:white;
-
   border-radius:10px;
-
   padding:5px 3px;
-
   font-weight:900;
-
-  box-shadow:
-    inset 0 -2px 0 rgba(0,0,0,.10);
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.10);
 }
 
 .reveal-hidden{
   color:#8a7a67;
-
   font-weight:700;
-
   font-size:11px;
-}
-
-
-/* =============================
-   CHOICE STRIP
-============================= */
-
-.choice-strip{
-  display:flex;
-
-  gap:5px;
-
-  flex-wrap:wrap;
-
-  margin-top:8px;
-}
-
-.choice{
-  padding:4px 7px;
-
-  border-radius:999px;
-
-  color:#fff;
-
-  font-size:12px;
-
-  font-weight:800;
 }
 
 
@@ -801,20 +575,12 @@ button.secondary{
 
 .log{
   height:150px;
-
   overflow:auto;
-
   background:#fff;
-
-  border:
-    1px solid #ead8ba;
-
+  border:1px solid #ead8ba;
   border-radius:14px;
-
   padding:8px;
-
   font-size:11px;
-
   line-height:1.55;
 }
 
@@ -827,43 +593,27 @@ button.secondary{
   color:#b44819;
 }
 
-
-/* =============================
-   CPU NOTE
-============================= */
-
 .cpu-note{
   font-size:12px;
-
   line-height:1.5;
-
   background:#fff5df;
-
   border-radius:12px;
-
   padding:9px;
 }
 
 
 /* =============================
-   RESULT MODAL
+   RESULT
 ============================= */
 
 .overlay{
   position:fixed;
-
   inset:0;
-
-  background:
-    rgba(47,32,20,.55);
-
+  background:rgba(47,32,20,.55);
   display:none;
-
   align-items:center;
   justify-content:center;
-
   padding:20px;
-
   z-index:20;
 }
 
@@ -873,56 +623,37 @@ button.secondary{
 
 .modal{
   background:#fffaf0;
-
   border-radius:26px;
-
   padding:22px;
-
   max-width:620px;
-
   width:100%;
-
-  box-shadow:
-    0 24px 70px rgba(0,0,0,.30);
-
-  border:
-    3px solid #efc884;
+  box-shadow:0 24px 70px rgba(0,0,0,.30);
+  border:3px solid #efc884;
 }
 
 .modal h2{
   margin-top:0;
-
   color:#0d7199;
 }
 
 .results{
   display:grid;
-
   gap:6px;
-
   margin:15px 0;
 }
 
 .result{
   display:flex;
-
   justify-content:space-between;
   align-items:center;
-
   padding:10px 12px;
-
   border-radius:14px;
-
   background:#fff;
-
-  border:
-    1px solid #ead8ba;
+  border:1px solid #ead8ba;
 }
 
 .result.win{
-  border:
-    3px solid #f2b640;
-
+  border:3px solid #f2b640;
   background:#fff8d9;
 }
 
@@ -944,10 +675,6 @@ button.secondary{
   .cpu-note{
     font-size:10px;
     padding:6px;
-  }
-
-  .brand small{
-    font-size:11px;
   }
 }
 
@@ -971,43 +698,17 @@ button.secondary{
     flex-direction:column;
   }
 
-  .cards-section{
-    order:1;
-  }
-
-  .reveal-panel{
-    order:2;
-  }
-
-  .actionbar{
-    order:3;
-  }
-
-  .step-help{
-    order:4;
-  }
-
-  .players-section{
-    order:5;
-  }
-
-  .log-section{
-    order:6;
-  }
-
-  .cpu-note{
-    order:7;
-  }
-
-  .app{
-    padding:10px;
-  }
+  .cards-section{order:1}
+  .reveal-panel{order:2}
+  .actionbar{order:3}
+  .step-help{order:4}
+  .players-section{order:5}
+  .log-section{order:6}
+  .cpu-note{order:7}
 
   .board-wrap{
     width:100%;
-
     max-width:100%;
-
     aspect-ratio:1/1.05;
   }
 
@@ -1017,8 +718,6 @@ button.secondary{
 
   .gap-pasture{
     width:21%;
-
-    min-height:11%;
   }
 
   .chip{
@@ -1026,58 +725,35 @@ button.secondary{
     height:27px;
   }
 
-  .choice-icons{
-    gap:2px;
-
-    min-height:14px;
-  }
-
   .choice-icon{
     width:17px;
     height:17px;
-
     font-size:9px;
   }
 
   .gap-head{
     font-size:9px;
-
     padding:1px 4px;
-
-    gap:3px;
-  }
-
-  .gap-dot{
-    width:7px;
-    height:7px;
   }
 
   .center-card{
     inset:37% 37%;
-
     font-size:12px;
-
     padding:8px;
   }
 
   .cards{
-    grid-template-columns:
-      repeat(6,minmax(0,1fr));
-
     gap:4px;
   }
 
   .cardbtn{
     min-height:76px;
-
     padding:6px 2px;
-
     font-size:11px;
   }
 
   .legend{
     font-size:11px;
-
     padding:4px 6px;
   }
 
@@ -1101,26 +777,13 @@ button.secondary{
 <header>
 
   <div class="brand">
-
     <h1>SCLAMBLE</h1>
-
-    <small>
-      6人プレイ / 3ラウンド体験版
-    </small>
-
+    <small>6人プレイ / 3ラウンド体験版</small>
   </div>
 
-
   <div class="roundbox">
-
-    ROUND
-
-    <br>
-
-    <strong id="roundLabel">
-      1 / 3
-    </strong>
-
+    ROUND<br>
+    <strong id="roundLabel">1 / 3</strong>
   </div>
 
 </header>
@@ -1129,59 +792,29 @@ button.secondary{
 <div class="layout">
 
 
-<!-- =============================
-     牧場
-============================= -->
-
 <section class="panel board-panel">
 
   <div class="board-title">
 
-    <h2>
-      牧場
-    </h2>
-
+    <h2>牧場</h2>
 
     <div class="legend">
 
       <div class="legend-row">
 
         <span class="legend-item">
-
-          <img
-            class="legend-chip"
-            src="../assets/white_chip.jpg"
-            alt="白羊"
-          >
-
+          <img class="legend-chip" src="../assets/white_chip.jpg" alt="白羊">
           白=1点
-
         </span>
 
-
         <span class="legend-item">
-
-          <img
-            class="legend-chip"
-            src="../assets/red_chip.jpg"
-            alt="赤羊"
-          >
-
+          <img class="legend-chip" src="../assets/red_chip.jpg" alt="赤羊">
           赤=2点
-
         </span>
 
-
         <span class="legend-item">
-
-          <img
-            class="legend-chip"
-            src="../assets/gold_chip.jpg"
-            alt="金羊"
-          >
-
+          <img class="legend-chip" src="../assets/gold_chip.jpg" alt="金羊">
           金=3点
-
         </span>
 
       </div>
@@ -1190,15 +823,8 @@ button.secondary{
       <div class="legend-row legend-wolf-row">
 
         <span class="legend-item">
-
-          <img
-            class="legend-chip"
-            src="../assets/wolf_right_chip.jpg"
-            alt="オオカミ"
-          >
-
+          <img class="legend-chip" src="../assets/wolf_right_chip.jpg" alt="オオカミ">
           =0点
-
         </span>
 
         <span class="legend-note">
@@ -1212,10 +838,7 @@ button.secondary{
   </div>
 
 
-  <div
-    class="board-wrap"
-    id="board"
-  >
+  <div class="board-wrap" id="board">
 
     <div class="center-card">
       同じ色の牧場を選ぶと
@@ -1229,10 +852,6 @@ button.secondary{
 
 
 
-<!-- =============================
-     SIDE
-============================= -->
-
 <aside class="panel side">
 
 
@@ -1242,10 +861,7 @@ button.secondary{
       プレイヤー
     </div>
 
-    <div
-      class="players"
-      id="players"
-    ></div>
+    <div class="players" id="players"></div>
 
   </div>
 
@@ -1257,39 +873,22 @@ button.secondary{
       あなたの色カード
     </div>
 
-
-    <div
-      class="cards"
-      id="cards"
-    ></div>
+    <div class="cards" id="cards"></div>
 
 
     <button
       class="primary"
       id="confirmColorBtn"
-      style="
-        display:none;
-        width:100%;
-        margin-top:8px;
-      "
+      style="display:none;width:100%;margin-top:8px"
     >
       色を決定する
     </button>
-
-
-    <div
-      class="choice-strip"
-      id="choiceStrip"
-    ></div>
 
   </div>
 
 
 
-  <div
-    class="reveal-panel"
-    id="revealPanel"
-  >
+  <div class="reveal-panel" id="revealPanel">
 
     <div class="reveal-head">
 
@@ -1303,10 +902,7 @@ button.secondary{
 
     </div>
 
-    <div
-      class="reveal-grid"
-      id="revealGrid"
-    ></div>
+    <div class="reveal-grid" id="revealGrid"></div>
 
   </div>
 
@@ -1347,10 +943,7 @@ button.secondary{
       ゲームログ
     </div>
 
-    <div
-      class="log"
-      id="log"
-    ></div>
+    <div class="log" id="log"></div>
 
   </div>
 
@@ -1358,36 +951,22 @@ button.secondary{
 
   <div class="cpu-note">
 
-    CPUは
-
-    「羊の得点価値」
-
-    「オオカミの危険」
-
-    「他者とのバッティング予測」
-
-    にランダムな揺らぎを加えて判断します。
-
+    CPUは「羊の得点価値」「オオカミの危険」「他者とのバッティング予測」に
+    ランダムな揺らぎを加えて判断します。
     CPU同士は互いの選択を事前には知りません。
 
   </div>
 
 </aside>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- =============================
-     RESULT
-============================= -->
 
-<div
-  class="overlay"
-  id="overlay"
->
+<div class="overlay" id="overlay">
 
   <div class="modal">
 
@@ -1401,15 +980,9 @@ button.secondary{
       5・6ラウンド目に各牧場へ2チップ追加されます。
     </p>
 
-    <div
-      class="results"
-      id="results"
-    ></div>
+    <div class="results" id="results"></div>
 
-    <button
-      class="primary"
-      id="replayBtn"
-    >
+    <button class="primary" id="replayBtn">
       もう一度遊ぶ
     </button>
 
@@ -1421,66 +994,23 @@ button.secondary{
 
 <script>
 
-/* =============================
-   COLOR
-============================= */
-
 const COLORS=[
-
-  {
-    id:'yellow',
-    name:'黄',
-    hex:'#e4c400',
-    soft:'#fff4a8'
-  },
-
-  {
-    id:'green',
-    name:'緑',
-    hex:'#28a84b',
-    soft:'#d9f3dc'
-  },
-
-  {
-    id:'cyan',
-    name:'水',
-    hex:'#17a6d1',
-    soft:'#d8f2fa'
-  },
-
-  {
-    id:'red',
-    name:'赤',
-    hex:'#e83f43',
-    soft:'#ffdcdc'
-  },
-
-  {
-    id:'blue',
-    name:'青',
-    hex:'#2348b8',
-    soft:'#dde4ff'
-  },
-
-  {
-    id:'pink',
-    name:'桃',
-    hex:'#d83aa8',
-    soft:'#f8dcf1'
-  }
-
+  {id:'yellow',name:'黄',hex:'#e4c400',soft:'#fff4a8'},
+  {id:'green',name:'緑',hex:'#28a84b',soft:'#d9f3dc'},
+  {id:'cyan',name:'水',hex:'#17a6d1',soft:'#d8f2fa'},
+  {id:'red',name:'赤',hex:'#e83f43',soft:'#ffdcdc'},
+  {id:'blue',name:'青',hex:'#2348b8',soft:'#dde4ff'},
+  {id:'pink',name:'桃',hex:'#d83aa8',soft:'#f8dcf1'}
 ];
 
 
 const PLAYER_AVATAR_BG=[
-
   '#dff4ff',
   '#ffe6cc',
   '#efe6d8',
   '#fde8f2',
   '#e7f0ff',
   '#e3f6e4'
-
 ];
 
 
@@ -1517,48 +1047,32 @@ const ANIMALS={
 let game;
 
 
-/* =============================
-   BAG
-============================= */
 
 function freshBag(){
 
   const spec=[
-
     ['white',18],
     ['red',6],
     ['gold',18],
     ['wolf',6]
-
   ];
 
-
   let bag=[];
-
   let id=0;
-
 
   for(const [type,count] of spec){
 
     for(let i=0;i<count;i++){
 
       bag.push({
-
         id:++id,
-
-        type:type,
-
-        dir:
-          Math.random()<.5
-            ? -1
-            : 1
-
+        type,
+        dir:Math.random()<.5?-1:1
       });
 
     }
 
   }
-
 
   return shuffle(bag);
 
@@ -1570,7 +1084,6 @@ function shuffle(a){
 
   a=[...a];
 
-
   for(let i=a.length-1;i>0;i--){
 
     const j=
@@ -1578,30 +1091,21 @@ function shuffle(a){
         Math.random()*(i+1)
       );
 
-
     [
       a[i],
       a[j]
-
     ]=[
-
       a[j],
       a[i]
-
     ];
 
   }
-
 
   return a;
 
 }
 
 
-
-/* =============================
-   NEW GAME
-============================= */
 
 function newGame(){
 
@@ -1679,16 +1183,9 @@ function newGame(){
 
     ],
 
-
-    /* 公開後の6人分の選択 */
-
     currentChoices:null,
 
-
-    /* 人間が現在仮選択している色 */
-
     pendingHumanColor:null,
-
 
     pendingCounts:null,
 
@@ -1720,29 +1217,17 @@ function newGame(){
 
 
 
-/* =============================
-   DRAW
-============================= */
-
-function drawTo(
-  colorId,
-  n
-){
+function drawTo(colorId,n){
 
   for(let i=0;i<n;i++){
 
     if(!game.bag.length){
-
       break;
-
     }
 
-
-    game
-      .pastures[colorId]
-      .push(
-        game.bag.pop()
-      );
+    game.pastures[colorId].push(
+      game.bag.pop()
+    );
 
   }
 
@@ -1750,24 +1235,13 @@ function drawTo(
 
 
 
-/* =============================
-   SCORE
-============================= */
-
 function scoreChips(chips){
 
   return chips.reduce(
 
-    (
-      total,
-      chip
-    )=>
-
-      total
-      +
-      ANIMALS[
-        chip.type
-      ].score,
+    (total,chip)=>
+      total+
+      ANIMALS[chip.type].score,
 
     0
 
@@ -1777,10 +1251,7 @@ function scoreChips(chips){
 
 
 
-function countType(
-  chips,
-  type
-){
+function countType(chips,type){
 
   return chips.filter(
     chip=>chip.type===type
@@ -1790,20 +1261,12 @@ function countType(
 
 
 
-/* =============================
-   RENDER
-============================= */
-
 function render(){
 
   renderBoard();
-
   renderPlayers();
-
   renderCards();
-
   renderReveal();
-
 
   document
     .getElementById('roundLabel')
@@ -1815,57 +1278,37 @@ function render(){
 
 
 /* =============================
-   REVEAL
+   今回のカード
 ============================= */
 
 function renderReveal(){
 
   const grid=
-    document.getElementById(
-      'revealGrid'
-    );
-
+    document.getElementById('revealGrid');
 
   const phase=
-    document.getElementById(
-      'phaseText'
-    );
-
+    document.getElementById('phaseText');
 
   const stepBtn=
-    document.getElementById(
-      'nextStepBtn'
-    );
-
+    document.getElementById('nextStepBtn');
 
   const help=
-    document.getElementById(
-      'stepHelp'
-    );
+    document.getElementById('stepHelp');
 
 
-  /* =========================
-     CPU伏せ状態
-  ========================= */
 
   if(game.step==='locked'){
 
     grid.innerHTML=
       game.players
         .map(
-          (
-            player,
-            index
-          )=>{
+          (player,index)=>{
 
             if(index===0){
 
               const color=
                 COLORS.find(
-                  x=>
-                    x.id
-                    ===
-                    game.currentChoices[0]
+                  x=>x.id===game.currentChoices[0]
                 );
 
 
@@ -1876,16 +1319,13 @@ function renderReveal(){
                   <div class="reveal-name">
 
                     ${game.players[0].avatar}
-
                     あなた
 
                   </div>
 
                   <div
                     class="reveal-color"
-                    style="
-                      background:${color.hex}
-                    "
+                    style="background:${color.hex}"
                   >
 
                     ${color.name}カード
@@ -1906,7 +1346,6 @@ function renderReveal(){
                 <div class="reveal-name">
 
                   ${player.avatar}
-
                   ${player.name}
 
                 </div>
@@ -1928,19 +1367,14 @@ function renderReveal(){
   }
 
 
-  /* =========================
-     公開後
-  ========================= */
-
   else if(game.currentChoices){
 
     grid.innerHTML=
+
       game.currentChoices
+
         .map(
-          (
-            colorId,
-            index
-          )=>{
+          (colorId,index)=>{
 
             const color=
               COLORS.find(
@@ -1969,12 +1403,9 @@ function renderReveal(){
 
                 </div>
 
-
                 <div
                   class="reveal-color"
-                  style="
-                    background:${color.hex}
-                  "
+                  style="background:${color.hex}"
                 >
 
                   ${color.name}カード
@@ -1987,24 +1418,20 @@ function renderReveal(){
 
           }
         )
+
         .join('');
 
   }
 
 
-  /* =========================
-     初期状態
-  ========================= */
-
   else{
 
     grid.innerHTML=
+
       game.players
+
         .map(
-          (
-            player,
-            index
-          )=>`
+          (player,index)=>`
 
           <div
             class="
@@ -2016,7 +1443,6 @@ function renderReveal(){
             <div class="reveal-name">
 
               ${player.avatar}
-
               ${player.name}
 
             </div>
@@ -2031,6 +1457,7 @@ function renderReveal(){
 
         `
         )
+
         .join('');
 
   }
@@ -2065,16 +1492,13 @@ function renderReveal(){
 
 
 
-  /* =========================
-     色選択
-  ========================= */
-
   if(game.step==='choose'){
 
     stepBtn.style.display='none';
 
 
     help.textContent=
+
       game.pendingHumanColor
 
         ? `${colorName(game.pendingHumanColor)}を選択中です。「色を決定する」で確定します。`
@@ -2090,6 +1514,7 @@ function renderReveal(){
 
   stepBtn.style.display=
     'inline-block';
+
 
 
   const labels={
@@ -2112,6 +1537,7 @@ function renderReveal(){
   if(game.step==='roundEnd'){
 
     stepBtn.textContent=
+
       game.round===3
 
         ? 'OK・最終結果を見る'
@@ -2120,6 +1546,7 @@ function renderReveal(){
 
 
     help.textContent=
+
       game.round===3
 
         ? '結果を確認してから最終順位へ進みます。'
@@ -2131,9 +1558,7 @@ function renderReveal(){
   else{
 
     stepBtn.textContent=
-      labels[game.step]
-      ||
-      'OK';
+      labels[game.step]||'OK';
 
 
     help.textContent=
@@ -2145,19 +1570,13 @@ function renderReveal(){
 
 
 
-/* =============================
-   BOARD 選択表示
-============================= */
-
 function shouldShowSelections(){
 
   return [
-
     'reveal',
     'move',
     'acquire',
     'roundEnd'
-
   ].includes(
     game.step
   );
@@ -2166,9 +1585,7 @@ function shouldShowSelections(){
 
 
 
-function selectedPlayersForColor(
-  colorId
-){
+function selectedPlayersForColor(colorId){
 
   if(
     !game.currentChoices
@@ -2184,15 +1601,10 @@ function selectedPlayersForColor(
   return game.currentChoices
 
     .map(
-      (
-        choice,
-        index
-      )=>
-
+      (choice,index)=>
         choice===colorId
           ? game.players[index]
           : null
-
     )
 
     .filter(Boolean);
@@ -2208,9 +1620,7 @@ function selectedPlayersForColor(
 function renderBoard(){
 
   const board=
-    document.getElementById(
-      'board'
-    );
+    document.getElementById('board');
 
 
   board
@@ -2222,9 +1632,6 @@ function renderBoard(){
     );
 
 
-  /* =========================
-     柵カード
-  ========================= */
 
   const fences=[
 
@@ -2273,13 +1680,12 @@ function renderBoard(){
   ];
 
 
+
   fences.forEach(
     fence=>{
 
       const element=
-        document.createElement(
-          'div'
-        );
+        document.createElement('div');
 
 
       element.className=
@@ -2294,12 +1700,10 @@ function renderBoard(){
         fence.y+'%';
 
 
-      element
-        .style
-        .setProperty(
-          '--rot',
-          fence.rot
-        );
+      element.style.setProperty(
+        '--rot',
+        fence.rot
+      );
 
 
       element.innerHTML=`
@@ -2321,56 +1725,37 @@ function renderBoard(){
 
 
 
-  /* =========================
-     牧場位置
-  ========================= */
-
   const gapPos={
 
-    red:
-      [34,19],
+    red:[34,19],
 
-    cyan:
-      [66,19],
+    cyan:[66,19],
 
-    green:
-      [82,50],
+    green:[82,50],
 
-    yellow:
-      [66,81],
+    yellow:[66,81],
 
-    blue:
-      [34,81],
+    blue:[34,81],
 
-    pink:
-      [18,50]
+    pink:[18,50]
 
   };
 
 
-  /* =========================
-     チップ角度
-  ========================= */
 
   const chipRotations={
 
-    yellow:
-      '-45deg',
+    yellow:'-45deg',
 
-    green:
-      '-90deg',
+    green:'-90deg',
 
-    cyan:
-      '-135deg',
+    cyan:'-135deg',
 
-    red:
-      '135deg',
+    red:'135deg',
 
-    blue:
-      '45deg',
+    blue:'45deg',
 
-    pink:
-      '90deg'
+    pink:'90deg'
 
   };
 
@@ -2380,9 +1765,7 @@ function renderBoard(){
     color=>{
 
       const element=
-        document.createElement(
-          'div'
-        );
+        document.createElement('div');
 
 
       element.className=
@@ -2390,41 +1773,37 @@ function renderBoard(){
 
 
 
-      /* =====================
-         バッティング表示
-      ===================== */
-
       if(
         shouldShowSelections()
         &&
         game.currentChoices
       ){
 
-        const numberSelected=
+        const selectedCount=
+
           game.currentChoices
+
             .filter(
               x=>x===color.id
             )
+
             .length;
 
 
-        if(
-          numberSelected>=2
-        ){
 
-          element.classList.add(
-            'battled'
-          );
+        if(selectedCount>=2){
+
+          element
+            .classList
+            .add('battled');
 
         }
 
-        else if(
-          numberSelected===1
-        ){
+        else if(selectedCount===1){
 
-          element.classList.add(
-            'target'
-          );
+          element
+            .classList
+            .add('target');
 
         }
 
@@ -2438,7 +1817,9 @@ function renderBoard(){
         );
 
 
+
       const selectedIconsHTML=
+
         selectedPlayers.length
 
           ? `
@@ -2447,13 +1828,15 @@ function renderBoard(){
 
             ${
               selectedPlayers
+
                 .map(
                   player=>{
 
-                    const playerIndex=
-                      game.players.indexOf(
-                        player
-                      );
+                    const index=
+                      game.players
+                        .indexOf(
+                          player
+                        );
 
 
                     return `
@@ -2463,9 +1846,7 @@ function renderBoard(){
                         style="
                           background:
                           ${
-                            PLAYER_AVATAR_BG[
-                              playerIndex
-                            ]
+                            PLAYER_AVATAR_BG[index]
                             ||
                             '#fff'
                           }
@@ -2481,6 +1862,7 @@ function renderBoard(){
 
                   }
                 )
+
                 .join('')
             }
 
@@ -2490,20 +1872,14 @@ function renderBoard(){
 
           : `
 
-          <div class="choice-icons">
-          </div>
+          <div class="choice-icons"></div>
 
           `;
 
 
 
-      const [
-        x,
-        y
-      ]=
-        gapPos[
-          color.id
-        ];
+      const [x,y]=
+        gapPos[color.id];
 
 
       element.style.left=
@@ -2514,16 +1890,15 @@ function renderBoard(){
         y+'%';
 
 
-      element
-        .style
-        .setProperty(
-          '--chip-rotation',
-          chipRotations[
-            color.id
-          ]
-          ||
-          '0deg'
-        );
+      element.style.setProperty(
+
+        '--chip-rotation',
+
+        chipRotations[color.id]
+        ||
+        '0deg'
+
+      );
 
 
 
@@ -2536,8 +1911,8 @@ function renderBoard(){
             style="
               background:${color.hex}
             "
-          >
-          </span>
+          ></span>
+
 
           <span>
 
@@ -2560,19 +1935,21 @@ function renderBoard(){
         <div class="chips">
 
           ${
-            game
-              .pastures[
-                color.id
-              ]
-              .map(
-                chipHTML
-              )
-              .join('')
+            game.pastures[
+              color.id
+            ]
+
+            .map(
+              chipHTML
+            )
+
+            .join('')
           }
 
         </div>
 
       `;
+
 
 
       board.appendChild(
@@ -2590,9 +1967,7 @@ function renderBoard(){
    CHIP
 ============================= */
 
-function chipHTML(
-  chip
-){
+function chipHTML(chip){
 
   const animal=
     ANIMALS[
@@ -2601,6 +1976,7 @@ function chipHTML(
 
 
   const src=
+
     chip.type==='wolf'
 
       ? (
@@ -2622,6 +1998,7 @@ function chipHTML(
         )
 
       : animal.img;
+
 
 
   return `
@@ -2648,7 +2025,7 @@ function chipHTML(
 
 
 /* =============================
-   PLAYERS
+   PLAYER
 ============================= */
 
 function renderPlayers(){
@@ -2662,6 +2039,7 @@ function renderPlayers(){
   box.innerHTML='';
 
 
+
   game.players.forEach(
     (
       player,
@@ -2669,47 +2047,67 @@ function renderPlayers(){
     )=>{
 
       const sheep=
-        player.hut.filter(
-          chip=>
-            chip.type!=='wolf'
-        ).length;
+
+        player.hut
+
+          .filter(
+            chip=>
+              chip.type!=='wolf'
+          )
+
+          .length;
+
 
 
       const wolves=
+
         countType(
           player.hut,
           'wolf'
         );
 
 
+
       const points=
+
         scoreChips(
           player.hut
         );
 
 
+
       const avatarBg=
+
         PLAYER_AVATAR_BG[
           index
         ]
+
         ||
+
         '#f4e0bd';
 
 
+
       const element=
+
         document.createElement(
           'div'
         );
 
 
+
       element.className=
+
         'player'
+
         +
+
         (
           player.human
             ? ' you'
             : ''
         );
+
 
 
       element.innerHTML=`
@@ -2755,6 +2153,7 @@ function renderPlayers(){
       `;
 
 
+
       box.appendChild(
         element
       );
@@ -2792,14 +2191,19 @@ function renderCards(){
     color=>{
 
       const button=
+
         document.createElement(
           'button'
         );
 
 
+
       button.className=
+
         'cardbtn'
+
         +
+
         (
           game.pendingHumanColor
           ===
@@ -2811,12 +2215,15 @@ function renderCards(){
         );
 
 
+
       button.style.background=
         color.hex;
 
 
+
       button.textContent=
         color.name;
+
 
 
       button.disabled=
@@ -2832,10 +2239,6 @@ function renderCards(){
         game.round>3;
 
 
-
-      /* =====================
-         ここでは確定しない
-      ===================== */
 
       button.onclick=()=>{
 
@@ -2935,6 +2338,7 @@ function log(message){
 
 
   const paragraph=
+
     document.createElement(
       'p'
     );
@@ -2956,13 +2360,10 @@ function log(message){
 
 
 
-/* =============================
-   COLOR NAME
-============================= */
-
 function colorName(id){
 
   const color=
+
     COLORS.find(
       color=>color.id===id
     );
@@ -2980,9 +2381,7 @@ function colorName(id){
    CPU
 ============================= */
 
-function cpuChoice(
-  cpuIndex
-){
+function cpuChoice(cpuIndex){
 
   const me=
     game.players[
@@ -2991,29 +2390,37 @@ function cpuChoice(
 
 
   const wolfCount=
+
     countType(
       me.hut,
       'wolf'
     );
 
 
+
   const scored=
+
     COLORS.map(
       color=>{
 
         const chips=
+
           game.pastures[
             color.id
           ];
 
 
+
         const sheepValue=
+
           scoreChips(
             chips
           );
 
 
+
         const wolves=
+
           countType(
             chips,
             'wolf'
@@ -3036,12 +2443,9 @@ function cpuChoice(
           );
 
 
+
         if(
-          wolfCount
-          +
-          wolves
-          >=
-          3
+          wolfCount+wolves>=3
         ){
 
           wolfRisk+=5.5;
@@ -3070,7 +2474,6 @@ function cpuChoice(
           )
 
           *
-
           .32;
 
 
@@ -3086,7 +2489,6 @@ function cpuChoice(
           )
 
           *
-
           2.2;
 
 
@@ -3158,15 +2560,10 @@ function cpuChoice(
     );
 
 
-  scored.sort(
-    (
-      a,
-      b
-    )=>
 
-      b.value
-      -
-      a.value
+  scored.sort(
+    (a,b)=>
+      b.value-a.value
   );
 
 
@@ -3183,17 +2580,11 @@ function cpuChoice(
 function confirmColorSelection(){
 
   if(
-
     game.busy
-
     ||
-
     game.step!=='choose'
-
     ||
-
     !game.pendingHumanColor
-
   ){
 
     return;
@@ -3204,6 +2595,7 @@ function confirmColorSelection(){
 
   const humanColor=
     game.pendingHumanColor;
+
 
 
   game.busy=true;
@@ -3218,25 +2610,17 @@ function confirmColorSelection(){
 
     </span>
 
-    あなたは
-
-    「${colorName(humanColor)}」
-
-    を選びました。`
+    あなたは「${colorName(humanColor)}」を選びました。`
 
   );
 
 
 
   const choices=[
-
     humanColor
-
   ];
 
 
-
-  /* CPUは人間が決定したあとに選択 */
 
   for(
     let i=1;
@@ -3256,6 +2640,7 @@ function confirmColorSelection(){
     choices;
 
 
+
   game.pendingHumanColor=
     null;
 
@@ -3269,15 +2654,12 @@ function confirmColorSelection(){
     colorId=>{
 
       counts[colorId]=
-
         (
           counts[colorId]
           ||
           0
         )
-
         +
-
         1;
 
     }
@@ -3303,20 +2685,13 @@ function confirmColorSelection(){
 
 
 
-  document
-    .getElementById(
-      'choiceStrip'
-    )
-    .innerHTML='';
-
-
-
   game.step=
     'locked';
 
 
 
-  game.busy=false;
+  game.busy=
+    false;
 
 
 
@@ -3337,56 +2712,6 @@ function confirmColorSelection(){
 ============================= */
 
 function processRevealStep(){
-
-  document
-    .getElementById(
-      'choiceStrip'
-    )
-    .innerHTML=
-
-    game.currentChoices
-
-      .map(
-        (
-          id,
-          index
-        )=>{
-
-          const color=
-            COLORS.find(
-              x=>x.id===id
-            );
-
-
-          return `
-
-            <span
-              class="choice"
-              style="
-                background:${color.hex}
-              "
-            >
-
-              ${
-                index===0
-                  ? 'あなた'
-                  : 'CPU'+index
-              }
-
-              :
-
-              ${color.name}
-
-            </span>
-
-          `;
-
-        }
-      )
-
-      .join('');
-
-
 
   game.step=
     'reveal';
@@ -3471,6 +2796,7 @@ function processRevealStep(){
 function processMoveStep(){
 
   const battled=
+
     new Set(
       game.pendingBattled
     );
@@ -3515,6 +2841,7 @@ function processMoveStep(){
                   color.id
                 ]
               ]
+
         ]
       )
 
@@ -3691,12 +3018,7 @@ function processAcquireStep(){
 
         log(
 
-          `${game.players[i].name}
-           が
-           ${colorName(colorId)}牧場
-           から
-           ${obtained.length}枚
-           獲得。`
+          `${game.players[i].name} が ${colorName(colorId)}牧場から ${obtained.length}枚 獲得。`
 
         );
 
@@ -3706,10 +3028,7 @@ function processAcquireStep(){
 
         log(
 
-          `${game.players[i].name}
-           の
-           ${colorName(colorId)}牧場
-           は空でした。`
+          `${game.players[i].name} の ${colorName(colorId)}牧場は空でした。`
 
         );
 
@@ -3751,8 +3070,7 @@ function finishRoundStep(){
 
     `<span class="major">
 
-      ROUND ${game.round}
-      の処理終了。
+      ROUND ${game.round} の処理終了。
 
     </span>
 
@@ -3774,55 +3092,36 @@ function finishRoundStep(){
 
 function advanceStep(){
 
-  if(
-    game.busy
-  ){
-
+  if(game.busy){
     return;
-
   }
 
 
-
-  if(
-    game.step==='locked'
-  ){
+  if(game.step==='locked'){
 
     processRevealStep();
 
   }
 
-
-  else if(
-    game.step==='reveal'
-  ){
+  else if(game.step==='reveal'){
 
     processMoveStep();
 
   }
 
-
-  else if(
-    game.step==='move'
-  ){
+  else if(game.step==='move'){
 
     processAcquireStep();
 
   }
 
-
-  else if(
-    game.step==='acquire'
-  ){
+  else if(game.step==='acquire'){
 
     finishRoundStep();
 
   }
 
-
-  else if(
-    game.step==='roundEnd'
-  ){
+  else if(game.step==='roundEnd'){
 
     advanceRound();
 
@@ -3843,20 +3142,14 @@ function resolveWolfBursts(){
     game.players
 
       .map(
-        (
-          player,
-          index
-        )=>
+        (player,index)=>
 
           countType(
             player.hut,
             'wolf'
-          )
-          >=
-          3
+          )>=3
 
             ? index
-
             : -1
 
       )
@@ -3867,9 +3160,7 @@ function resolveWolfBursts(){
 
 
 
-  if(
-    !bursting.length
-  ){
+  if(!bursting.length){
 
     return;
 
@@ -3911,10 +3202,7 @@ function resolveWolfBursts(){
   ){
 
     const hut=
-      originalHuts[
-        index
-      ];
-
+      originalHuts[index];
 
 
     const wolves=
@@ -3925,7 +3213,6 @@ function resolveWolfBursts(){
       );
 
 
-
     const sheep=
 
       hut.filter(
@@ -3934,10 +3221,7 @@ function resolveWolfBursts(){
       );
 
 
-
-    newHuts[
-      index
-    ]=[];
+    newHuts[index]=[];
 
 
 
@@ -3974,19 +3258,7 @@ function resolveWolfBursts(){
 
     log(
 
-      `🐺
-
-      <span class="major">
-
-        ${game.players[index].name}
-
-        にオオカミが3匹以上！
-
-      </span>
-
-      羊${sheep.length}枚が隣の小屋へ逃げ、
-
-      狼${wolves.length}枚は除外。`
+      `🐺 <span class="major">${game.players[index].name} にオオカミが3匹以上！</span> 羊${sheep.length}枚が隣の小屋へ逃げ、狼${wolves.length}枚は除外。`
 
     );
 
@@ -4005,25 +3277,19 @@ function resolveWolfBursts(){
     ){
 
       newHuts[i]=[
-
         ...originalHuts[i]
-
       ];
 
     }
 
 
-
-    newHuts[i]
-      .push(
-        ...transfers[i]
-      );
+    newHuts[i].push(
+      ...transfers[i]
+    );
 
 
-
-    game.players[i]
-      .hut=
-        newHuts[i];
+    game.players[i].hut=
+      newHuts[i];
 
   }
 
@@ -4083,9 +3349,7 @@ function advanceRound(){
   const addCount=
 
     nextRound===3
-
       ? 2
-
       : 1;
 
 
@@ -4102,16 +3366,7 @@ function advanceRound(){
 
   log(
 
-    `ROUND ${nextRound}準備：
-
-     各牧場に
-     ${addCount}枚追加。
-
-     ${
-       nextRound===3
-         ? '（製品版の5・6ラウンド目を模倣）'
-         : ''
-     }`
+    `ROUND ${nextRound}準備：各牧場に ${addCount}枚追加。${nextRound===3?'（製品版の5・6ラウンド目を模倣）':''}`
 
   );
 
@@ -4121,42 +3376,28 @@ function advanceRound(){
     nextRound;
 
 
-
   game.currentChoices=
     null;
-
 
 
   game.pendingHumanColor=
     null;
 
 
-
   game.pendingCounts=
     null;
-
 
 
   game.pendingBattled=
     [];
 
 
-
   game.step=
     'choose';
 
 
-
   game.busy=
     false;
-
-
-
-  document
-    .getElementById(
-      'choiceStrip'
-    )
-    .innerHTML='';
 
 
 
@@ -4252,6 +3493,7 @@ function nightWolfMove(){
               destinationIndex
             ].id
           ]
+
           .push(
             chip
           );
@@ -4277,24 +3519,13 @@ function nightWolfMove(){
 
 function endGame(){
 
-  game.busy=
-    true;
+  game.busy=true;
 
+  game.currentChoices=null;
 
+  game.pendingHumanColor=null;
 
-  game.currentChoices=
-    null;
-
-
-
-  game.pendingHumanColor=
-    null;
-
-
-
-  game.step=
-    'ended';
-
+  game.step='ended';
 
 
   render();
@@ -4311,7 +3542,7 @@ function endGame(){
           index
         )=>({
 
-          index:index,
+          index,
 
           name:
             player.name,
@@ -4325,36 +3556,30 @@ function endGame(){
             ),
 
           sheep:
-            player.hut.filter(
-              chip=>
-                chip.type!=='wolf'
-            ).length
+            player.hut
+              .filter(
+                chip=>
+                  chip.type!=='wolf'
+              )
+              .length
 
         })
       )
 
       .sort(
-        (
-          a,
-          b
-        )=>
+        (a,b)=>
 
-          b.score
-          -
-          a.score
+          b.score-a.score
 
           ||
 
-          b.sheep
-          -
-          a.sheep
+          b.sheep-a.sheep
       );
 
 
 
   const bestScore=
     ranked[0].score;
-
 
 
   const bestSheep=
@@ -4369,15 +3594,11 @@ function endGame(){
       .filter(
         result=>
 
-          result.score
-          ===
-          bestScore
+          result.score===bestScore
 
           &&
 
-          result.sheep
-          ===
-          bestSheep
+          result.sheep===bestSheep
       )
 
       .map(
@@ -4388,6 +3609,7 @@ function endGame(){
 
 
   const box=
+
     document.getElementById(
       'results'
     );
@@ -4478,9 +3700,7 @@ function endGame(){
     );
 
 
-  if(
-    resetBtn
-  ){
+  if(resetBtn){
 
     resetBtn.style.display=
       'inline-block';

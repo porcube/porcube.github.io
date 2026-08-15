@@ -66,8 +66,8 @@ const COLORS = [
   {id:"green",  name:"緑", hex:"#28a84b", cardImg:"../assets/iro_card_front_green.jpg"},
   {id:"cyan",   name:"水", hex:"#17a6d1", cardImg:"../assets/iro_card_front_blue.jpg"},
   {id:"red",    name:"赤", hex:"#e83f43", cardImg:"../assets/iro_card_front_red.jpg"},
-  {id:"blue",   name:"青", hex:"#2348b8", cardImg:"../assets/iro_card_front_purple.jpg"},
-  {id:"pink",   name:"桃", hex:"#d83aa8", cardImg:"../assets/iro_card_front_pink.jpg"}
+  {id:"pink",   name:"桃", hex:"#d83aa8", cardImg:"../assets/iro_card_front_pink.jpg"},
+  {id:"blue",   name:"青", hex:"#2348b8", cardImg:"../assets/iro_card_front_purple.jpg"}
 ];
 
 const ANIMALS = {
@@ -930,7 +930,7 @@ function renderLobby(roomData) {
   waitingMessage.textContent =
     players.length >= MAX_PLAYERS
       ? "満員です"
-      : "参加者を待っています…";
+      : "不足人数はゲーム開始時にCPUが参加します";
 
   playerList.replaceChildren();
 
@@ -1306,10 +1306,12 @@ async function startGame() {
     return;
   }
 
+  const playersObject = {
+    ...(currentRoomData.players || {})
+  };
+
   const players =
-    Object.values(
-      currentRoomData.players || {}
-    );
+    Object.values(playersObject);
 
   if (
     players.length < 1 ||
@@ -1325,13 +1327,59 @@ async function startGame() {
   showLoading("ゲームを準備しています…");
 
   try {
+    const cpuNumbers = players
+      .filter(player => player.type === "cpu")
+      .map(player => {
+        const match =
+          String(player.name).match(/\d+/);
+
+        return match
+          ? Number(match[0])
+          : 0;
+      });
+
+    let nextCpuNumber = 1;
+    const baseJoinedAt = Date.now();
+
+    while (
+      Object.keys(playersObject).length <
+      MAX_PLAYERS
+    ) {
+      while (
+        cpuNumbers.includes(nextCpuNumber)
+      ) {
+        nextCpuNumber++;
+      }
+
+      const cpuId =
+        `cpu_${baseJoinedAt}_${nextCpuNumber}_${Math.random()
+          .toString(36)
+          .slice(2, 7)}`;
+
+      playersObject[cpuId] =
+        createCpuPlayer(
+          cpuId,
+          `CPU ${nextCpuNumber}`,
+          Object.keys(playersObject).length
+        );
+
+      playersObject[cpuId].joinedAt =
+        baseJoinedAt + nextCpuNumber;
+
+      cpuNumbers.push(nextCpuNumber);
+      nextCpuNumber++;
+    }
+
+    const gamePlayers =
+      Object.values(playersObject);
+
     const roomRef =
       ref(
         database,
         `rooms/${currentRoomId}`
       );
 
-    const initialGame = createInitialGame(players);
+    const initialGame = createInitialGame(gamePlayers);
 
     await remove(
       ref(database, `roomChoices/${currentRoomId}`)
@@ -1342,6 +1390,7 @@ async function startGame() {
     cpuChoicesRound = null;
 
     await update(roomRef, {
+      players: playersObject,
       status: "game",
       totalRounds: TOTAL_ROUNDS,
       startedAt: Date.now(),
@@ -1432,10 +1481,17 @@ function createAnimalBag() {
 
   specification.forEach(([type, count]) => {
     for (let index = 0; index < count; index++) {
+      const direction =
+        type === "red"
+          ? 1
+          : type === "wolf"
+            ? (Math.random() < 0.5 ? -1 : 1)
+            : -1;
+
       bag.push({
         id: `chip_${++id}`,
         type,
-        dir: Math.random() < 0.5 ? -1 : 1
+        dir: direction
       });
     }
   });

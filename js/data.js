@@ -41,7 +41,7 @@ const GAMES = [
     players: "2～4人",
     time: "15～30分",
     age: "8歳～",
-    desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。<br>「爽快感×スリル」スキマ争奪カードゲーム",
+    desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。「爽快感×スリル」スキマ争奪カードゲーム",
     image: "assets/outbaaaan.jpg",
     isNew: false,
     links: [ 

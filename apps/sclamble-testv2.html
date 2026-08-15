@@ -1393,8 +1393,8 @@ const COLORS=[
   {id:'green',name:'緑',hex:'#28a84b',soft:'#d9f3dc',cardImg:'../assets/iro_card_front_green.jpg'},
   {id:'cyan',name:'水',hex:'#17a6d1',soft:'#d8f2fa',cardImg:'../assets/iro_card_front_blue.jpg'},
   {id:'red',name:'赤',hex:'#e83f43',soft:'#ffdcdc',cardImg:'../assets/iro_card_front_red.jpg'},
-  {id:'blue',name:'青',hex:'#2348b8',soft:'#dde4ff',cardImg:'../assets/iro_card_front_purple.jpg'},
-  {id:'pink',name:'桃',hex:'#d83aa8',soft:'#f8dcf1',cardImg:'../assets/iro_card_front_pink.jpg'}
+  {id:'pink',name:'桃',hex:'#d83aa8',soft:'#f8dcf1',cardImg:'../assets/iro_card_front_pink.jpg'},
+  {id:'blue',name:'青',hex:'#2348b8',soft:'#dde4ff',cardImg:'../assets/iro_card_front_purple.jpg'}
 ];
 
 const PLAYER_AVATAR_BG=['#dff4ff','#ffe6cc','#efe6d8','#fde8f2','#e7f0ff','#e3f6e4'];
@@ -1414,10 +1414,17 @@ function freshBag(){
 
   for(const [type,count] of spec){
     for(let i=0;i<count;i++){
+      const direction=
+        type==='red'
+          ?1
+          :type==='wolf'
+            ?(Math.random()<.5?-1:1)
+            :-1;
+
       bag.push({
         id:++id,
         type,
-        dir:Math.random()<.5?-1:1
+        dir:direction
       });
     }
   }

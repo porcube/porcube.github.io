@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>SCLAMBLE ONLINE</title>
+
+  <meta
+    name="description"
+    content="ボードゲームSCLAMBLEのオンライン対戦版"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <main class="app-shell">
+
+    <!-- Firebase接続状態 -->
+    <div
+      class="connection-status"
+      id="connectionStatus"
+      aria-live="polite"
+    >
+      Firebaseに接続しています…
+    </div>
+
+
+    <!-- ========================================
+         ホーム画面
+    ========================================= -->
+    <section
+      class="screen home-screen"
+      id="homeScreen"
+    >
+
+      <div class="home-card">
+
+        <img
+          class="brand-logo"
+          src="./assets/sclamble_title.png"
+          alt="SCLAMBLE"
+        >
+
+        <div class="online-label">
+          ONLINE PLAY
+        </div>
+
+        <div class="intro">
+
+          <h1>オンライン対戦</h1>
+
+          <p>
+            名前を入力して部屋を作るか、<br>
+            ルームIDを入力して参加しよう！
+          </p>
+
+        </div>
+
+
+        <!-- プレイヤーネーム -->
+        <div class="form-group">
+
+          <label for="playerName">
+            プレイヤーネーム
+          </label>
+
+          <input
+            id="playerName"
+            type="text"
+            maxlength="12"
+            autocomplete="nickname"
+            placeholder="名前を入力"
+          >
+
+          <small>
+            1〜12文字で入力してください
+          </small>
+
+        </div>
+
+
+        <!-- 部屋作成 -->
+        <button
+          class="primary-button"
+          id="createRoomButton"
+          type="button"
+          disabled
+        >
+          部屋を作る
+        </button>
+
+
+        <div class="divider">
+          <span>または</span>
+        </div>
+
+
+        <!-- 部屋参加 -->
+        <div class="join-area">
+
+          <div class="form-group">
+
+            <label for="roomIdInput">
+              ルームID
+            </label>
+
+            <input
+              id="roomIdInput"
+              type="text"
+              maxlength="6"
+              autocomplete="off"
+              autocapitalize="characters"
+              spellcheck="false"
+              placeholder="例：A7K3P9"
+            >
+
+          </div>
+
+          <button
+            class="secondary-button"
+            id="joinRoomButton"
+            type="button"
+            disabled
+          >
+            部屋に参加する
+          </button>
+
+        </div>
+
+
+        <!-- エラーなどの表示 -->
+        <p
+          class="form-message"
+          id="homeMessage"
+          aria-live="polite"
+        ></p>
+
+
+        <div class="home-meta">
+
+          <span>👥 1〜6人</span>
+
+          <span>🎴 全6ラウンド</span>
+
+          <span>🔑 会員登録不要</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         待機部屋
+    ========================================= -->
+    <section
+      class="screen lobby-screen"
+      id="lobbyScreen"
+      hidden
+    >
+
+      <div class="lobby-card">
+
+        <header class="lobby-header">
+
+          <div>
+
+            <div class="lobby-label">
+              WAITING ROOM
+            </div>
+
+            <h1>対戦ルーム</h1>
+
+          </div>
+
+
+          <div class="room-id-box">
+
+            <span>ルームID</span>
+
+            <strong id="roomIdDisplay">
+              ------
+            </strong>
+
+            <button
+              class="copy-button"
+              id="copyRoomIdButton"
+              type="button"
+            >
+              コピー
+            </button>
+
+          </div>
+
+        </header>
+
+
+        <!-- 参加人数 -->
+        <div class="lobby-status">
+
+          <div>
+
+            <span>参加人数</span>
+
+            <strong id="playerCount">
+              0 / 6
+            </strong>
+
+          </div>
+
+
+          <div
+            class="host-badge"
+            id="hostBadge"
+            hidden
+          >
+            👑 あなたがホスト
+          </div>
+
+        </div>
+
+
+        <!-- プレイヤー一覧 -->
+        <section class="lobby-section">
+
+          <div class="section-heading">
+
+            <h2>プレイヤー</h2>
+
+            <span id="waitingMessage">
+              参加者を待っています…
+            </span>
+
+          </div>
+
+
+          <div
+            class="player-list"
+            id="playerList"
+          >
+            <!-- app.jsからプレイヤーを表示 -->
+          </div>
+
+        </section>
+
+
+        <!-- ホスト専用操作 -->
+        <section
+          class="lobby-section host-controls"
+          id="hostControls"
+          hidden
+        >
+
+          <div class="section-heading">
+
+            <h2>ホスト設定</h2>
+
+            <span>
+              全6ラウンド
+            </span>
+
+          </div>
+
+
+          <div class="settings-grid">
+
+            <div class="setting-item">
+
+              <span>
+                CPUプレイヤー
+              </span>
+
+              <button
+                class="small-button"
+                id="addCpuButton"
+                type="button"
+              >
+                ＋ CPUを追加
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="start-game-button"
+            id="startGameButton"
+            type="button"
+            disabled
+          >
+            ゲームを開始する
+          </button>
+
+          <small class="start-note">
+            人間とCPUを合わせて1〜6人で開始できます
+          </small>
+
+        </section>
+
+
+        <!-- 一般参加者向け表示 -->
+        <div
+          class="guest-waiting"
+          id="guestWaiting"
+          hidden
+        >
+          ホストがゲームを開始するまでお待ちください
+        </div>
+
+
+        <!-- ロビー下部 -->
+        <footer class="lobby-footer">
+
+          <button
+            class="leave-button"
+            id="leaveRoomButton"
+            type="button"
+          >
+            部屋から退出する
+          </button>
+
+          <p
+            class="form-message"
+            id="lobbyMessage"
+            aria-live="polite"
+          ></p>
+
+        </footer>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         仮ゲーム画面
+         ロビー完成後にゲーム本編を接続
+    ========================================= -->
+    <section
+      class="screen game-screen"
+      id="gameScreen"
+      hidden
+    >
+
+      <div class="temporary-game-card">
+
+        <div class="lobby-label">
+          GAME START
+        </div>
+
+        <h1>ゲーム開始！</h1>
+
+        <p>
+          オンラインロビーの動作確認後、<br>
+          ここへ6ラウンドのゲーム画面を接続します。
+        </p>
+
+        <button
+          class="secondary-button"
+          id="temporaryReturnButton"
+          type="button"
+        >
+          待機部屋へ戻る
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       全画面ローディング
+  ========================================= -->
+  <div
+    class="loading-overlay"
+    id="loadingOverlay"
+    hidden
+  >
+
+    <div class="loading-card">
+
+      <div class="spinner"></div>
+
+      <p id="loadingText">
+        通信中…
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- 通知 -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+    hidden
+  ></div>
+
+
+  <!-- JavaScript -->
+  <script
+    type="module"
+    src="./app.js"
+  ></script>
+
+</body>
+</html>

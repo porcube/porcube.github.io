@@ -342,39 +342,370 @@
 
 
     <!-- ========================================
-         仮ゲーム画面
-         ロビー完成後にゲーム本編を接続
-    ========================================= -->
-    <section
-      class="screen game-screen"
-      id="gameScreen"
-      hidden
-    >
+     オンラインゲーム画面
+========================================= -->
+<section
+  class="screen game-screen"
+  id="gameScreen"
+  hidden
+>
 
-      <div class="temporary-game-card">
+  <div class="game-container">
 
-        <div class="lobby-label">
-          GAME START
+    <!-- ゲームヘッダー -->
+    <header class="game-header">
+
+      <div class="game-brand">
+
+        <img
+          class="game-logo"
+          src="../assets/sclamble_title.png"
+          alt="SCLAMBLE"
+        >
+
+        <div class="game-room-information">
+          ROOM
+          <strong id="gameRoomId">------</strong>
         </div>
 
-        <h1>ゲーム開始！</h1>
+      </div>
 
-        <p>
-          オンラインロビーの動作確認後、<br>
-          ここへ6ラウンドのゲーム画面を接続します。
-        </p>
+
+      <div class="round-box">
+        <span>ROUND</span>
+        <strong id="gameRoundLabel">1 / 6</strong>
+      </div>
+
+    </header>
+
+
+    <div class="game-layout">
+
+      <!-- ================================
+           牧場
+      ================================= -->
+      <section class="game-panel board-panel">
+
+        <div class="board-title">
+
+          <h1>牧場</h1>
+
+          <div class="animal-legend">
+
+            <span>
+              <img
+                src="../assets/white_chip.jpg"
+                alt="白羊"
+              >
+              白＝1点
+            </span>
+
+            <span>
+              <img
+                src="../assets/red_chip.jpg"
+                alt="赤羊"
+              >
+              赤＝2点
+            </span>
+
+            <span>
+              <img
+                src="../assets/gold_chip.jpg"
+                alt="金羊"
+              >
+              金＝3点
+            </span>
+
+            <span>
+              <img
+                src="../assets/wolf_right_chip.jpg"
+                alt="オオカミ"
+              >
+              狼＝0点
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="board-wrap"
+          id="onlineBoard"
+        >
+
+          <!-- 牧場・柵・チップはapp.jsで表示 -->
+
+          <div class="game-center-card">
+
+            <div
+              class="center-guide"
+              id="gameCenterGuide"
+            >
+              色カードを選ぼう！
+            </div>
+
+            <div
+              class="center-sub"
+              id="gameCenterSub"
+            >
+              決定するまでは変更できます
+            </div>
+
+            <!-- ホスト用進行ボタン -->
+            <button
+              class="center-action"
+              id="hostAdvanceButton"
+              type="button"
+              hidden
+              disabled
+            >
+              全員の選択を待っています
+            </button>
+
+            <!-- ゲスト用進行表示 -->
+            <div
+              class="guest-progress"
+              id="guestProgress"
+            >
+              色を選択してください
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================================
+           操作・プレイヤー
+      ================================= -->
+      <aside class="game-panel game-side">
+
+        <!-- プレイヤー -->
+        <section class="game-side-section">
+
+          <div class="game-section-heading">
+
+            <h2>プレイヤー</h2>
+
+            <span id="readyCount">
+              選択済み 0 / 0
+            </span>
+
+          </div>
+
+          <div
+            class="game-player-list"
+            id="gamePlayerList"
+          >
+            <!-- app.jsで表示 -->
+          </div>
+
+        </section>
+
+
+        <!-- 自分の色カード -->
+        <section class="game-side-section color-card-section">
+
+          <div class="game-section-heading">
+
+            <h2>あなたの色カード</h2>
+
+            <span id="myChoiceStatus">
+              未選択
+            </span>
+
+          </div>
+
+          <div
+            class="color-card-list"
+            id="colorCardList"
+          >
+            <!-- app.jsで6色を表示 -->
+          </div>
+
+          <button
+            class="confirm-choice-button"
+            id="confirmChoiceButton"
+            type="button"
+            disabled
+          >
+            色を決定する
+          </button>
+
+          <button
+            class="cancel-choice-button"
+            id="cancelChoiceButton"
+            type="button"
+            hidden
+          >
+            選択をやり直す
+          </button>
+
+        </section>
+
+
+        <!-- 全員の今回のカード -->
+        <section class="reveal-panel">
+
+          <div class="game-section-heading">
+
+            <h2>今回のカード</h2>
+
+            <span id="gamePhaseText">
+              色カードを選択中
+            </span>
+
+          </div>
+
+          <div
+            class="online-reveal-grid"
+            id="onlineRevealGrid"
+          >
+            <!-- 選択状況をapp.jsで表示 -->
+          </div>
+
+        </section>
+
+
+        <!-- 操作案内 -->
+        <div
+          class="game-step-help"
+          id="gameStepHelp"
+        >
+          欲しい牧場の色カードを選んでください。
+        </div>
+
+
+        <!-- ゲームログ -->
+        <section class="game-log-section">
+
+          <div class="game-section-heading">
+            <h2>ゲームログ</h2>
+          </div>
+
+          <div
+            class="game-log"
+            id="gameLog"
+            aria-live="polite"
+          ></div>
+
+        </section>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================
+     最終結果画面
+========================================= -->
+<section
+  class="result-overlay"
+  id="resultOverlay"
+  hidden
+>
+
+  <div class="result-screen">
+
+    <div class="result-content">
+
+      <div class="result-label">
+        GAME FINISHED
+      </div>
+
+      <h1>最終結果</h1>
+
+      <p class="result-lead">
+        6ラウンド終了！
+      </p>
+
+      <div
+        class="final-results"
+        id="finalResults"
+      >
+        <!-- app.jsで順位を表示 -->
+      </div>
+
+
+      <!-- ホスト用 -->
+      <div
+        class="result-actions"
+        id="hostResultActions"
+        hidden
+      >
 
         <button
-          class="secondary-button"
-          id="temporaryReturnButton"
+          class="result-button result-button-main"
+          id="rematchButton"
           type="button"
         >
-          待機部屋へ戻る
+          ↻ 同じメンバーでリマッチ
+        </button>
+
+        <button
+          class="result-button result-button-secondary"
+          id="changeSettingsButton"
+          type="button"
+        >
+          CPU設定を変更してリマッチ
+        </button>
+
+        <button
+          class="result-button result-button-danger"
+          id="closeRoomButton"
+          type="button"
+        >
+          部屋を解散してホームへ
         </button>
 
       </div>
 
-    </section>
+
+      <!-- 一般参加者用 -->
+      <div
+        class="result-actions"
+        id="guestResultActions"
+        hidden
+      >
+
+        <button
+          class="result-button result-button-main"
+          id="requestRematchButton"
+          type="button"
+        >
+          リマッチ希望
+        </button>
+
+        <button
+          class="result-button result-button-secondary"
+          id="returnHomeButton"
+          type="button"
+        >
+          部屋を退出してホームへ
+        </button>
+
+      </div>
+
+
+      <div
+        class="rematch-status"
+        id="rematchStatus"
+      >
+        リマッチ希望 0 / 0
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   </main>
 

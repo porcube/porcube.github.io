@@ -1424,18 +1424,20 @@ const ANIMALS={
 let game;
 
 function freshBag(){
-  const spec=[['white',18],['red',6],['gold',18],['wolf',6]];
+  // 実物48枚の両面構成から、見えている面の比率だけを暫定再現。
+  // 白18/96面、赤36/96面、金18/96面、狼左12/96面、狼右12/96面
+  // → 48枚換算：白9 / 赤18 / 金9 / 狼左6 / 狼右6
+  const spec=[
+    ['white',9,-1],
+    ['red',18,1],
+    ['gold',9,-1],
+    ['wolf',6,-1],
+    ['wolf',6,1]
+  ];
   let bag=[],id=0;
 
-  for(const [type,count] of spec){
+  for(const [type,count,direction] of spec){
     for(let i=0;i<count;i++){
-      const direction=
-        type==='red'
-          ?1
-          :type==='wolf'
-            ?(Math.random()<.5?-1:1)
-            :-1;
-
       bag.push({
         id:++id,
         type,

@@ -627,6 +627,21 @@ button,a{-webkit-tap-highlight-color:transparent}
   line-height:1;
 }
 
+.start-step-icon-img{
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 6px;
+}
+
+@media(max-width:560px){
+  .start-step-icon-img{
+    width:44px;
+    height:44px;
+  }
+}
+
 .start-step-num{
   margin-bottom:3px;
   color:#b77a42;
@@ -1180,21 +1195,21 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="start-steps">
 
         <div class="start-step">
-          <div class="start-step-icon">🎴</div>
+          <img class="start-step-icon-img" src="../assets/start_step_choose.png" alt="色を選ぶ">
           <div class="start-step-num">STEP 1</div>
           <strong>色を選ぶ</strong>
           <span>欲しい牧場の<br>色カードを1枚選択</span>
         </div>
 
         <div class="start-step">
-          <div class="start-step-icon">⚡</div>
+          <img class="start-step-icon-img" src="../assets/start_step_batting.png" alt="バッティング">
           <div class="start-step-num">STEP 2</div>
           <strong>バッティング</strong>
           <span>同じ色を選ぶと<br>誰も獲得できない！</span>
         </div>
 
         <div class="start-step">
-          <div class="start-step-icon">🐑</div>
+          <img class="start-step-icon-img" src="../assets/start_step_sheep.png" alt="羊を集める">
           <div class="start-step-num">STEP 3</div>
           <strong>羊を集める</strong>
           <span>動物チップを集めて<br>高得点を狙おう</span>
@@ -2203,7 +2218,7 @@ document.getElementById('resetBtn').onclick=newGame;
 document.getElementById('startBtn').onclick=()=>{
   document.getElementById('startOverlay').classList.add('hide');
   document.body.style.overflow='';
-  window.scrollTo({top:0,behavior:'instant'});
+  window.scrollTo({top:0,behavior:'auto'});
 };
 
 document.getElementById('replayBtn').onclick=()=>{

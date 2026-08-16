@@ -1424,25 +1424,41 @@ const ANIMALS={
 let game;
 
 function freshBag(){
-  // 実物48枚の両面構成から、見えている面の比率だけを暫定再現。
-  // 白18/96面、赤36/96面、金18/96面、狼左12/96面、狼右12/96面
-  // → 48枚換算：白9 / 赤18 / 金9 / 狼左6 / 狼右6
-  const spec=[
-    ['white',9,-1],
-    ['red',18,1],
-    ['gold',9,-1],
-    ['wolf',6,-1],
-    ['wolf',6,1]
+  // 実物48枚の両面構成を再現。
+  // ゲーム開始時に各チップの表裏を50%で決め、その後48枚をシャッフルする。
+  const pairSpec=[
+    ['white','white',1],
+    ['red','red',8],
+    ['gold','gold',5],
+    ['white','red',10],
+    ['white','gold',2],
+    ['red','gold',2],
+    ['white','wolfLeft',2],
+    ['white','wolfRight',2],
+    ['red','wolfLeft',4],
+    ['red','wolfRight',4],
+    ['gold','wolfLeft',2],
+    ['gold','wolfRight',2],
+    ['wolfLeft','wolfLeft',1],
+    ['wolfRight','wolfRight',1],
+    ['wolfLeft','wolfRight',2]
   ];
-  let bag=[],id=0;
 
-  for(const [type,count,direction] of spec){
+  const faceToChip=(face,id)=>{
+    if(face==='wolfLeft') return {id,type:'wolf',dir:-1};
+    if(face==='wolfRight') return {id,type:'wolf',dir:1};
+    if(face==='red') return {id,type:'red',dir:1};
+    if(face==='white') return {id,type:'white',dir:-1};
+    return {id,type:'gold',dir:-1};
+  };
+
+  const bag=[];
+  let id=0;
+
+  for(const [front,back,count] of pairSpec){
     for(let i=0;i<count;i++){
-      bag.push({
-        id:++id,
-        type,
-        dir:direction
-      });
+      const visibleFace=Math.random()<.5?front:back;
+      bag.push(faceToChip(visibleFace,++id));
     }
   }
 

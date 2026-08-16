@@ -1469,36 +1469,59 @@ function createInitialGame(players) {
 
 
 function createAnimalBag() {
-  const specification = [
-    ["white", 18],
-    ["red", 6],
-    ["gold", 18],
-    ["wolf", 6]
+  const pairSpec = [
+    ["white", "white", 1],
+    ["red", "red", 8],
+    ["gold", "gold", 5],
+    ["white", "red", 10],
+    ["white", "gold", 2],
+    ["red", "gold", 2],
+    ["white", "wolfLeft", 2],
+    ["white", "wolfRight", 2],
+    ["red", "wolfLeft", 4],
+    ["red", "wolfRight", 4],
+    ["gold", "wolfLeft", 2],
+    ["gold", "wolfRight", 2],
+    ["wolfLeft", "wolfLeft", 1],
+    ["wolfRight", "wolfRight", 1],
+    ["wolfLeft", "wolfRight", 2]
   ];
 
   const bag = [];
   let id = 0;
 
-  specification.forEach(([type, count]) => {
+  const faceToChip = face => {
+    if (face === "wolfLeft") {
+      return { type: "wolf", dir: -1 };
+    }
+
+    if (face === "wolfRight") {
+      return { type: "wolf", dir: 1 };
+    }
+
+    return {
+      type: face,
+      dir: face === "red" ? 1 : -1
+    };
+  };
+
+  pairSpec.forEach(([front, back, count]) => {
     for (let index = 0; index < count; index++) {
-      const direction =
-        type === "red"
-          ? 1
-          : type === "wolf"
-            ? (Math.random() < 0.5 ? -1 : 1)
-            : -1;
+      const visibleFace =
+        Math.random() < 0.5 ? front : back;
+
+      const chip = faceToChip(visibleFace);
 
       bag.push({
         id: `chip_${++id}`,
-        type,
-        dir: direction
+        type: chip.type,
+        dir: chip.dir
       });
     }
   });
 
   return shuffleArray(bag);
 }
-
 
 function shuffleArray(values) {
   const result = [...values];

@@ -4,6 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SCLAMBLE 3ラウンド体験版</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-260PDCBPMC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-260PDCBPMC');
+</script>
 <style>
 :root{
   --bg:#fff4df;
@@ -1423,24 +1431,48 @@ const ANIMALS={
 
 let game;
 
+function trackEvent(name,params={}){
+  if(typeof gtag==='function'){
+    gtag('event',name,params);
+  }
+}
+
 function freshBag(){
-  const spec=[['white',18],['red',6],['gold',18],['wolf',6]];
-  let bag=[],id=0;
+  // 実物48枚の両面構成を再現。
+  // ゲーム開始時に各チップの表裏を50%で決め、その後48枚をシャッフルする。
+  const pairSpec=[
+    ['white','white',1],
+    ['red','red',8],
+    ['gold','gold',5],
+    ['white','red',10],
+    ['white','gold',2],
+    ['red','gold',2],
+    ['white','wolfLeft',2],
+    ['white','wolfRight',2],
+    ['red','wolfLeft',4],
+    ['red','wolfRight',4],
+    ['gold','wolfLeft',2],
+    ['gold','wolfRight',2],
+    ['wolfLeft','wolfLeft',1],
+    ['wolfRight','wolfRight',1],
+    ['wolfLeft','wolfRight',2]
+  ];
 
-  for(const [type,count] of spec){
+  const faceToChip=(face,id)=>{
+    if(face==='wolfLeft') return {id,type:'wolf',dir:-1};
+    if(face==='wolfRight') return {id,type:'wolf',dir:1};
+    if(face==='red') return {id,type:'red',dir:1};
+    if(face==='white') return {id,type:'white',dir:-1};
+    return {id,type:'gold',dir:-1};
+  };
+
+  const bag=[];
+  let id=0;
+
+  for(const [front,back,count] of pairSpec){
     for(let i=0;i<count;i++){
-      const direction=
-        type==='red'
-          ?1
-          :type==='wolf'
-            ?(Math.random()<.5?-1:1)
-            :-1;
-
-      bag.push({
-        id:++id,
-        type,
-        dir:direction
-      });
+      const visibleFace=Math.random()<.5?front:back;
+      bag.push(faceToChip(visibleFace,++id));
     }
   }
 
@@ -2063,6 +2095,14 @@ function processAcquireStep(){
 function finishRoundStep(){
   game.step='roundEnd';
 
+  const human=game.players[0];
+  trackEvent('sclamble_round_complete',{
+    round:game.round,
+    score:scoreChips(human.hut),
+    sheep_count:human.hut.filter(chip=>chip.type!=='wolf').length,
+    wolf_count:countType(human.hut,'wolf')
+  });
+
   log(
     `<span class="major">ROUND ${game.round} の処理終了。</span> 牧場と各プレイヤーの小屋を確認してください。`
   );
@@ -2227,6 +2267,15 @@ function endGame(){
     )
     .map(result=>result.index);
 
+  const humanResult=ranked.find(result=>result.index===0);
+  const humanRank=ranked.findIndex(result=>result.index===0)+1;
+
+  trackEvent('sclamble_trial_complete',{
+    score:humanResult?.score||0,
+    sheep_count:humanResult?.sheep||0,
+    rank:humanRank
+  });
+
   const box=document.getElementById('results');
 
   box.innerHTML=ranked.map((result,rank)=>`
@@ -2262,15 +2311,21 @@ document.getElementById('centerActionBtn').onclick=advanceCentralAction;
 document.getElementById('resetBtn').onclick=newGame;
 
 document.getElementById('startBtn').onclick=()=>{
+  trackEvent('sclamble_trial_start');
   document.getElementById('startOverlay').classList.add('hide');
   document.body.style.overflow='';
   window.scrollTo({top:0,behavior:'auto'});
 };
 
 document.getElementById('replayBtn').onclick=()=>{
+  trackEvent('sclamble_replay');
   newGame();
   window.scrollTo({top:0,behavior:'smooth'});
 };
+
+document.getElementById('boothLink').addEventListener('click',()=>{
+  trackEvent('sclamble_booth_click');
+});
 
 newGame();
 document.body.style.overflow='hidden';

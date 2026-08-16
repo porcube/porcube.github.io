@@ -4,6 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SCLAMBLE 3ラウンド体験版</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-260PDCBPMC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-260PDCBPMC');
+</script>
 <style>
 :root{
   --bg:#fff4df;
@@ -1423,6 +1431,12 @@ const ANIMALS={
 
 let game;
 
+function trackEvent(name,params={}){
+  if(typeof gtag==='function'){
+    gtag('event',name,params);
+  }
+}
+
 function freshBag(){
   // 実物48枚の両面構成を再現。
   // ゲーム開始時に各チップの表裏を50%で決め、その後48枚をシャッフルする。
@@ -2081,6 +2095,14 @@ function processAcquireStep(){
 function finishRoundStep(){
   game.step='roundEnd';
 
+  const human=game.players[0];
+  trackEvent('sclamble_round_complete',{
+    round:game.round,
+    score:scoreChips(human.hut),
+    sheep_count:human.hut.filter(chip=>chip.type!=='wolf').length,
+    wolf_count:countType(human.hut,'wolf')
+  });
+
   log(
     `<span class="major">ROUND ${game.round} の処理終了。</span> 牧場と各プレイヤーの小屋を確認してください。`
   );
@@ -2245,6 +2267,15 @@ function endGame(){
     )
     .map(result=>result.index);
 
+  const humanResult=ranked.find(result=>result.index===0);
+  const humanRank=ranked.findIndex(result=>result.index===0)+1;
+
+  trackEvent('sclamble_trial_complete',{
+    score:humanResult?.score||0,
+    sheep_count:humanResult?.sheep||0,
+    rank:humanRank
+  });
+
   const box=document.getElementById('results');
 
   box.innerHTML=ranked.map((result,rank)=>`
@@ -2280,15 +2311,21 @@ document.getElementById('centerActionBtn').onclick=advanceCentralAction;
 document.getElementById('resetBtn').onclick=newGame;
 
 document.getElementById('startBtn').onclick=()=>{
+  trackEvent('sclamble_trial_start');
   document.getElementById('startOverlay').classList.add('hide');
   document.body.style.overflow='';
   window.scrollTo({top:0,behavior:'auto'});
 };
 
 document.getElementById('replayBtn').onclick=()=>{
+  trackEvent('sclamble_replay');
   newGame();
   window.scrollTo({top:0,behavior:'smooth'});
 };
+
+document.getElementById('boothLink').addEventListener('click',()=>{
+  trackEvent('sclamble_booth_click');
+});
 
 newGame();
 document.body.style.overflow='hidden';

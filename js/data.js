@@ -5,7 +5,7 @@
 
 const SITE = {
   // GoogleフォームのURLに差し替えてください
-  contactFormUrl: "https://forms.gle/XXXXXXXXXXXX",
+  contactFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSclqo1ItKphMG6NdHj0ysAzMCogmRO4hHRHdxxAg83wrEtpwA/viewform",
   xUrl: "https://x.com/porcube04",
 };
 
@@ -87,6 +87,6 @@ const MEMBERS = [
   { name: "ふらぴぐ", role: "アートワーク", url: "" },
   { name: "フジモリメライ", role: "制作進行", url: "" },
   { name: "コスケ", role: "Web・アプリ制作", url: "" },
-  { name: "なまえ", role: "メンバー", url: "" },
+  { name: "まつばら", role: "メンバー", url: "" },
 ];
 

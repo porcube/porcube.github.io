@@ -24,6 +24,7 @@ const GAMES = [
     isNew: true,
     links: [
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
+      { label: "動画を見る", url: "" }, 
     ],
   },
   {

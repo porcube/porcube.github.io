@@ -492,3 +492,47 @@ a:focus-visible, .btn:focus-visible {
 a.member-card:hover { background: var(--mist); }
 .member-name { font-size: 13px; font-weight: 800; }
 .member-role { font-size: 11px; color: var(--gray); text-align: right; }
+
+/* ---------- video modal ---------- */
+.game-video-btn { align-self: flex-start; padding: 8px 20px; font-size: 13px; }
+
+.video-modal {
+  width: min(960px, calc(100% - 32px));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+.video-modal::backdrop { background: rgba(17, 17, 17, .8); }
+.video-modal[open] { animation: video-pop .2s ease; }
+.video-modal-inner { position: relative; }
+.video-modal-player {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  background: #000;
+  border: var(--line) solid var(--paper);
+  border-radius: var(--radius-md);
+}
+.video-modal-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border: var(--line) solid var(--paper);
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+.video-modal-close:hover { background: var(--gray-dark); }
+@keyframes video-pop { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .video-modal[open] { animation: none; } }

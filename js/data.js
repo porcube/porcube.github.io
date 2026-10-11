@@ -12,6 +12,7 @@ const SITE = {
 // ---- 作品ギャラリー ----
 // image: "assets/xxx.jpg"（画像を assets フォルダに入れてパスを指定。無ければ null）
 // isNew: true にすると NEW バッジが付きます
+// video: "assets/xxx.mp4"（指定すると「動画を見る」ボタンが付き、ポップアップで再生）
 // links: 名前とURLの組を好きなだけ（BOOTH、ゲームマーケット、ルール説明PDFなど）
 const GAMES = [
   {
@@ -21,6 +22,7 @@ const GAMES = [
     age: "6歳～",
     desc: "羊がぐるぐる逃げ回る！？羊を巡る思惑が交差する、ドタバタバッティングゲーム！",
     image: "assets/sclamble.jpg",
+    video: "assets/scramble_pv.mp4",
     isNew: true,
     links: [
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },

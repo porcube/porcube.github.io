@@ -37,11 +37,55 @@
             '<h3 class="game-title">' + esc(g.title) + "</h3>" +
             '<div class="game-specs">' + specs.join("") + "</div>" +
             '<p class="game-desc">' + esc(g.desc) + "</p>" +
+            (g.video ? '<button type="button" class="btn btn--solid game-video-btn" data-video="' + esc(g.video) +
+                       '" data-title="' + esc(g.title) + '">▶ 動画を見る</button>' : "") +
             (links ? '<div class="game-links">' + links + "</div>" : "") +
           "</div>" +
         "</article>"
       );
     }).join("");
+  }
+
+  // ---- 動画ポップアップ ----
+  function setupVideoModal() {
+    var grid = document.getElementById("games-grid");
+    if (!grid || !grid.querySelector(".game-video-btn")) return;
+
+    var dialog = document.createElement("dialog");
+    dialog.className = "video-modal";
+    dialog.innerHTML =
+      '<div class="video-modal-inner">' +
+        '<button type="button" class="video-modal-close" aria-label="閉じる">×</button>' +
+        '<video class="video-modal-player" controls playsinline preload="none"></video>' +
+      "</div>";
+    document.body.appendChild(dialog);
+    var video = dialog.querySelector("video");
+
+    grid.addEventListener("click", function (e) {
+      var btn = e.target.closest(".game-video-btn");
+      if (!btn) return;
+      var src = btn.getAttribute("data-video");
+      var title = btn.getAttribute("data-title");
+      if (video.getAttribute("src") !== src) video.setAttribute("src", src);
+      dialog.setAttribute("aria-label", title + " の動画");
+      dialog.showModal();
+      video.currentTime = 0;
+      var p = video.play();
+      if (p && p.catch) p.catch(function () {});
+      if (typeof gtag === "function") gtag("event", "video_open", { video_title: title });
+    });
+
+    function close() {
+      video.pause();
+      if (dialog.open) dialog.close();
+    }
+
+    // ×ボタン・背景クリック・Escキーで閉じ、再生を止める
+    dialog.querySelector(".video-modal-close").addEventListener("click", close);
+    dialog.addEventListener("click", function (e) { if (e.target === dialog) close(); });
+    dialog.addEventListener("close", function () { video.pause(); });
+    // 読み込み中に閉じた場合、あとから再生が始まっても止める
+    video.addEventListener("playing", function () { if (!dialog.open) video.pause(); });
   }
 
   // ---- イベント ----
@@ -140,6 +184,7 @@
 
   try {
     renderGames();
+    setupVideoModal();
     renderEvents();
     renderMembers();
     applySiteLinks();

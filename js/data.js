@@ -87,6 +87,6 @@ const MEMBERS = [
   { name: "ふらぴぐ", role: "アートワーク", url: "" },
   { name: "フジモリメライ", role: "制作進行", url: "" },
   { name: "コスケ", role: "Web・アプリ制作", url: "" },
-  { name: "まつばら", role: "メンバー", url: "" },
+  { name: "松原誠", role: "メンバー", url: "" },
 ];
 

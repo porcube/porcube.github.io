@@ -28,7 +28,7 @@ const GAMES = [
     isNew: true,
     links: [
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
-      // { label: "説明書（PDF）", url: "assets/sclamble_manual.pdf" },  // PDFを入れたら // を外す
+      { label: "説明書（PDF）", url: "assets/scramble_manual.pdf" },
     ],
   },
   {

@@ -13,6 +13,7 @@ const SITE = {
 // image: "assets/xxx.jpg"（画像を assets フォルダに入れてパスを指定。無ければ null）
 // isNew: true にすると NEW バッジが付きます
 // video: "assets/xxx.mp4"（指定すると「動画を見る」ボタンが付き、ポップアップで再生）
+// videoCredit: 動画の下に表示するクレジット { label: "映像制作", name: "名前", url: "リンク（任意）" }
 // links: 名前とURLの組を好きなだけ（BOOTH、ゲームマーケット、ルール説明PDFなど）
 const GAMES = [
   {
@@ -23,6 +24,7 @@ const GAMES = [
     desc: "羊がぐるぐる逃げ回る！？羊を巡る思惑が交差する、ドタバタバッティングゲーム！",
     image: "assets/sclamble.jpg",
     video: "assets/scramble_pv.mp4",
+    videoCredit: { label: "映像制作", name: "藍田あん", url: "https://x.com/Lantern_wf" },
     isNew: true,
     links: [
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },

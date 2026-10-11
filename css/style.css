@@ -517,6 +517,15 @@ a.member-card:hover { background: var(--mist); }
   border: var(--line) solid var(--paper);
   border-radius: var(--radius-md);
 }
+.video-modal-credit {
+  margin: 12px 4px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--paper);
+  text-align: right;
+}
+.video-modal-credit a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.video-modal-credit a:hover { opacity: .75; }
 .video-modal-close {
   position: absolute;
   top: -48px;

@@ -29,6 +29,13 @@
         return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + " →</a>";
       }).join("");
 
+      var vc = g.videoCredit;
+      var credit = vc
+        ? esc(vc.label) + "：" + (vc.url
+            ? '<a href="' + esc(vc.url) + '" target="_blank" rel="noopener">' + esc(vc.name) + "</a>"
+            : esc(vc.name))
+        : "";
+
       return (
         '<article class="game-card reveal">' +
           thumb +
@@ -38,7 +45,7 @@
             '<div class="game-specs">' + specs.join("") + "</div>" +
             '<p class="game-desc">' + esc(g.desc) + "</p>" +
             (g.video ? '<button type="button" class="btn btn--solid game-video-btn" data-video="' + esc(g.video) +
-                       '" data-title="' + esc(g.title) + '">▶ 動画を見る</button>' : "") +
+                       '" data-title="' + esc(g.title) + '" data-credit="' + esc(credit) + '">▶ 動画を見る</button>' : "") +
             (links ? '<div class="game-links">' + links + "</div>" : "") +
           "</div>" +
         "</article>"
@@ -57,16 +64,21 @@
       '<div class="video-modal-inner">' +
         '<button type="button" class="video-modal-close" aria-label="閉じる">×</button>' +
         '<video class="video-modal-player" controls playsinline preload="none"></video>' +
+        '<p class="video-modal-credit"></p>' +
       "</div>";
     document.body.appendChild(dialog);
     var video = dialog.querySelector("video");
+    var creditEl = dialog.querySelector(".video-modal-credit");
 
     grid.addEventListener("click", function (e) {
       var btn = e.target.closest(".game-video-btn");
       if (!btn) return;
       var src = btn.getAttribute("data-video");
       var title = btn.getAttribute("data-title");
+      var credit = btn.getAttribute("data-credit");
       if (video.getAttribute("src") !== src) video.setAttribute("src", src);
+      creditEl.innerHTML = credit;  // renderGames でエスケープ済み
+      creditEl.hidden = !credit;
       dialog.setAttribute("aria-label", title + " の動画");
       dialog.showModal();
       video.currentTime = 0;

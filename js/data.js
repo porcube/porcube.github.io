@@ -55,6 +55,14 @@ const GAMES = [
 // booth: ブース番号（未定なら null）
 const EVENTS = [
   {
+    date: "2027-1-16.17",
+    name: "ボードゲームビジネスエキスポジャパン",
+    place: "インテックス大阪",
+    booth: null,
+    note: "新作「SCLAMBLE(スクランブル)」を頒布予定です。",
+    url: "https://www.bgbe-j.com/",          // ← 決まったら公式サイトのURLを入れる
+  },
+  {
     date: "2026-10-17",
     name: "ゲームマーケット2026秋",
     place: "幕張メッセ",

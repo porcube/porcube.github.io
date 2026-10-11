@@ -28,6 +28,7 @@ const GAMES = [
     isNew: true,
     links: [
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
+      // { label: "説明書（PDF）", url: "assets/sclamble_manual.pdf" },  // PDFを入れたら // を外す
     ],
   },
   {
@@ -38,7 +39,9 @@ const GAMES = [
     desc: "テスト前夜。起きて勉強しなきゃいけないのに、頭の中では羊たちがメェメェメェ、、",
     image: "assets/mememeday.jpg",
     isNew: false,
-    links: [],
+    links: [
+      { label: "説明書（PDF）", url: "assets/mememeday_manual.pdf" },
+    ],
   },
   {
     title: "OUTBAAAAN",
@@ -50,6 +53,7 @@ const GAMES = [
     isNew: false,
     links: [ 
       { label: "BOOTHで見る", url: "https://porcube.booth.pm/" },
+      { label: "説明書（PDF）", url: "assets/outbaaaan_manual.pdf" },
     ],
   },
 ];

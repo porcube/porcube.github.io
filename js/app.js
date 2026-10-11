@@ -100,17 +100,23 @@
     var upcoming = [];
     var past = [];
     EVENTS.forEach(function (ev) {
-      var d = new Date(ev.date + "T00:00:00");
-      (d >= today ? upcoming : past).push(ev);
+      // 複数日のイベントは最終日（endDate）まで「これからの予定」に残す
+      var last = new Date((ev.endDate || ev.date) + "T00:00:00");
+      (last >= today ? upcoming : past).push(ev);
     });
     upcoming.sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     past.sort(function (a, b) { return a.date > b.date ? -1 : 1; });
 
-  
+
     function row(ev) {
       var d = new Date(ev.date + "T00:00:00");
       var ym = d.getFullYear() + "." + (d.getMonth() + 1);
-      var day = d.getDate();
+      var day = String(d.getDate());
+      if (ev.endDate) {
+        var e = new Date(ev.endDate + "T00:00:00");
+        if (e.getMonth() !== d.getMonth()) ym += "–" + (e.getMonth() + 1);
+        day += "–" + e.getDate();
+      }
       var meta = [];
       if (ev.place) meta.push(esc(ev.place));
       if (ev.note) meta.push(esc(ev.note));

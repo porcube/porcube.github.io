@@ -180,7 +180,7 @@ const EVENTS = [
     name: "ゲームマーケット2026秋",
     place: "幕張メッセ",
     booth: null,
-    note: "新作「SCLAMBLE(スクランブル)」を頒布予定です。",
+    note: "新作「SCLAMBLE(スクランブル)」を頒布しました。",
     url: "https://www.gamemarket.jp/booth/6044",          // ← 決まったら公式サイトのURLを入れる
   },
    {

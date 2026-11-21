@@ -23,7 +23,8 @@ const esc = R.esc;
 // ---- data.js を読み込む ----
 function loadData() {
   const code = fs.readFileSync(path.join(ROOT, "js/data.js"), "utf8");
-  return vm.runInNewContext(code + "\n;({ SITE, GAMES, EVENTS, MEMBERS })", {});
+  return vm.runInNewContext(code +
+    "\n;({ SITE, GAMES, EVENTS, MEMBERS, MEDIA: typeof MEDIA === 'undefined' ? [] : MEDIA })", {});
 }
 
 function write(rel, content) {
@@ -42,6 +43,7 @@ function buildIndex(data) {
   const events = R.eventLists(data.EVENTS, new Date());
   const blocks = {
     "games": R.gamesGrid(data.GAMES),
+    "media": R.mediaList(data.MEDIA, { games: data.GAMES }),
     "events-upcoming": events.upcoming,
     "events-past": events.past,
     "members": R.membersList(data.MEMBERS),
@@ -127,6 +129,11 @@ function gamePage(g, data) {
       '<video class="detail-video" controls playsinline preload="none"' +
       (g.image ? ' poster="' + esc(B + g.image) + '"' : "") + ' src="' + esc(B + g.video) + '"></video>' +
       (credit ? '<p class="detail-video-credit">' + credit + "</p>" : "")));
+  }
+  const media = data.MEDIA.filter((m) => m.game === g.slug);
+  if (media.length) {
+    sections.push(section("メディア掲載", "Media",
+      '<div class="media-list">' + R.mediaList(media, { base: B }) + "</div>"));
   }
   if ((g.contents && g.contents.length) || (g.credits && g.credits.length)) {
     let body = '<div class="detail-cols">';
@@ -224,7 +231,7 @@ ${sections.join("\n")}
 </main>
 
 ${footer(B)}
-
+${media.length ? `<script src="${B}js/yt-lite.js"></script>\n` : ""}
 </body>
 </html>
 `;

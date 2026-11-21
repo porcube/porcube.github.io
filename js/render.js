@@ -152,7 +152,49 @@
     }).join("");
   }
 
+  // ---- メディア掲載 ----
+  // opts.base: 相対パスの前に付ける文字（作品ページでは "../"）
+  // opts.games: 作品一覧（紹介作品へのリンク用。省略するとリンクなし）
+  function mediaCard(m, opts) {
+    opts = opts || {};
+    var base = opts.base || "";
+    var thumb = "";
+    if (m.youtube) {
+      var id = encodeURIComponent(m.youtube);
+      thumb =
+        '<a class="yt-lite" href="https://www.youtube.com/watch?v=' + id + '" data-yt="' + id +
+        '" target="_blank" rel="noopener" aria-label="' + esc("動画を再生：" + m.title) + '">' +
+          '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy">' +
+          '<span class="yt-lite-play" aria-hidden="true"></span>' +
+        "</a>";
+    }
+    var game = null;
+    (opts.games || []).forEach(function (g) { if (m.game && g.slug === m.game) game = g; });
+    var links =
+      (game ? '<a href="' + esc(base + gamePath(game)) + '">紹介された作品：' + esc(game.title) + " →</a>" : "") +
+      (m.url ? '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' +
+               (m.youtube ? "YouTubeで見る" : "記事を見る") + " →</a>" : "");
+
+    return (
+      '<article class="media-card reveal">' +
+        (thumb ? '<div class="media-thumb">' + thumb + "</div>" : "") +
+        '<div class="media-body">' +
+          '<p class="media-meta"><span class="media-outlet">' + esc(m.outlet) + "</span>" +
+            (m.date ? "<span>" + esc(m.date) + "</span>" : "") + "</p>" +
+          '<h3 class="media-title">' + esc(m.title) + "</h3>" +
+          (m.desc ? '<p class="media-desc">' + esc(m.desc) + "</p>" : "") +
+          (links ? '<div class="game-links">' + links + "</div>" : "") +
+        "</div>" +
+      "</article>"
+    );
+  }
+
+  function mediaList(media, opts) {
+    return media.map(function (m) { return mediaCard(m, opts); }).join("");
+  }
+
   var api = {
+    mediaList: mediaList,
     esc: esc,
     withBase: withBase,
     gamePath: gamePath,

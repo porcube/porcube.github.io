@@ -13,6 +13,13 @@
     grid.innerHTML = R.gamesGrid(GAMES);
   }
 
+  // ---- メディア掲載 ----
+  function renderMedia() {
+    var el = document.getElementById("media-list");
+    if (!el || typeof MEDIA === "undefined") return;
+    el.innerHTML = R.mediaList(MEDIA, { games: typeof GAMES === "undefined" ? [] : GAMES });
+  }
+
   // ---- 動画ポップアップ ----
   function setupVideoModal() {
     var grid = document.getElementById("games-grid");
@@ -110,6 +117,7 @@
   try {
     renderGames();
     setupVideoModal();
+    renderMedia();
     renderEvents();
     renderMembers();
     applySiteLinks();

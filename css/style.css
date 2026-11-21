@@ -706,3 +706,87 @@ a.member-card:hover { background: var(--mist); }
 @media (prefers-reduced-motion: reduce) {
   .other-games a { transition: none; }
 }
+
+/* ---------- media（メディア掲載） ---------- */
+.section-die[data-face="4"]::before { top: 7px; left: 7px; width: 7px; height: 7px; box-shadow: 17px 0 0 var(--ink); }
+.section-die[data-face="4"]::after  { bottom: 7px; left: 7px; width: 7px; height: 7px; box-shadow: 17px 0 0 var(--ink); }
+
+.hero-media { margin-top: 18px; }
+.hero-media a {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--mist);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .15s ease, background .2s ease;
+}
+.hero-media a:hover { transform: translateY(-2px); background: var(--paper); }
+
+.media-list { display: grid; gap: 22px; max-width: 880px; margin: 0 auto; }
+.media-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  border: var(--line) solid var(--ink);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--paper);
+}
+.media-thumb { border-right: var(--line) solid var(--ink); background: #000; }
+.media-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 10px; }
+.media-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; font-weight: 700; color: var(--gray-dark); }
+.media-outlet {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 999px;
+  padding: 1px 10px;
+}
+.media-title { font-size: 16px; font-weight: 800; line-height: 1.5; }
+.media-desc { font-size: 13px; color: var(--gray-dark); }
+
+.yt-lite, .yt-lite-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+.yt-lite img { width: 100%; height: 100%; object-fit: cover; }
+.yt-lite-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 68px; height: 48px;
+  transform: translate(-50%, -50%);
+  background: var(--ink);
+  border: var(--line) solid var(--paper);
+  border-radius: 14px;
+  transition: transform .15s ease;
+}
+.yt-lite-play::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 9px 0 9px 15px;
+  border-color: transparent transparent transparent var(--paper);
+}
+.yt-lite:hover .yt-lite-play { transform: translate(-50%, -50%) scale(1.08); }
+
+.detail-section .media-card { grid-template-columns: 1fr; }
+.detail-section .media-thumb { border-right: 0; border-bottom: var(--line) solid var(--ink); }
+
+@media (max-width: 720px) {
+  .media-card { grid-template-columns: 1fr; }
+  .media-thumb { border-right: 0; border-bottom: var(--line) solid var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-media a, .yt-lite-play { transition: none; }
+}
+
+/* ---------- events: これからの予定をほんのり強調 ---------- */
+:root { --accent-soft: #fff6d8; }
+#events-upcoming .event-row { background: var(--accent-soft); }
+#events-upcoming .event-date { background: var(--paper); }

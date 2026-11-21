@@ -28,7 +28,7 @@ const GAMES = [
     kana: "スクランブル",
     title: "SCLAMBLE",
     players: "3〜6人",
-    time: "15～30分",
+    time: "15分",
     age: "6歳～",
     desc: "羊がぐるぐる逃げ回る！？羊を巡る思惑が交差する、ドタバタバッティングゲーム！",
     image: "assets/sclamble.jpg",
@@ -108,7 +108,7 @@ const GAMES = [
     kana: "アウトバーン",
     title: "OUTBAAAAN",
     players: "2～4人",
-    time: "15～30分",
+    time: "30分",
     age: "8歳～",
     desc: "車のスピードを読み合いながら、狙うは数字と数字の”スキマ”。「爽快感×スリル」スキマ争奪カードゲーム",
     image: "assets/outbaaaan.jpg",
@@ -141,6 +141,23 @@ const GAMES = [
       { label: "制作進行", name: "フジモリメライ" },
       { label: "Special Thanks", name: "松原誠" },
     ],
+  },
+];
+
+// ---- メディア掲載 ----
+// 新しいものを上に書きます。編集したら `node tools/build.js` を実行
+// youtube: YouTube の動画ID（URLの v= の後ろ。動画でなければ null）
+// url: 記事・動画のURL ／ date: 掲載・放送時期（表示用の文字）
+// game: 紹介された作品の slug（作品ページにも表示されます。無ければ null）
+const MEDIA = [
+  {
+    outlet: "テレビ大阪ニュース",
+    date: "2026年11月放送",
+    title: "駆け引きが魅力⁉︎【芸人とボードゲーム作家の二刀流】大阪発ヒットゲーム誕生への挑戦",
+    desc: "PORCUBEの活動に密着取材していただき、新作「SCLAMBLE」を紹介していただきました。",
+    youtube: "uiPXR0X5OwY",
+    url: "https://www.youtube.com/watch?v=uiPXR0X5OwY",
+    game: "sclamble",
   },
 ];
 
